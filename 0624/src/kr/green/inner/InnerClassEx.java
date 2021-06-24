@@ -30,6 +30,17 @@ class OuterClass{
 }
 public class InnerClassEx {
 	public static void main(String[] args) {
-		OuterClass.StaticInner.sview(); // 정적 내부클래스의 정벅 메서드 호출 
+		OuterClass.StaticInner.sview(); // 정적 내부클래스의 정적 메서드 호출 
+		
+		// 정적 내부 클리스의 객체 선언
+		OuterClass.StaticInner si = new OuterClass.StaticInner();
+		si.iview(); //객체를 생성했으니까 인스턴스 메서드 호출 가능
+		
+		// 인스턴스 내부 클래스의 객체 선언
+		OuterClass outer = new OuterClass();
+		OuterClass.InstanceInner oi = outer.new InstanceInner(); // new의 위치 주의
+		oi.view();
+		
+		
 	}
 }
