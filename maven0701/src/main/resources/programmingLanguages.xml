@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<programming_languages>
+    <language>
+        <category>응용프로래밍</category>
+        <developer>오라클</developer>
+        <name>Java</name>
+    </language>
+    <language>
+        <category>응용프로래밍</category>
+        <developer>오라클</developer>
+        <name>C++</name>
+    </language>
+</programming_languages>
