@@ -52,7 +52,6 @@ public class GUIChatServer extends JFrame implements Runnable, ActionListener{
 		messageTA.setEditable(false);
 		messageTA.setFont(new Font("굴림" , Font.BOLD, 16));
 		JScrollPane jScrollPane = new JScrollPane(messageTA);
-		
 		add(jScrollPane, BorderLayout.CENTER);
 		
 		setResizable(false);
@@ -67,12 +66,12 @@ public class GUIChatServer extends JFrame implements Runnable, ActionListener{
 		// 서버 시작
 		try {
 			ServerSocket serverSocket = new ServerSocket(9999);
-			server.messageTA.append("서버시작.....");
-			server.messageTA.append("Loading........");
+			server.messageTA.append("서버시작.....\n");
+			server.messageTA.append("Loading........\n");
 			// 접속대기
 			server.socket = serverSocket.accept();
 			// 접속되면
-			server.messageTA.append(server.socket.getInetAddress() + " 접속에 성공했습니다. ");
+			server.messageTA.append(server.socket.getInetAddress() + " 접속에 성공했습니다.\n");
 			server.pw = new PrintWriter(server.socket.getOutputStream());
 			server.sc = new Scanner(server.socket.getInputStream());
 			// 접속 후에는 버튼과 텍스트 필드 접근

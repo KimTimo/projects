@@ -13,6 +13,7 @@ import java.util.Scanner;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
@@ -61,32 +62,31 @@ public class GUIChatClient extends JFrame implements Runnable, ActionListener{
 	}
     
 	public static void main(String[] args) {
-		GUIChatClient server = new GUIChatClient();
-		server.sendBtn.setEnabled(false);
-		server.messageTF.setEnabled(false);
-		// 서버 시작
+		GUIChatClient client = new GUIChatClient();
+		client.sendBtn.setEnabled(false);
+		client.messageTF.setEnabled(false);
+		// 클라이언트 시작
 		try {
-			ServerSocket serverSocket = new ServerSocket(9999);
-			server.messageTA.append("서버시작.....");
-			server.messageTA.append("Loading........");
+			// 서버의 아이피 입력
+			String hostName = JOptionPane.showInputDialog("접속할 서버의 ip입력", "127.0.0.1");
+			
 			// 접속대기
-			server.socket = serverSocket.accept();
+			client.messageTA.append("서버에 접속합니다.....\n");
+			client.socket = new Socket(hostName, 9999);
 			// 접속되면
-			server.messageTA.append(server.socket.getInetAddress() + " 접속에 성공했습니다. ");
-			server.pw = new PrintWriter(server.socket.getOutputStream());
-			server.sc = new Scanner(server.socket.getInputStream());
+			client.messageTA.append(client.socket.getInetAddress() + "의 서버에 접속했습니다......\n");
+			client.pw = new PrintWriter(client.socket.getOutputStream());
+			client.sc = new Scanner(client.socket.getInputStream());
 			// 접속 후에는 버튼과 텍스트 필드 접근
-			server.sendBtn.setEnabled(true);
-			server.messageTF.setEnabled(true);
-			server.messageTF.requestFocus(); // 커서위치 지정
+			client.sendBtn.setEnabled(true);
+			client.messageTF.setEnabled(true);
+			client.messageTF.requestFocus(); // 커서위치 지정
 			
 			// 받는 스레드 시작
-			Thread thread = new Thread(server);
+			Thread thread = new Thread(client);
 			thread.setDaemon(true);
 			thread.start();
 			
-			// 서버소켓 닫기
-			if(serverSocket!=null) serverSocket.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
