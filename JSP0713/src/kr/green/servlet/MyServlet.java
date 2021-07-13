@@ -25,7 +25,7 @@ public class MyServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		String name = request.getParameter("name");
 		if(name==null || name.trim().equals("")) name = "무명";
-		out.println("<h1>" + name + "씨 안녕!!</h1>");
+		out.println("<h1>" + name + "씨 안녕!! </h1>");
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
