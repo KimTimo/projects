@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>표 합치기</title>
+</head>
+<body>
+	<!-- table>(tr>td*5)*5  -->
+	<table border="1" style="width: 500px; margin: auto;height: 200px;">
+		<caption>표 제목 1</caption>
+		<tr>
+			<td colspan="5">1</td>
+		</tr>
+		<tr>
+			<td colspan="5">2</td>
+		</tr>
+		<tr>
+			<td rowspan="3">3</td>
+			<td rowspan="3">4</td>
+			<td>5</td>
+			<td>6</td>
+			<td>7</td>
+		</tr>
+		<tr>
+			<td colspan="2">8</td>
+			<td>9</td>
+		</tr>
+		<tr>
+			<td colspan="3">10</td>
+		</tr>
+		<caption>표 제목 2</caption>
+	</table>
+</body>
+</html>
