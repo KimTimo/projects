@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Dynamic pseudo-classes</title>
+<style type="text/css">
+   /*
+   Dynamic pseudo-classes 에는 :link, :visited, :hover, :active, :focus가 있습니다.
+   앞의 네가지는 링크를 꾸밀 때 주로 사용하고, :focus는 양식을 꾸밀 때 주로 사용합니다.
+   1. a:link    : 방문 전 링크 상태
+   2. a:visited : 방문 후 링크 상태
+   3. a:hover   : 마우스 오버했을 때 링크 상태
+   4. a:active  : 클릭했을 때 링크 상태
+   */
+   a:link {text-decoration: none; color: blue;}
+   a:visited {text-decoration: none; color: orange;}
+   a:hover {text-decoration: overline; color: green;}
+   a:active {text-decoration: none; color: red;}
+   
+   div{border: 1px solid gray; padding: 10px; }
+   div:hover{background-color: yellow; cursor: pointer;}
+   div:active {background-color: pink;}
+   
+   input{border-bottom: 2px solid pink;}
+   input[type="text"]:focus{background-color: orange; padding: 5px}
+   
+   li:first-child {
+	color: red;
+}
+
+</style>
+</head>
+<body>
+    <ul>
+    	<li>아이템 001</li>
+    	<li>아이템 002</li>
+    	<li>아이템 003</li>
+    </ul>
+
+
+
+    <a href="#">링크</a><br />
+    <div>나는 영역일세!</div>
+    <input type="text"/>
+    <input type="text"/>
+    <input type="password"/>
+
+</body>
+</html>
