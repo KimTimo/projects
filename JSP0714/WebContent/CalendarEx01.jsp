@@ -1,4 +1,3 @@
-<%@page import="java.awt.print.PrinterAbortException"%>
 <%@page import="java.util.Calendar" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
@@ -32,7 +31,7 @@
     calendar.set(yy, mm-1, 1); // 날짜를 그달의 1일로 변경
     int week = calendar.get(Calendar.DAY_OF_WEEK)-1;  // 1~7을 리턴 : 0~6으로 변경하기 위하여 -1을 한다.
     int lastday = calendar.getActualMaximum(Calendar.DATE);
-    System.out.println(yy + ", " + mm + ", " + week + ", " + lastday);
+    //System.out.println(yy + ", " + mm + ", " + week + ", " + lastday);
 %>
 <!DOCTYPE html>
 <html>
@@ -46,13 +45,13 @@ table {
 	margin: auto;
 }
 
-th td {
+th, td {
 	padding: 5px;
 	border: 1px solid gray;
 }
 
 .title {
-	font-size: 18pt;
+	font-size: 22pt;
 	font-weight: bold;
 	text-align: center;
 	border: none;
@@ -70,7 +69,7 @@ th td {
     background-color: silver; 
 }
 .sun_date{
-    height: 750px;
+    height: 50px;
     border-radius: 20px;
     background-color: pink; 
     color: red;
@@ -111,15 +110,15 @@ a:active { text-decoration: none; color: blue;}
 			</td>
 		</tr>
 	<%-- table>tr/th[width="100px;"]*7 --%>
-	<tr bgcolor="silver"> 
-		<th width="100px;" style="background-color: pink;">일</th>
-		<th width="100px;">월</th>
-		<th width="100px;">화</th>
-		<th width="100px;">수</th>
-		<th width="100px;">목</th>
-		<th width="100px;">금</th>
-		<th width="100px;" style="background-color: skyblue;">토</th>
-	</tr>
+	<tr bgcolor="silver">
+			<th width="100px;" style="background-color: pink;">일</th>
+			<th width="100px;">월</th>
+			<th width="100px;">화</th>
+			<th width="100px;">수</th>
+			<th width="100px;">목</th>
+			<th width="100px;">금</th>
+			<th width="100px;" style="background-color: skyblue;">토</th>
+		</tr>
 	<%-- 달력을 출력해보자!!! --%>
 	<tr>
 	<%-- 1일의 요일을 맞추기 위해 앞에 공백을 출력한다. --%>
@@ -136,20 +135,20 @@ a:active { text-decoration: none; color: blue;}
 	    	if(week==0){
 	    		out.println("<td class='sun_date' align='right' valign='bottom'>" + i + "</td>");
 	    	}else if(week==6){  // 토요일이면
-	    		out.println("<td class='sat_date' align='right' valign='bottom'>" + i + "</td");
+	    		out.println("<td class='sat_date' align='right' valign='bottom'>" + i + "</td>");
 	    	    out.println("</tr>");
 	    	    if(i!=lastday){  // 현재 날짜가 마지막 날짜가 아니면 더 출력할 날짜가 있으니까 새로운 줄을 시작
 	    	    	out.println("<tr>");
 	    	    }
 	    	}else{
-	    		out.println("<td class='date' align='right' valign='bottom'>" + i + "</td");
+	    		out.println("<td class='date' align='right' valign='bottom'>" + i + "</td>");
 	    	}
 	    }
 	%>
 	<%-- 표의 뒷부분을 마무리 한다. --%>
 	<%
 	    for(int i = week+1; i < 7; i++){
-	    	out.println("<td class='blank_date'>&nbsp;</td");
+	    	out.println("<td class='blank_date'>&nbsp;</td>");
 	    }
 	    if(week!=6) out.println("</tr>");
 	%>

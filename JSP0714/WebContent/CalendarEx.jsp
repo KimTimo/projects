@@ -43,7 +43,7 @@
 <style type="text/css">
 	table { margin: auto;}
 	th, td { padding: 5px; border: 1px solid gray; }
-	.title { font-size: 22pt; font-weight: bold;text-align: center; border: none;}
+	.title { font-size: 22pt; font-weight: bold; text-align: center; border: none;}
 	.move {border: none; text-align: center; font-weight: bold;}
 	/* 날짜 출력 모양 */
 	.blank_date { height: 50px; border-radius: 20px; background-color: silver; }
