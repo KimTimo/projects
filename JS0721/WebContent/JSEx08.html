@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>클로저(Closure)</title>
+<script type="text/javascript">
+    function test(name) {
+		var output = "반갑습네다." + name + "씨!!";
+	}
+    //alert(output);  // output is not defined 에러 발생!
+                    // output 변수는 지역변수 이므로 함수내에서만 사용이 가능하다.
+                    
+    function outerFunction(name) {
+		var output = "반갑습네다." + name + "씨!!";
+		return function() {
+			alert(output);  // 지역변수를 계속 유효하게 가지는 기능 : 클로저
+		}
+	}
+    
+    var fn1 = outerFunction("김머현");
+    var fn2 = outerFunction("안곤듀");
+    var fn3 = outerFunction("상자몽");
+    // 똑같은 함수를 호출했는데도 변수값이 전부 다르게 저장되어있다.
+    // 함수는 일반적으로 기능을 담당하기 때문에 고유한 값을 가질 수 없다.
+    // 함수를 리턴하면 호출 당시의 변수값이 계속 유지가 된다.
+    // 아래처럼 나중에 실행해도 이전값이 유지가 된다...... 이게 바로 클로저
+    fn1();
+    fn2();
+    fn3();
+    outerFunction("안곤듀 두둥등장")();
+</script>
+</head>
+<body>
+
+</body>
+</html>
