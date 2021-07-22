@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>내장함수 - 인코딩/디코딩</title>
+<script type="text/javascript">
+    var query = "abcd1234~!@# 한글";
+    document.writeln(query + "<br>");
+    // 인코딩
+    document.writeln(escape(query) + "<br>");
+    document.writeln(encodeURI(query) + "<br>");
+    document.writeln(encodeURIComponent(query) + "<br>");
+    // 디코딩
+    document.writeln(unescape(escape(query)) + "<br>");
+    document.writeln(decodeURI(query) + "<br>");
+    document.writeln(decodeURIComponent(query) + "<br>");
+</script>
+</head>
+<body>
+
+</body>
+</html>
