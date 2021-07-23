@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>상속으로 구현해 보자!!!</title>
+<script type="text/javascript">
+	function Rectangle(w, h) {
+		// 함수내에서 변수 선언시 var를 붙이면 지역변수가 된다. 정보의 은폐가 된다.
+		if (w > 0)
+			var width = w;
+		else
+			throw '폭은 음수가 될 수 없습니다.' // 예외를 던진다.
+		if (h > 0)
+			var height = h;
+		else
+			throw '높이는 음수가 될 수 없습니다.'
+
+			// 간접적으로 접근이 가능하도록 getter & setter를 만들어 주어야 한다
+		this.getWidth = function() {
+			return width;
+		}
+		this.getHeight = function() {
+			return height;
+		}
+		// 코드로 작성되기 때문에 예외 처리가 가능하다.
+		this.setWidth = function(w) {
+			if (w < 0) {
+				throw '폭은 음수가 될 수 없습니다.' // 예외를 던진다.
+			}
+			width = w;
+		}
+		this.setHeight = function(h) {
+			if (h < 0) {
+				throw '높이는 음수가 될 수 없습니다.'
+			}
+			height = h;
+		}
+	}
+	Rectangle.prototype.getArea = function() {
+		// return width * height; // 외부에서 직접 접근이 불가하다.
+		return this.getWidth() * this.getHeight();
+	}
+	
+	// Rectangle을 상속받아 Square 생성자 함수를 만들어 보자
+	function Square(length){
+		this.base = Rectangle; // base : 부모 지정
+		this.base(length,length); // 생성자 함수 호출
+	}
+	Square.prototype = Rectangle.prototype; // 메서드 상속
+	
+	// Square생성자 함수를  상속으로 구현한 예!!!
+	rect1 = new Rectangle(5, 7);
+	document.write("폭 : " + rect1.width + ", 높이 : " + rect1.height + "의 넓이 : " + rect1.getArea()+"<br>");
+	square1 = new Square(5);
+	document.write("한변의 길이가  " + square1.width + "인 정사각형의 넓이 : " + square1.getArea()+"<br>");
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
