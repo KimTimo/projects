@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>부모창에 값넣기</title>
+<script type="text/javascript">
+    function selectAddr(no) {
+		var value = document.getElementById("addr"+no).value;
+		opener.getElementById("address1").value = value;
+		opener.getElementById("address2").focus();
+		window.close();
+	}
+</script>
+</head>
+<body>
+    <input type="text" id="addr1" value="경기 성남 분당"><button onclick="selectAddr(1)">선택</button>
+    <input type="text" id="addr2" value="경기 성남 분당"><button onclick="selectAddr(2)">선택</button>
+    <input type="text" id="addr3" value="경기 성남 분당"><button onclick="selectAddr(3)">선택</button>
+
+</body>
+</html>
