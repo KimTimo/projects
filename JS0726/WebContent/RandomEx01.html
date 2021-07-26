@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>로또 번호 자동 생성기</title>
+<script type="text/javascript">
+	// Math.random() 사용 : 0 ~ 1사이의 난수를 만들어 준다.
+	function makeLotto() {
+		var cnt = document.getElementById("cnt").value * 1; // 읽어서 숫자로
+		document.getElementById("result").innerHTML = ""; // 결과창 지우기
+		for(var i=0;i<cnt;i++){ // 횟수
+			var lotto = new Array(6); // 6개 배열
+			for(j = 0;j<lotto.length;j++){ // 6개
+				lotto[j] = parseInt(Math.random()*45)+1; // 1~45사이의 난수발생
+				for(k=0;k<j;k++){ // 이전에 발생한 것 만큼
+					if(lotto[j]==lotto[k]){ // 같은 숫자있으면
+						j--; break; // 현재 위치를 이전으로 돌리고 탈출
+					}
+				}
+			}
+			// 정렬하여 결과를 결과창에 추가
+			document.getElementById("result").innerHTML += lotto.sort() + "<br>";
+			// 위처럼 정렬하면 문자로 정렬된다. 숫자로 정렬되게 바꿔 보시오!!!
+			document.getElementById("result").innerHTML += lotto.sort(function(a, b){
+				return a-b;
+			}) + "<br><hr>";
+		}
+	}
+</script>
+<style type="text/css">
+	div { width: 300px; overflow: auto; border: 1px solid gray; padding : 10px;}
+</style>
+</head>
+<body>
+	몇게임 : <input type="text" id="cnt" value="5" size="5"/>
+	<input type="button" value="로또번호 만들기" onclick="makeLotto();"/> <br /><hr />
+	<div id="result"></div>
+</body>
+</html>
