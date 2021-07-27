@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>태그 만들기</title>
+<script type="text/javascript">
+   window.onload = function(){
+	   var h1Node = document.createElement("h1");
+	   var textNode = document.createTextNode("Hello DOM!!!");
+	   h1Node.appendChild(textNode);
+	   document.body.appendChild(h1Node);
+	   //태그 생성
+	   var imgNode = document.createElement("img");
+	   // 속성 추가
+	   imgNode.src = "images/penguin0.jpg";
+	   imgNode.width = 275;
+	   imgNode.height = 183;
+	   imgNode.setAttribute('alt', '귀여운 펭수')
+	   console.log(imgNode.getAttribute('alt'));
+	   console.log(imgNode.getAttribute('width'));
+	   console.log(imgNode.getAttribute('height'));
+	   console.log(imgNode.getAttribute('src'));
+	   // 노드 연결
+	   document.body.appendChild(imgNode);
+   }
+   var content = "<h1>태그가 과연 먹을까요?</h1>";
+   function setUp1() {
+	document.getElementById("box1").innerHTML = content;
+}
+   function setUp2() {
+	document.getElementById("box2").innerText = content;
+}
+</script>
+<style type="text/css">
+    div{
+        width: 150px;
+        height: 150px;
+        margin: 10px;
+        border: 1px solid blue;
+        padding: 10px;
+    }
+</style>
+</head>
+<body>
+    <div id="box1">움하하하</div>
+    <div id="box2"><h2><b>낄낄낄낄</b></h2></div>
+    <button onclick="setUp1()">태그로 넣기</button>
+    <button onclick="setUp2()">Text로 넣기</button>
+
+</body>
+</html>
