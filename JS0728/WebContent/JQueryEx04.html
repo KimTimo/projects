@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script type="text/javascript">
+    window.onload = function() {
+    	alert('window.onload2');
+	}
+    window.onload = function() {
+		alert('window.onload2');
+	}
+    window.onload = function() {
+		alert('window.onload3');  // 이것만 실행됨.
+		                          // 함수를 재정의 했기 때문에.
+	}
+    // 복수로 지정이 가능하다.
+    $(function() {
+		alert( "ready~~~~1" );
+	});
+    
+    $(function() {
+		alert( "ready~~~~2" );
+	});
+    
+    $(function() {
+		alert( "ready~~~~3" );
+	});
+</script>
+</head>
+<body>
+
+</body>
+</html>
