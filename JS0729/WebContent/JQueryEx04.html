@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>선택자 연습 : 필터 선택자</title>
+<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		// index는 0부터이다.
+		$("h1:odd").css('background-color','pink');
+		$("h1:even").css('background-color','skyblue');
+		$("h1:first").css('color','red');
+		$("h1:last").css('color','blue');
+		
+		$("tr:first").css('background-color','silver');
+		$("tr:last").css('background-color','silver');
+	});
+</script>
+</head>
+<body>
+	h1{나는 $$$번째 제목입니다.}*5
+	<h1>나는 001번째 제목입니다.</h1>
+	<h1>나는 002번째 제목입니다.</h1>
+	<h1>나는 003번째 제목입니다.</h1>
+	<h1>나는 004번째 제목입니다.</h1>
+	<h1>나는 005번째 제목입니다.</h1>
+
+	table[border='1']>(tr>td{항목 $$}*5)*4
+	<table border="1">
+		<tr>
+			<td>항목 01</td>
+			<td>항목 02</td>
+			<td>항목 03</td>
+			<td>항목 04</td>
+			<td>항목 05</td>
+		</tr>
+		<tr>
+			<td>항목 01</td>
+			<td>항목 02</td>
+			<td>항목 03</td>
+			<td>항목 04</td>
+			<td>항목 05</td>
+		</tr>
+		<tr>
+			<td>항목 01</td>
+			<td>항목 02</td>
+			<td>항목 03</td>
+			<td>항목 04</td>
+			<td>항목 05</td>
+		</tr>
+		<tr>
+			<td>항목 01</td>
+			<td>항목 02</td>
+			<td>항목 03</td>
+			<td>항목 04</td>
+			<td>항목 05</td>
+		</tr>
+	</table>
+	
+	
+</body>
+</html>

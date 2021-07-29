@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>배열관리</title>
+<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		var ar = [
+			{'name':'네이버', 'link':'https://www.naver.com'},
+			{'name':'다음', 'link':'http://www.daum.net'},
+			{'name':'네이트', 'link':'http://www.nate.com'},
+			{'name':'구글', 'link':'http://www.google.co.kr'}
+		];
+		// $.each(컬렉션, 핸들러) : 컬렉션의 내용을 핸들러가 반복한다.
+		$.each(ar, function(i, item) {
+			document.writeln(i + " : " + item.name + " : " + item['link'] + "<br>");
+		});
+		
+		document.writeln("<hr>");
+		
+		$.each(ar, function(i, item) {
+			document.writeln("<a href='" + item.link + "'>" + item['name'] + "</a><br>");
+		});
+	
+	});
+</script>
+</head>
+<body>
+	
+	
+</body>
+</html>
