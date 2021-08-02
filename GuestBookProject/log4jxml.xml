@@ -1,0 +1,128 @@
+<log4j:event logger="kr.green.guestbook.log.LogEx01" timestamp="1627885242956" level="DEBUG" thread="main">
+<log4j:message><![CDATA[Debug 로거!!!!]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="kr.green.guestbook.log.LogEx01" timestamp="1627885242961" level="INFO" thread="main">
+<log4j:message><![CDATA[info 로거!!!!]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="kr.green.guestbook.log.LogEx01" timestamp="1627885242962" level="WARN" thread="main">
+<log4j:message><![CDATA[warn 로거!!!!]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="kr.green.guestbook.log.LogEx01" timestamp="1627885242962" level="ERROR" thread="main">
+<log4j:message><![CDATA[error 로거!!!!]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="kr.green.guestbook.log.LogEx01" timestamp="1627885242963" level="FATAL" thread="main">
+<log4j:message><![CDATA[fatal 로거!!!!]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="kr.green.guestbook.log.LogEx01" timestamp="1627885408513" level="DEBUG" thread="main">
+<log4j:message><![CDATA[Debug 로거!!!!]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="kr.green.guestbook.log.LogEx01" timestamp="1627885408538" level="INFO" thread="main">
+<log4j:message><![CDATA[info 로거!!!!]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="kr.green.guestbook.log.LogEx01" timestamp="1627885408541" level="WARN" thread="main">
+<log4j:message><![CDATA[warn 로거!!!!]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="kr.green.guestbook.log.LogEx01" timestamp="1627885408542" level="ERROR" thread="main">
+<log4j:message><![CDATA[error 로거!!!!]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="kr.green.guestbook.log.LogEx01" timestamp="1627885408543" level="FATAL" thread="main">
+<log4j:message><![CDATA[fatal 로거!!!!]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="kr.green.guestbook.log.LogEx01" timestamp="1627885538610" level="DEBUG" thread="main">
+<log4j:message><![CDATA[Debug 로거!!!!]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="kr.green.guestbook.log.LogEx01" timestamp="1627885538623" level="INFO" thread="main">
+<log4j:message><![CDATA[info 로거!!!!]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="kr.green.guestbook.log.LogEx01" timestamp="1627885538625" level="WARN" thread="main">
+<log4j:message><![CDATA[warn 로거!!!!]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="kr.green.guestbook.log.LogEx01" timestamp="1627885538625" level="ERROR" thread="main">
+<log4j:message><![CDATA[error 로거!!!!]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="kr.green.guestbook.log.LogEx01" timestamp="1627885538626" level="FATAL" thread="main">
+<log4j:message><![CDATA[fatal 로거!!!!]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="kr.green.guestbook.log.LogEx01" timestamp="1627885561301" level="DEBUG" thread="main">
+<log4j:message><![CDATA[Debug 로거!!!!]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="kr.green.guestbook.log.LogEx01" timestamp="1627885561311" level="INFO" thread="main">
+<log4j:message><![CDATA[info 로거!!!!]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="kr.green.guestbook.log.LogEx01" timestamp="1627885561311" level="WARN" thread="main">
+<log4j:message><![CDATA[warn 로거!!!!]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="kr.green.guestbook.log.LogEx01" timestamp="1627885561313" level="ERROR" thread="main">
+<log4j:message><![CDATA[error 로거!!!!]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="kr.green.guestbook.log.LogEx01" timestamp="1627885561313" level="FATAL" thread="main">
+<log4j:message><![CDATA[fatal 로거!!!!]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="kr.green.guestbook.log.LogEx01" timestamp="1627885633077" level="DEBUG" thread="main">
+<log4j:message><![CDATA[Debug 로거!!!!]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="kr.green.guestbook.log.LogEx01" timestamp="1627885633086" level="INFO" thread="main">
+<log4j:message><![CDATA[info 로거!!!!]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="kr.green.guestbook.log.LogEx01" timestamp="1627885633086" level="WARN" thread="main">
+<log4j:message><![CDATA[warn 로거!!!!]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="kr.green.guestbook.log.LogEx01" timestamp="1627885633087" level="ERROR" thread="main">
+<log4j:message><![CDATA[error 로거!!!!]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="kr.green.guestbook.log.LogEx01" timestamp="1627885633087" level="FATAL" thread="main">
+<log4j:message><![CDATA[fatal 로거!!!!]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="kr.green.guestbook.log.LogEx02" timestamp="1627886246238" level="DEBUG" thread="main">
+<log4j:message><![CDATA[짝!!, {}, {}]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="kr.green.guestbook.log.LogEx02" timestamp="1627886259938" level="DEBUG" thread="main">
+<log4j:message><![CDATA[{1}, {1}, {1}]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="kr.green.guestbook.log.LogEx02" timestamp="1627886289375" level="DEBUG" thread="main">
+<log4j:message><![CDATA[짝!!, 찍, 쪽]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="kr.green.guestbook.log.LogEx02" timestamp="1627886626989" level="DEBUG" thread="main">
+<log4j:message><![CDATA[짝!!, 찍, 쪽]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="kr.green.guestbook.log.LogEx02" timestamp="1627886627000" level="DEBUG" thread="main">
+<log4j:message><![CDATA[짝!!]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="kr.green.guestbook.log.LogEx02" timestamp="1627886647278" level="DEBUG" thread="main">
+<log4j:message><![CDATA[짝!!, 찍, 쪽]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="kr.green.guestbook.log.LogEx02" timestamp="1627886647299" level="DEBUG" thread="main">
+<log4j:message><![CDATA[짝!!, 찍, 쪽]]></log4j:message>
+</log4j:event>
+

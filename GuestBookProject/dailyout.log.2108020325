@@ -1,0 +1,5 @@
+main> [2021-08-02 15:25:38] [LogEx01] [17] [DEBUG] Debug 로거!!!! 
+main> [2021-08-02 15:25:38] [LogEx01] [18] [INFO] info 로거!!!! 
+main> [2021-08-02 15:25:38] [LogEx01] [19] [WARN] warn 로거!!!! 
+main> [2021-08-02 15:25:38] [LogEx01] [20] [ERROR] error 로거!!!! 
+main> [2021-08-02 15:25:38] [LogEx01] [21] [FATAL] fatal 로거!!!! 
