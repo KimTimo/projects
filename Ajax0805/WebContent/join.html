@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+<script>
+	$(function(){
+		$("#userid").keyup(function(){
+			// alert($(this).val());
+			var value = $(this).val();
+			// 입력값이 4글자 미만이면 그냥 둔다.
+			if(value.length<4){
+				$("#msg").html("");
+				return false;
+			}
+			// 입력값이 4글자 이상이면 Ajax를 사용하여 아이디 중복 확인을 검사한다.
+			$.ajax({
+				url : 'idcheck.jsp',
+				data : {"userid":value},
+				method : "POST",
+				success : function(data){
+					// $("#msg").html(data + " : " + typeof(data)).css('color','blue');
+					if(data*1==0)
+						$("#msg").html('사용 가능한 아이디 입니다.').css('color','blue');
+					else
+						$("#msg").html('이미 사용중인 아아디 입니다.').css('color','red');
+						
+				},
+				error : function(){
+					$("#msg").html('에러 발생!!!').css('color','red');
+				}
+			});
+		});
+	});
+</script>
+</head>
+<body>
+	<!-- 아이디 중복확인을 Ajax로 해결해보자!!!! -->
+	<form action="#">
+		<input type="text" id="userid" name="userid"/> <span id="msg"></span>
+	</form>
+</body>
+</html>
