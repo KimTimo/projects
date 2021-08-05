@@ -1,12 +1,5 @@
 <%@page import="java.util.List"%>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%
-	if(session.getAttribute("memo")!=null){
-		
-	}else{
-		
-	}
-%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,6 +35,7 @@
 			$("#memo").val("");
 		}
 		$("#memo").focus(); // 커서를 memo로 보낸다.
+		
 		$("#saveBtn").click(function(){
 			var value = $("#memo").val();
 			if(value!=null && value.trim().length>0){

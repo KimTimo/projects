@@ -36,7 +36,7 @@
 		if(count==1){
 			// 로그인 성공
 			result = "{\"result\":1,\"nickname\":\"" +nickname+ "\",\"userid\":\""+userid+ "\",\"point\":"+point+"}";
-			System.out.println(result);
+			// System.out.println(result);
 			session.setAttribute("mv", "로그인성공!!!"); // 원래는 vo 객체를 저장해야 한다.
 		}else{
 			// 로그인 실패
