@@ -64,5 +64,12 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.47</version>
 		</dependency>
+		<!-- 표준태그 라이브러리 추가 -->
+		<dependency>
+			<groupId>jstl</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+		<!-- 표준태그 라이브러리 추가종료 -->
 	</dependencies>
 </project>

@@ -6,6 +6,8 @@ public class CommonVO {
 	private int p; // 현재 페이지
 	private int s; // 페이지당 글의 수
 	private int b; // 페이지리스트의 페이지 개수
+	private int idx; // 글번호
+	
 	private String m;
 	
 	// 실제 사용할 변수
@@ -14,6 +16,16 @@ public class CommonVO {
 	private int blockSize;
 	private String mode;
 	
+	public int getIdx() {
+		return idx;
+	}
+	public void setIdx(int idx) {
+		this.idx = idx;
+		if(this.idx<=0) {
+			this.idx = 0;
+		}
+	}
+
 	public int getP() {
 		return p;
 	}
@@ -70,10 +82,12 @@ public class CommonVO {
 	public String getMode() {
 		return mode;
 	}
-	
 	@Override
 	public String toString() {
-		return "CommonVO [p=" + p + ", s=" + s + ", b=" + b + ", currentPage=" + currentPage + ", pageSize=" + pageSize
-				+ ", blockSize=" + blockSize + "]";
+		return "CommonVO [p=" + p + ", s=" + s + ", b=" + b + ", idx=" + idx + ", m=" + m + ", currentPage="
+				+ currentPage + ", pageSize=" + pageSize + ", blockSize=" + blockSize + ", mode=" + mode + "]";
 	}
+	
+	
+	
 }
