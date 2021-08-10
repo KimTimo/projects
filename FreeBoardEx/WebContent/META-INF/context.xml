@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<context>
+  <Resource 
+  name="jdbc/TestDB" 
+  auth="Container" 
+  type="javax.sql.DataSource"
+  maxTotal="100" 
+  maxIdle="30" 
+  maxWaitMillis="10000"
+  username="jspuser" 
+  password="123456" 
+  driverClassName="net.sf.log4jdbc.DriverSpy"
+  url="jdbc:log4jdbc:mysql://localhost:3306/jspdb"/>
+</context>
