@@ -31,7 +31,7 @@ public class CommentDAO {
 	// 2. 해당글번호의 댓글 목록을 구하는 메서드
 	public List<CommentVO> selectList(Connection conn, int ref) throws SQLException {
 		List<CommentVO> commentList = null;
-		String sql = "select * from comment where ref=" + ref;
+		String sql = "select * from comment where ref=" + ref + " order by idx desc";
 		Statement stmt = conn.createStatement();
 		ResultSet rs = stmt.executeQuery(sql);
 		if(rs.next()) {
