@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMapConfig
+PUBLIC "-//ibatis.apache.org//DTD SQL Map Config 2.0//EN"
+"http://ibatis.apache.org/dtd/sql-map-config-2.dtd">
+<!-- 다음은 정확한 XML 헤더를 위한 필수값이다. -->
+<sqlMapConfig>
+	<!-- 
+		여기서 명시된 파일내 프라퍼티(name=value) 는 이 설정파일내 고정자(placeholder) 에 의해 사용될수 있다. 
+		(이를테면. “${driver}”. 
+		이 파일은 클래스패스에 상대적이고 선택적인 사항이다. 
+		application.properties 프로퍼티 파일을 사용하겠다.
+	-->
+	<properties resource="application.properties" />
+	
+	<!-- 이 셋팅은 가장 기본적으로는 트랜잭션 관리를 하며 SqlMapClient 설정 상세를 제어한다. 이것들은 모두 선택적이다. -->
+	<settings 
+		cacheModelsEnabled="true" 
+		enhancementEnabled="true"
+		lazyLoadingEnabled="true" 
+		maxRequests="128" 
+		maxSessions="100"
+		maxTransactions="50" 
+		useStatementNamespaces="true"
+		defaultStatementTimeout="5" 
+		statementCachingEnabled="true"
+		classInfoCacheEnabled="true" />
+		
+	<!-- 긴 전체 경로를 포함한 클래스명을 위한 좀더 짧은 이름을 사용하기 위한 별칭을 타이핑한다. -->
+	<!-- VO클래스를 만들때마다 여기에 추가해 주면 된다 -->
+	<typeAlias alias="hashMap" type="java.util.HashMap" />
+	<typeAlias alias="testVO" type="kr.green.ibatis.vo.TestVO" />
+	
+	
+	<!--SimpleDataSource 를 이용한 SQL Map 를 사용하기 위한 데이터소스 설정. 6 위 자원으로 부터 프라퍼티  사용에 주의. -->
+	<transactionManager type="JDBC">
+		<dataSource type="SIMPLE">
+			<property name="JDBC.Driver" value="${driver}" />
+			<property name="JDBC.ConnectionURL" value="${url}" />
+			<property name="JDBC.Username" value="${username}" />
+			<property name="JDBC.Password" value="${password}" />
+			<property name="JDBC.DefaultAutoCommit" value="true" />
+			<property name="Pool.MaximumActiveConnections" value="100" />
+			<property name="Pool.MaximumIdleConnections" value="20" />
+			<property name="Pool.MaximumCheckoutTime" value="120000" />
+			<property name="Pool.TimeToWait" value="500" />
+		</dataSource>
+	</transactionManager>
+	<!-- 이 SQL map 에 의해 로드되는 모든 SQL Map 파일을 인식한다. 경로는 클래스패스에 상대적이다. -->
+	<sqlMap resource="mappers/testMapper.xml" />
+	<sqlMap resource="mappers/testMapper2.xml" />
+	
+</sqlMapConfig>
