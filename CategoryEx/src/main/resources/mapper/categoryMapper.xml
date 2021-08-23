@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="category">
+ 	<!-- id: 메서드명 , parameterType : 인수, resultType : 리턴값 -->
+  	<select id="selectList" resultType="categoryVO">
+  		SELECT idx, ref, seq, lev, item  FROM category ORDER BY ref DESC, seq ASC
+  	</select>
+  	<insert id="insert" parameterType="categoryVO">
+  		INSERT INTO category VALUES (category_idx_seq.nextval, category_idx_seq.currval, 0, 0 , #{item})
+  	</insert>
+</mapper>
