@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dept">
+	<!-- 중복없이 부서번호만 -->
+  	<select id="selectDeptID" resultType="string">
+  		SELECT DISTINCT dept_id FROM DEPT_LOCATION ORDER BY 1
+  	</select> 
+  	<!-- 중복없이 직업만 -->
+  	<select id="selectJobID" resultType="string">
+  		SELECT DISTINCT job_id FROM DEPT_LOCATION ORDER BY 1
+  	</select> 
+  	<!-- 전체 -->
+  	<select id="selectAll" resultType="DeptVO">
+  		select * from dept_location
+  	</select> 
+  	<!-- 부서별 -->
+  	<select id="selectByDeptID" resultType="DeptVO" parameterType="string">
+  		select * from dept_location where dept_id=#{dept_id}
+  	</select> 
+  	<!-- 직업별 -->
+  	<select id="selectByJobID" resultType="DeptVO" parameterType="string">
+  		select * from dept_location where job_id=#{job_id}
+  	</select> 
+  	<!-- 부서별/직업별 -->
+  	<select id="selectByJobIDDeptID" resultType="DeptVO" parameterType="string">
+  		select * from dept_location where dept_id=#{dept_id} and  job_id=#{job_id}
+  	</select> 
+  	
+  	<!-- 위의 4개 태그를 1개로 합치면 -->
+  	<select id="selectDept" resultType="DeptVO" parameterType="HashMap">
+  		select * from dept_location 
+  		<where> <!-- 밑에 조건이 생성되면 이자리에 자동으로 where가 써진다. -->
+  			<if test="dept_id != null"> <!-- 조건에 만족하면 where절이 만들어진다. -->
+  				and dept_id=#{dept_id}
+  			</if>
+  			<if test="job_id != null"> <!-- 이때 필요없는 OR나 and는 알아서 없애준다.  -->
+  				and job_id=#{job_id}
+  			</if>
+  		</where>
+  	</select> 
+  	
+  	
+</mapper>
