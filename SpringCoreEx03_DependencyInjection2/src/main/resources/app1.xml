@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!--  생성자를 이용한 주입 : 기본 자료형에 직접 값 대입 -->
+	<bean id="employee1" class="kr.green.core.vo.Employee"></bean>
+	<bean id="employee2" class="kr.green.core.vo.Employee">
+		<constructor-arg>
+			<value type="int">1001</value>
+		</constructor-arg>
+	</bean>
+	<bean id="employee3" class="kr.green.core.vo.Employee">
+		<constructor-arg>
+			<value type="java.lang.String">김말자</value>
+		</constructor-arg>
+	</bean>
+	<bean id="employee4" class="kr.green.core.vo.Employee">
+		<constructor-arg type="int" value="1001"/>
+		<constructor-arg type="java.lang.String" value="김말자"/>
+	</bean>
+	<bean id="employee5" class="kr.green.core.vo.Employee">
+		<constructor-arg type="int" value="1001" index="1"/>
+		<constructor-arg type="java.lang.String" value="김말자" index="0"/>
+	</bean>
+	
+	<!-- setter를 통한 주입 -->
+	<bean id="employee6" class="kr.green.core.vo.Employee">
+	    <property name="id">
+	        <value>5004</value>
+	    </property>
+	    <property name="name">
+	        <value>안곤듀</value>
+	    </property>
+	</bean>
+	<bean id="employee7" class="kr.green.core.vo.Employee">
+	    <property name="id" value="5004"/>
+	    <property name="name" value="안곤듀"/>
+	</bean>
+</beans>
