@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Singleton singleton1 = new Singleton() 이 실행이된다. -->
+	<bean id="singleton1" class="kr.green.core.vo.Singleton"></bean>
+
+	
+	<!-- 
+	Singleton s = new Singleton()
+	Singleton singleton2 = s.getInstance();
+	이 실행이된다. 
+	-->
+	<bean id="singleton2" class="kr.green.core.vo.Singleton" factory-method="getInstance"></bean>
+	
+</beans>
