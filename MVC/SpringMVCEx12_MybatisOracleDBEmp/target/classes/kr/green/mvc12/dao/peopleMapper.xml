@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="kr.green.mvc12.dao.PeopleDAO">
+	<!-- 1. 저장 -->
+	<insert id="insert"  parameterType="PeopleVO">
+		insert into people (id,name,age) values (people_id_seq.nextval, #{name}, #{age})
+	</insert>
+	<!-- 2. 수정 -->
+	<update id="update" parameterType="PeopleVO">
+		update people set name=#{name}, age=#{age} where id=#{id}
+	</update>
+	<!-- 3. 삭제 -->
+	<delete id="delete" parameterType="int">
+		delete from people where id=#{id}
+	</delete>
+	<!-- 4. 1개얻기 -->
+	<select id="selectById"  parameterType="int" resultType="PeopleVO">
+		select * from people where id=#{id}
+	</select>
+	<!-- 5. 모두얻기 -->
+	<select id="selectList"  resultType="PeopleVO">
+		select * from people order by id desc
+	</select>
+	
+</mapper>
