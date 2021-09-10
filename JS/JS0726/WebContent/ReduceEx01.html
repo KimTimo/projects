@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ES5 Array객체 reduce</title>
+<script type="text/javascript">
+	ar = [1,2,3,4,5];
+	// reduce() : 배열의 요소가 하나가 될때까지 왼쪽부터 두개씩 묶는 함수를 실행한다.
+	// reduceRight() : 배열의 요소가 하나가 될때까지 오른쪽부터 두개씩 묶는 함수를 실행한다.
+	result = "";
+	//                 이전값, 현재값, 인덱스, 배열
+	ar.reduce(function(sum, elt, i, array) {
+		result += sum + ", " + elt + ", " + i + "<br>";
+	});
+	document.writeln(result);
+	document.writeln("<hr>");
+	result = "";
+	ar.reduceRight(function(sum, elt, i, array) {
+		result += sum + ", " + elt + ", " + i + "<br>";
+	});
+	document.writeln(result);
+	document.writeln("<hr>");
+	// 합
+	result =  ar.reduce(function(sum, elt, i, array) {
+		return sum + elt;
+	});
+	document.writeln(result);
+	document.writeln("<hr>");
+	// 곱
+	result =  ar.reduce(function(sum, elt, i, array) {
+		return sum * elt;
+	});
+	document.writeln(result);
+	document.writeln("<hr>");
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

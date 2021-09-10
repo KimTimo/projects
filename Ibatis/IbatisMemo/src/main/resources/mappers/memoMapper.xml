@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="memo">
+	<!-- 1. 전체 개수 얻기 -->
+	<select id="getCount" resultClass="int">
+		select count(*) from memo
+	</select>
+	
+	<!-- 2. 1페이지 분량 얻기 -->
+	<select id="selectList" parameterClass="hashMap" resultClass="memoVO">
+		select * from memo order by idx desc limit #startNo# , #pageSize#
+	</select>
+	
+	<!-- 3. 1개 얻기 -->
+	<select id="selectByIdx" parameterClass="hashMap" resultClass="memoVO">
+		select * from memo where idx = #idx#
+	</select>
+	<!-- 4. 저장하기 -->
+	<insert id="insert" parameterClass="memoVO">
+		insert into memo (name, password,content,regdate,ip) values (#name#, #password#,#content#,now(),#ip#)
+	</insert>
+	<!-- 5. 수정하기 -->
+	<update id="update" parameterClass="memoVO">
+		update memo set content=#content#, regdate=now(), ip=#ip# where idx=#idx#
+	</update>
+	<!-- 6. 삭제하기 -->
+	<delete id="delete" parameterClass="int">
+		delete from memo where idx=#idx#
+	</delete>
+</sqlMap>

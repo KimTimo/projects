@@ -34,6 +34,23 @@
 			SendPost("updateAdd.jsp", {"item":value});
 		});
 	});
+	
+	function editBtnClick(idx){
+		// alert(idx + "번 수정");
+		var value = $("#item"+idx).val();
+		if(value==null || value.trim().length==0){
+			alert('항목은 반드시 입력해야 합니다.');
+			$("#item"+idx).val("");
+			$("#item"+idx).focus();
+			return false;
+		}
+		SendPost("updateItem.jsp", {"idx":idx,"item":value});
+	}
+	
+	function deleteBtnClick(idx){
+		alert(idx + "번 삭제");
+	}
+	
 </script>
 </head>
 <body>
@@ -47,18 +64,20 @@
 		<c:forEach var="vo" items="${list }">
 			<c:if test="${vo.lev gt 0 }">
 				<c:forEach var="l" begin="0" end="${vo.lev }">
-					&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				</c:forEach>
 				☞ 
 			</c:if>
 			<%-- 여기에 소항목을 추가하는 폼을 만든다. --%>
 			${vo.item } 
-			<form action="updateAdd2.jsp" method="post" style="display: inline;">
+			<form action="updateAdd.jsp" method="post" style="display: inline;">
 				<input type="hidden" name="ref" id="ref" value="${vo.ref }"/> 
 				<input type="hidden" name="seq" id="seq" value="${vo.seq }"/> 
 				<input type="hidden" name="lev" id="lev" value="${vo.lev }"/> 
-				<input type="text" name="item" id="item" required="required" placeholder="항목입력"/> 
+				<input type="text"   name="item" id="item${vo.idx }" required="required" placeholder="항목입력"/> 
 				<input type="submit" value="추가"/> 
+				<input type="button" value="수정"  onclick="editBtnClick(${vo.idx})"/>
+				<input type="button" value="삭제"  onclick="deleteBtnClick(${vo.idx })"/> 
 			</form>
 			<br/>
 		</c:forEach>

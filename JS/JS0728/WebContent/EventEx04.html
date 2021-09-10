@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이벤트 전달 1</title>
+<script type="text/javascript">
+	window.onload = function(){ // onload : 문서가 모두 읽은 다음에
+		
+	}
+</script>
+<style type="text/css">
+	* { border : 1px solid gray; padding:10px;}
+</style>
+</head>
+<body>
+	<!--  이벤트 버블링 : 안의 것을 클릭하면 밖으로 전달 된다. -->
+	<div onclick="alert('밖의 DIV');">
+		<div onclick="alert('안의 DIV');">
+			<h1 onclick="alert('제목');">
+				<p onclick="alert('문단');">나는 문단</p>
+			</h1>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+    div{
+        width: 150px;
+        height: 50px;
+        border: 1px solid gray;
+        background-color: silver;
+        cursor: pointer;
+        margin: 10px;
+        padding: 10px;
+        float: left;
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+	<h2>각각의 div를 클릭하면 각각 몇번째 div를 클릭했다고 메세지를 띄우고 싶다.</h2>
+	<div id="divScope0">Click me! DIV 0</div>
+	<div id="divScope1">Click me! DIV 1</div>
+	<div id="divScope2">Click me! DIV 2</div>
+	<script> 
+		function setDivClick(index)	{ 
+			document.getElementById("divScope" + index).onclick = function() {
+				alert(index + 1 + "번째 div 클릭함!!"); 
+			}
+		} 
+		var i, len = 3; 
+		for (i = 0; i < len; i++) { 
+			setDivClick(i); 
+		} 
+	</script>
+</body>
+</html>

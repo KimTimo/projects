@@ -10,4 +10,20 @@
   	<insert id="insert" parameterType="categoryVO">
   		INSERT INTO category VALUES (category_idx_seq.nextval, category_idx_seq.currval, 0, 0 , #{item})
   	</insert>
+  	<!--  
+  	하위 항목 저장
+  	1. 나의 seq보다 큰값들을 모두 1씩 증가시킨다.
+  	2. ref는 그대로 seq와 lev는 +1해서 저장한다.
+  	 -->
+    <update id="updateSeq" parameterType="categoryVO">
+    	update category set seq = seq+1 where ref=#{ref } and seq > #{seq }
+    </update>	
+  	<insert id="insertrReply" parameterType="categoryVO">
+  		INSERT INTO category VALUES (category_idx_seq.nextval, #{ref}, #{seq}+1, #{lev}+1 , #{item})
+  	</insert>
+  	
+  	<!-- 아이템 수정 -->
+  	 <update id="updateItem" parameterType="categoryVO">
+    	update category set item = #{item} where idx=#{idx}
+    </update>	
 </mapper>

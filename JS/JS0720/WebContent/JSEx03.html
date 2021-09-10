@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>prompt 함수를 이용한 숫자만 입력받기</title>
+<script type="text/javascript">
+	var n = Math.sqrt(2);
+	document.writeln(n + "<br>");
+	var n = Math.sqrt(3);
+	document.writeln(n + "<br>");
+	var n = Math.sqrt(-3);
+	document.writeln(n + "<br>"); // 허수를 NaN으로 판단.
+	document.writeln("<br><hr>")
+
+	s = String(123);
+	document.writeln(typeof (s) + " : " + (s + 1) + "<br>");
+	s = Boolean("true");
+	document.writeln(typeof (s) + " : " + (!s) + "<br>");
+	document.writeln(Boolean(0) + "<br>");
+	document.writeln(Boolean('') + "<br>");
+	document.writeln(Boolean(NaN) + "<br>");
+	document.writeln(Boolean(null) + "<br>");
+	document.writeln(Boolean(undefined) + "<br>");
+	document.writeln("<br><hr>")
+	document.writeln(('' == false) + "<br>");
+	document.writeln(('' == 0) + "<br>");
+	document.writeln((0 == false) + "<br>");
+	document.writeln(('274' == 274) + "<br>");
+	document.writeln("<br><hr>")
+	document.writeln(('' === false) + "<br>");
+	document.writeln(('' === 0) + "<br>");
+	document.writeln((0 === false) + "<br>");
+	document.writeln(('274' === 274) + "<br>");
+</script>
+</head>
+<body>
+
+</body>
+</html>

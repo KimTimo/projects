@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>올림/버림/반올림</title>
+<script type="text/javascript">
+	var n = 4567.5678;
+	document.writeln("n = " + n + "<br>");
+	// 반올림
+	document.writeln("Math.round(n) = " + Math.round(n) + "<br>");
+	// n을 넘는 최소 정수
+	document.writeln("Math.ceil(n) = "  + Math.ceil(n) + "<br>");
+	// 넘지않는 최대 정수
+	document.writeln("Math.floor(n) = " + Math.floor(n) + "<br><hr>");
+	
+	var n = -4567.5678;
+	document.writeln("n = " + n + "<br>");
+	document.writeln("Math.round(n) = " + Math.round(n) + "<br>");
+	document.writeln("Math.ceil(n) = "  + Math.ceil(n) + "<br>");
+	document.writeln("Math.floor(n) = " + Math.floor(n) + "<br><hr>");
+	
+	var n = 4567.5678;
+	document.writeln("n = " + n + "<br>");
+	// 1의 자리에서 반올림
+	document.writeln("Math.round(n/10)*10 = " + Math.round(n/10)*10 + "<br>");
+	// 10의 자리에서 반올림
+	document.writeln("Math.round(n/100)*100 = " + Math.round(n/100)*100 + "<br>");
+	// 100의 자리에서 반올림
+	document.writeln("Math.round(n/1000)*1000 = " + Math.round(n/1000)*1000 + "<br>");
+	// 소수 둘째자리에서 반올림
+	document.writeln("Math.round(n*10)/10 = " + Math.round(n*10)/10 + "<br>");
+	// 소수 셋째자리에서 반올림
+	document.writeln("Math.round(n*100)/100 = " + Math.round(n*100)/100 + "<br><hr>");
+</script>
+</head>
+<body>
+
+</body>
+</html>

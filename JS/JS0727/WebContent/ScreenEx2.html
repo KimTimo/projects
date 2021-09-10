@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+    var child = open('','','width=300, height=200');
+    child.moveTo(0, 0);
+    child.resizeTo(screen.width, screen.height);
+    var id = setInterval(function() {
+    	child.resizeBy(-20,-20);
+    	chlid.moveBy(10,10);
+	}, 100)
+	
+	setTimeout(function() {
+		clearTimeout(id);
+	}, 3000)
+</script>
+</head>
+<body>
+
+</body>
+</html>

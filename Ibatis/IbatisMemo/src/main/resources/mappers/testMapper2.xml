@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="test2">
+	<!-- id: 메서드명 , resultClass : 인수, resultClass : 리턴값 -->
+	<!-- 
+	쿼리에 <, <= >, >=가 들어갈 경우에는 반드시 <![CDATA[ ]]> 섹션안에 써야 한다. 왜? 태그로 인식할 수 있기 때문
+	<![CDATA[ 명령 ]]> 섹션 안의 내용은 태그가 아닌 내용으로 인식되기 때문이다.
+	 -->	
+	<select id="calc" parameterClass="hashMap" resultClass="testVO" >
+		<![CDATA[
+		select now() AS now, ($num1$ + $num2$) * $num3$ AS result, CONCAT(#name#, '씨 반갑습니다.') AS message
+		]]>
+	</select>
+	<select id="calcMap" parameterClass="hashMap" resultClass="hashMap" >
+		<![CDATA[
+		select now() AS now, ($num1$ + $num2$) * $num3$ AS result, CONCAT(#name#, '씨 반갑습니다.') AS message
+		]]>
+	</select>
+</sqlMap>

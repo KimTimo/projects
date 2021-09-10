@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+    // 배열의 요소 추가, 삭제 방법
+    var arr = [];
+    document.writeln(arr.length + "개 : " + arr + "<br>");
+    arr.push(1);
+    arr.push(2);  // 뒤로 추가
+    document.writeln(arr.length + "개 : " + arr + "<br>");
+    
+    arr.unshift(9);
+    arr.unshift(8);  // 앞으로 추가
+    document.writeln(arr.length + "개 : " + arr + "<br>");
+    
+    arr.splice(1, 0, 7);
+    arr.splice(1, 0, -6, -5); // splice(위치, 지울개수, 요소.....) 원하는 위치에 한개 이상
+    arr.splice(1, 2, -6, -5); // splice(위치, 지울개수, 요소.....) 원하는 위치에 한개 이상
+    document.writeln(arr.length + "개 : " + arr + "<br>");
+    
+    document.writeln(arr.pop() + "제거 완료<br>");
+    document.writeln(arr.pop() + "제거 완료<br>");  // 뒤에서 제거. 제거한 값 리턴
+    document.writeln(arr.length + "개 : " + arr + "<br>");
+    
+    
+    document.writeln(arr.shift() + "제거 완료<br>");
+    document.writeln(arr.shift() + "제거 완료<br>");  // 앞에서 제거. 제거한 값 리턴
+    document.writeln(arr.length + "개 : " + arr + "<br>");
+    
+    arr.splice(1, 1); // splice(시작위치, 끝위치) ==> 1개 제거
+    arr.splice(1, 1);
+    document.writeln(arr.length + "개 : " + arr + "<br>");
+    
+    document.writeln("<br><hr>");
+</script>
+</head>
+<body>
+
+</body>
+</html>

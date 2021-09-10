@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload = function() {
+		setInterval(function() {
+			document.title = "현재 시간 : " + getTime();
+			document.getElementById("clock").innerHTML = "현재 시간 : " + getTime();
+		}, 1000)
+	}
+	
+	function getTime() {
+		var Today
+	}
+</script>
+<style type="text/css">
+    #clock{
+        border: 3px double gray;
+        padding: 5px;
+        height: 30px;
+        width: 100px;
+        position: absolute;
+        top: 0px;
+        left: 900px;
+    }
+</style>
+</head>
+<body>
+	<div id="clock">
+	
+	</div>
+</body>
+</html>

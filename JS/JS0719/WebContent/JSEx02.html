@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>자바스크립트의 위치</title>
+<script type="text/javascript">
+	alert('움하하하--In Header');
+	// innerHTML : 안의 내용을 HTML로 바꿔라
+	document.getElementById("header1").innerHTML = "제목이 바뀜!! 1";
+	document.getElementById("header2").innerHTML = "제목이 바뀜!! 2";
+</script>
+</head>
+<body>
+    <h1 id="header1">크크루짬뽕 1</h1>
+	<script type="text/javascript">
+		alert('움하하하--In Body');
+	document.getElementById("header1").innerHTML = "제목이 바뀜!! 1";
+	document.getElementById("header2").innerHTML = "제목이 바뀜!! 2";
+	</script>
+    <h1 id="header2">크크루짬뽕 2</h1>
+
+</body>
+<script type="text/javascript">
+	alert('움하하하--Out Body');
+	document.getElementById("header1").innerHTML = "제목이 바뀜!! 1";
+	document.getElementById("header2").innerHTML = "제목이 바뀜!! 2";
+</script>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ES5 Array객체 filter</title>
+<script type="text/javascript">
+	ar = [3,2,6,1,8,9];
+	document.writeln("ar = " + ar + "<br>");
+	// filter : 조건에 만족하는 요소만 뽑아 새로운 배열을 리턴한다.
+	evenAr = ar.filter(function(elt, i) {
+		return elt%2==0;
+	});
+	document.writeln("evenAr = " + evenAr + "<br>");
+	
+	oddAr = ar.filter(function(elt) {
+		return elt%2!=0;
+	});
+	document.writeln("oddAr = " + oddAr + "<br>");
+</script>
+</head>
+<body>
+
+</body>
+</html>

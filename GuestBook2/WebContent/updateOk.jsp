@@ -4,7 +4,7 @@
 <%@ page import="kr.green.guestbook.vo.PagingVO"%>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
-	//POST전송인지 검사
+//POST전송인지 검사
 	if(!request.getMethod().equals("POST")){
 		response.sendRedirect("index.jsp");
 		return;

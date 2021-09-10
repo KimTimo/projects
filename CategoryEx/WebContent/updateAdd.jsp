@@ -33,7 +33,10 @@
 	<%-- 서비스를 호출하여 저장을 수행한다. --%>
 	${vo }
 	<%
-		CategoryService.getInstance().insert(vo);
+		if(vo.getRef()==0) // 원본글이 없다면 원본글이다. 
+			CategoryService.getInstance().insert(vo);
+		else // 원본글이 있다면 하위글이다. 
+			CategoryService.getInstance().insertrReply(vo);
 	%>
 	<%-- 리스트로 보낸다. --%>
 	<c:redirect url="index.jsp"></c:redirect>

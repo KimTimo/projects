@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>짧은 조건문</title>
+<script type="text/javascript">
+    // 인수(매개변수) 를 받아 출력해주는 함수
+    function fn(x) {
+		document.writeln(x + "<br>");
+		
+		if(x){
+			document.writeln(x + "<br>")
+		}else{
+			document.writeln("0<br>")
+		}
+		document.writeln((x || 0) + "<br>")
+	}
+    
+    // 인수의 개수가 맞지 않아도 된다.
+    fn(5);  // 5출력
+    fn();   // un
+</script>
+</head>
+<body>
+
+</body>
+</html>
