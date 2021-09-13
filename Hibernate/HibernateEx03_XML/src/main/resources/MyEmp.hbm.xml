@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+ "-//Hibernate/Hibernate Mapping DTD//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+  
+ <hibernate-mapping>  
+  <class name="kr.green.core.MyEmp" table="MyEmp">  
+   		<id name="idx" type="int" column="IDX">
+		    <generator class="sequence">
+		    	<param name="sequence">student_idx_seq</param>
+		    </generator>
+		</id>		          
+        <property name="firstName" column="FIRSTNAME" type="string" />
+        <property name="lastName" column="LASTNAME" type="string" />
+  </class>  
+ </hibernate-mapping>  

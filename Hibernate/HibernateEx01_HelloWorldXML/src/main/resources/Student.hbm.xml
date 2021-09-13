@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+ "-//Hibernate/Hibernate Mapping DTD//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+ <!-- 객체와 테이블을 연결한다. -->
+<hibernate-mapping>
+    <class name="kr.green.core.Student" table="STUDENT">
+		<id name="idx" type="int" column="IDX">
+		    <generator class="sequence">
+		    	<param name="sequence">student_idx_seq</param>
+		    </generator>
+		</id>		          
+        <property name="name" column="NAME" type="string" />
+        <property name="section" column="SECTION" type="string" />
+    </class>
+</hibernate-mapping>
