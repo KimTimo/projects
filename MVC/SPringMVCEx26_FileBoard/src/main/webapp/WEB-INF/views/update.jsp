@@ -7,7 +7,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>자료실 새글쓰기</title>
+<title>자료실 수정하기</title>
+<!--  엑시콘사용 : 다운로드받은 폴더를 넣고 CSS파일을 읽는다. -->
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/axicon/axicon.min.css" />
+
 <script src="https://code.jquery.com/jquery-3.5.1.min.js" ></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
@@ -81,17 +84,10 @@
 	//-----------------------------------------------------------------------------------------------------------
 	// 돌아가기버튼 클릭시 사용할 함수
 	function goBack(){
-		SendPost("index.jsp", {"p":${cv.currentPage},"s":${cv.pageSize},"b":${cv.blockSize}});
+		SendPost("${pageContext.request.contextPath}/board/view", {"p":${cv.currentPage},"s":${cv.pageSize},"b":${cv.blockSize},"idx":${cv.idx}});
 	}
 	// 폼의 값 유효성 검사하기 스크립트
 	function formCheck(){
-		var value = $("#name").val();
-		if(!value || value.trim().length==0){
-			alert('이름은 반드시 입력해야 합니다.');
-			$("#name").val("");
-			$("#name").focus();
-			return false; 
-		}
 		var value = $("#password").val();
 		if(!value || value.trim().length==0){
 			alert('비밀번호는 반드시 입력해야 합니다.');
@@ -116,8 +112,19 @@
 		}
 		return true;
 	}
-	function goList(){
-		SendPost("${pageContext.request.contextPath }/board/list",{"p":${cv.currentPage },"s":${cv.pageSize },"b":${cv.blockSize }},"post");
+	function deleteFile(idx, count){
+		var value = $("#delfile"+count).val();
+		if(value==0){
+			if(confirm(idx+"번 첨부파일을 정말로 삭제하시겠습니까?")){
+				$("#delfile"+count).val(idx)
+				$("#msg"+count).html('삭제')
+			}
+		}else{
+			if(confirm(idx+"번 첨부파일을 삭제를 취소 하시겠습니까?")){
+				$("#delfile"+count).val(0)
+				$("#msg"+count).html('')
+			}
+		}
 	}
 </script>
 <style type="text/css">
@@ -133,21 +140,22 @@
 </head>
 <body>
 	<%-- ${cv } --%>
-	<form action="${pageContext.request.contextPath}/board/insertOk" method="post" enctype="multipart/form-data" onsubmit="return formCheck();" >
+	<form action="${pageContext.request.contextPath}/board/updateOK" method="post" enctype="multipart/form-data" onsubmit="return formCheck();" >
 		<table id="main_content">
 			<tr>
 				<td colspan="4" class="title" >
-				자료실 새글쓰기
+				자료실 수정하기
 					<%-- 페이지번호, 페이지 크기, 블록크기를 숨겨서 넘긴다.  --%>
 					<input type="hidden" name="p"  value="${cv.currentPage }"/>
 					<input type="hidden" name="s"  value="${cv.pageSize }"/>
 					<input type="hidden" name="b"  value="${cv.blockSize }"/>
+					<input type="hidden" name="idx"  value="${cv.idx }"/>
 				</td>
 			</tr>
 			<tr>
 				<th>이름</th>
 				<td> 
-					<input type="text" id="name" name="name" size="30" />
+					<input type="text" id="name" name="name" size="30" value="${fv.name }" readonly="readonly"/>
 				</td>
 				<th>비번</th>
 				<td> 
@@ -157,18 +165,31 @@
 			<tr>
 				<th>제목</th>
 				<td colspan="3"> 
-					<input type="text" id="subject" name="subject" size="140" />
+					<input type="text" id="subject" name="subject" size="110" value="${fv.subject }" />
 				</td>
 			</tr>
 			<tr>
 				<th valign="top">내용</th>
 				<td colspan="3"> 
-					<textarea name="content" id="content" cols="135" rows="7"></textarea>
+					<textarea name="content" id="content" cols="135" rows="7">${fv.content }</textarea>
 				</td>
 			</tr>
 			<tr>
 				<th valign="top">자료</th>
-				<td colspan="3"> 
+				<td colspan="3">
+					<%-- 기존에 있던 파일들을 표시하고 삭제버튼을 눌러 삭제가 가능하게 한다. --%>
+					<c:if test="${not empty fv.fileList }">
+					<c:forEach var="fvo" items="${fv.fileList }" varStatus="vs">
+						<%-- 파일명 출력 --%>
+						<i class="axi axi-download2"></i> ${fvo.oriName } 
+						<%-- 삭제 아이콘을 표시 :  클릭시 삭제여부를 물어보고 삭제 표시를 한다. --%>
+						<i style="font-size: 15pt;color:red;cursor: pointer;" class="axi axi-delete2" onclick="deleteFile(${fvo.idx}, ${vs.count })"></i>
+						<input type="hidden" name="delfile" id="delfile${vs.count }" size="5" value="0">
+						<span id="msg${vs.count }" style="color:red;"></span>
+						<br />
+					</c:forEach>
+				</c:if>					 
+					<hr />
 					<input type="button" value=" + " class="btn btn-outline-success btn-sm" style="margin-bottom: 5px;" onclick="addFile();"/>
 					<input type="button" value=" - " class="btn btn-outline-success btn-sm" style="margin-bottom: 5px;" onclick="removeFile();"/>
 					<span style="color:red;font-size: 9pt;">※ 이미지는 내용에 직접 첨부하세요!!!</span>
@@ -180,8 +201,8 @@
 			</tr>
 			<tr>
 				<td colspan="4" class="info">
-					<input type="submit" value=" 저장하기 " class="btn btn-outline-success btn-sm" />
-					<input type="button" value=" 돌아가기 " class="btn btn-outline-success btn-sm" onclick="goList()"/>
+					<input type="submit" value=" 수정하기 " class="btn btn-outline-success btn-sm" />
+					<input type="button" value=" 돌아가기 " class="btn btn-outline-success btn-sm" onclick="goBack()"/>
 				</td>
 			</tr>
 		</table>

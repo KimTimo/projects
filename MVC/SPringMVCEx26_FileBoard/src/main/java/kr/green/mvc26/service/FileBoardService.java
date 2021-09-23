@@ -1,7 +1,5 @@
 package kr.green.mvc26.service;
 
-import java.util.List;
-
 import kr.green.mvc26.vo.CommVO;
 import kr.green.mvc26.vo.FileBoardVO;
 import kr.green.mvc26.vo.PagingVO;
@@ -14,7 +12,7 @@ public interface FileBoardService {
 	// 3. 글쓰기
 	void insert(FileBoardVO fileBoardVO);
 	// 4. 글수정
-	void update(FileBoardVO fileBoardVO, List<Integer> delList, String uploadPath);
+	void update(FileBoardVO fileBoardVO, String[] delFiles, String realPath);
 	// 5. 글삭제
 	void delete(FileBoardVO fileBoardVO, String uploadPath);
 }

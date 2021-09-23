@@ -7,7 +7,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>자료실 새글쓰기</title>
+<title>자료실 삭제하기</title>
+<!--  엑시콘사용 : 다운로드받은 폴더를 넣고 CSS파일을 읽는다. -->
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/axicon/axicon.min.css" />
+
 <script src="https://code.jquery.com/jquery-3.5.1.min.js" ></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
@@ -37,61 +40,16 @@
 						}
 					}
 				});
+		$("#password").focus(); // 비번 입력으로 커서 보내기
+		$('#content').summernote('disable');
 	});
-	function sendFile(file, el) {
-		var form_data = new FormData();
-      	form_data.append('file', file);
-      	$.ajax({
-        	data: form_data,
-        	type: "POST",
-        	url: '${pageContext.request.contextPath}/imageUpload',
-        	cache: false,
-        	contentType: false,
-        	enctype: 'multipart/form-data',
-        	processData: false,
-        	success: function(img_name) {
-          		$(el).summernote('editor.insertImage', img_name);
-        	},
-        	error : function(){
-        		alert('에러!!!');
-        	}
-      	});
-    }
-	//-----------------------------------------------------------------------------------------------------------
-	// 첨부 파일 개수 증감하는 스크립트
-	var minLimit = 1;  // 최소 파일 갯수
-	var maxLimit = 5; // 최대 파일 갯수
-	var fileCount = 1; // 현재 파일 갯수
-	function addFile(){ // 추가
-		if(fileCount>=maxLimit){
-			alert('첨부 파일은 최대 ' + maxLimit + "까지만 허용합니다.");
-			return;
-		}
-		fileCount++;
-		$("#fileBox").append("<div id='fileItem"+fileCount+"' class='fileItem'><input type='file' name='upfile'></div>");
-	}
-	function removeFile(){ // 삭제
-		if(fileCount<=minLimit){
-			alert('첨부 파일은 최소 ' + minLimit + "개는 있어야 합니다.");
-			return;
-		}
-		$("#fileItem"+fileCount).remove();
-		fileCount--;
-	}
 	//-----------------------------------------------------------------------------------------------------------
 	// 돌아가기버튼 클릭시 사용할 함수
 	function goBack(){
-		SendPost("index.jsp", {"p":${cv.currentPage},"s":${cv.pageSize},"b":${cv.blockSize}});
+		SendPost("${pageContext.request.contextPath}/board/view", {"p":${cv.currentPage},"s":${cv.pageSize},"b":${cv.blockSize},"idx":${cv.idx}});
 	}
 	// 폼의 값 유효성 검사하기 스크립트
 	function formCheck(){
-		var value = $("#name").val();
-		if(!value || value.trim().length==0){
-			alert('이름은 반드시 입력해야 합니다.');
-			$("#name").val("");
-			$("#name").focus();
-			return false; 
-		}
 		var value = $("#password").val();
 		if(!value || value.trim().length==0){
 			alert('비밀번호는 반드시 입력해야 합니다.');
@@ -99,25 +57,7 @@
 			$("#password").focus();
 			return false; 
 		}
-		var value = $("#subject").val();
-		if(!value || value.trim().length==0){
-			alert('제목은 반드시 입력해야 합니다.');
-			$("#subject").val("");
-			$("#subject").focus();
-			return false; 
-		}
-		var value = $("#content").summernote('code');
-		// alert("값 : " + value);
-		if(!value || value.trim()=="<p><br></p>"){
-			alert('내용은 반드시 입력해야 합니다.');
-			$("#content").val("");
-			$("#content").focus();
-			return false; 
-		}
 		return true;
-	}
-	function goList(){
-		SendPost("${pageContext.request.contextPath }/board/list",{"p":${cv.currentPage },"s":${cv.pageSize },"b":${cv.blockSize }},"post");
 	}
 </script>
 <style type="text/css">
@@ -133,21 +73,22 @@
 </head>
 <body>
 	<%-- ${cv } --%>
-	<form action="${pageContext.request.contextPath}/board/insertOk" method="post" enctype="multipart/form-data" onsubmit="return formCheck();" >
+	<form action="${pageContext.request.contextPath}/board/deleteOK" method="post" onsubmit="return formCheck();" >
 		<table id="main_content">
 			<tr>
 				<td colspan="4" class="title" >
-				자료실 새글쓰기
+				자료실 삭제하기
 					<%-- 페이지번호, 페이지 크기, 블록크기를 숨겨서 넘긴다.  --%>
 					<input type="hidden" name="p"  value="${cv.currentPage }"/>
 					<input type="hidden" name="s"  value="${cv.pageSize }"/>
 					<input type="hidden" name="b"  value="${cv.blockSize }"/>
+					<input type="hidden" name="idx"  value="${cv.idx }"/>
 				</td>
 			</tr>
 			<tr>
 				<th>이름</th>
 				<td> 
-					<input type="text" id="name" name="name" size="30" />
+					<input type="text" id="name" name="name" size="30" value="${fv.name }" readonly="readonly"/>
 				</td>
 				<th>비번</th>
 				<td> 
@@ -157,31 +98,31 @@
 			<tr>
 				<th>제목</th>
 				<td colspan="3"> 
-					<input type="text" id="subject" name="subject" size="140" />
+					<input type="text" id="subject" name="subject" size="110" value="${fv.subject }" readonly="readonly"/>
 				</td>
 			</tr>
 			<tr>
 				<th valign="top">내용</th>
 				<td colspan="3"> 
-					<textarea name="content" id="content" cols="135" rows="7"></textarea>
+					<textarea name="content" id="content" cols="135" rows="7" readonly="readonly">${fv.content }</textarea>
 				</td>
 			</tr>
 			<tr>
 				<th valign="top">자료</th>
-				<td colspan="3"> 
-					<input type="button" value=" + " class="btn btn-outline-success btn-sm" style="margin-bottom: 5px;" onclick="addFile();"/>
-					<input type="button" value=" - " class="btn btn-outline-success btn-sm" style="margin-bottom: 5px;" onclick="removeFile();"/>
-					<span style="color:red;font-size: 9pt;">※ 이미지는 내용에 직접 첨부하세요!!!</span>
-					<br />
-					<div id="fileBox">
-						<div id="fileItem1" class="fileItem"> <input type="file" name="upfile"/></div>
-					</div>
+				<td colspan="3">
+					<c:if test="${not empty fv.fileList }">
+					<c:forEach var="fvo" items="${fv.fileList }" varStatus="vs">
+						<%-- 파일명 출력 --%>
+						<i class="axi axi-download2"></i> ${fvo.oriName } 
+						<br />
+					</c:forEach>
+					</c:if>					 
 				</td>
 			</tr>
 			<tr>
 				<td colspan="4" class="info">
-					<input type="submit" value=" 저장하기 " class="btn btn-outline-success btn-sm" />
-					<input type="button" value=" 돌아가기 " class="btn btn-outline-success btn-sm" onclick="goList()"/>
+					<input type="submit" value=" 삭제하기 " class="btn btn-outline-success btn-sm" />
+					<input type="button" value=" 돌아가기 " class="btn btn-outline-success btn-sm" onclick="goBack()"/>
 				</td>
 			</tr>
 		</table>

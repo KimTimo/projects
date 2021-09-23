@@ -73,7 +73,7 @@
 				<tr align="center">
 					<td>${vo.idx }</td>
 					<td align="left" >
-						<a href="#" onclick='SendPost("view.jsp",{"p":${pv.currentPage },"s":${pv.pageSize },"b":${pv.blockSize },"idx":${vo.idx },"m":"view","h":"true"},"post")'><c:out value="${vo.subject }"></c:out></a>
+						<a href="#" onclick='SendPost("${pageContext.request.contextPath }/board/view",{"p":${pv.currentPage },"s":${pv.pageSize },"b":${pv.blockSize },"idx":${vo.idx },"m":"view","h":"true"},"post")'><c:out value="${vo.subject }"></c:out></a>
 						<%-- 오늘 저장한 글이면 new 아이콘을 달아보자  --%>		
 						<jsp:useBean id="today" scope="request" class="java.util.Date"></jsp:useBean>				
 						<fmt:formatDate value="${today }" pattern="yyyyMMdd" var="day"/> 

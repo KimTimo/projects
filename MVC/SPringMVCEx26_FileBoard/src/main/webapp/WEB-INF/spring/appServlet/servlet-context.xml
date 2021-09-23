@@ -26,6 +26,7 @@
 	<!-- ********************************************************************************** -->
 	<!-- 업로드된 파일이 저장될 폴더는 직접 접근이 가능해야 한다. -->
 	<resources mapping="/upload/**" location="/upload/" />
+	<resources mapping="/contentfile/**" location="/contentfile/" />
 	<!-- 업로드 관련 객체 등록 시작 -->
 	<!-- 1. 업로드 경로 -->
 	<beans:bean id="uploadPath" class="java.lang.String">
