@@ -1,7 +1,7 @@
 <%@page import="java.util.Calendar"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
-	Calendar cal = Calendar.getInstance();
+	__2F_JSP0713_2F_WebContent_2F_CalendarEx01_2E_jsp cal = Calendar.getInstance();
 	int yy = cal.get(Calendar.YEAR); 
 	int mm = cal.get(Calendar.MONTH) + 1; 
 	
