@@ -11,5 +11,6 @@
 </h1>
 	<P>  The time on the server is ${serverTime}. </P>
 	<a href="test">테스트하기</a>
+	<a href="login">로그인하기</a>
 </body>
 </html>
