@@ -2,6 +2,7 @@
 <%@ page session="false" contentType="text/html; charset=UTF-8"%>
 <html>
 <head>
+<link rel="stylesheet" href="css/style.css">
 <meta charset="UTF-8">
 <title>Home</title>
 <style>
