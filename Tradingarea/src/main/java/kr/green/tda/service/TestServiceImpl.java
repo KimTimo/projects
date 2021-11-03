@@ -1,77 +1,41 @@
 package kr.green.tda.service;
 
-import java.sql.SQLException;
-import java.util.Date;
 import java.util.HashMap;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import kr.green.tda.dao.TestDAO;
-import kr.green.tda.vo.TestVO;
-import lombok.extern.slf4j.Slf4j;
-@Slf4j
+import kr.green.tda.dao.TestDao;
+
+
 @Service("testService")
-public class TestServiceImpl implements TestService{
+@Transactional
+public class TestServiceImpl implements TestService {
 
 	@Autowired
-	private TestDAO testDAO;
-
+	TestDao testDao;
+	
 	@Override
-	public Date selectToday() {
-		log.info("{}의 selectToday 호출", this.getClass().getName());
-		Date today = null;
-		try {
-			today = testDAO.selectToday();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		log.info("{}의 selectToday 리턴 : {}", this.getClass().getName(), today);
-		return today;
+	public String selectToday() {
+		return testDao.selectToday();
 	}
 
 	@Override
-	public int selectSum(int num1, int num2) {
-		log.info("{}의 selectSum 호출 : {}", this.getClass().getName(), num1 + " + " + num2);
-		int result = 0;
-		try {
-			HashMap<String , Integer> map = new HashMap<>();
-			map.put("num1", num1);
-			map.put("num2", num2);
-			result = testDAO.selectSum(map);
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		log.info("{}의 selectSum 리턴 : {}", this.getClass().getName(), result);
-		return result;
+	public int selectSum(int n1, int n2) {
+		HashMap<String, Integer> map = new HashMap<>();
+		map.put("num1", n1);
+		map.put("num2", n2);
+		return testDao.selectSum(map);
 	}
 
 	@Override
-	public int selectMul(int num1, int num2) {
-		log.info("{}의 selectMul 호출 : {}", this.getClass().getName(), num1 + " + " + num2);
-		int result = 0;
-		try {
-			HashMap<String , Integer> map = new HashMap<>();
-			map.put("num1", num1);
-			map.put("num2", num2);
-			result = testDAO.selectMul(map);
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		log.info("{}의 selectMul 리턴 : {}", this.getClass().getName(), result);
-		return result;
+	public int selectMul(int n1, int n2, int n3) {
+		HashMap<String, Integer> map = new HashMap<>();
+		map.put("num1", n1);
+		map.put("num2", n2);
+		map.put("num3", n3);
+		return testDao.selectMul(map);
 	}
 
-	@Override
-	public TestVO selectVO(TestVO testVO) {
-		log.info("{}의 selectVO 호출 : {}", this.getClass().getName(), testVO);
-		TestVO resultVO = null;
-		try {
-			resultVO = testDAO.selectVO(testVO);
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		log.info("{}의 selectVO 리턴 : {}", this.getClass().getName(), resultVO);
-		return resultVO;
-	}
 }

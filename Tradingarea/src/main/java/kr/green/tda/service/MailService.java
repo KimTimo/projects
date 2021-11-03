@@ -25,7 +25,7 @@ public class MailService {
 			@Override
 			public void prepare(MimeMessage mimeMessage) throws Exception {
 				MimeMessageHelper helper = new MimeMessageHelper(mimeMessage,false,"UTF-8");
-				helper.setFrom("itsungnam202106@gmail.com");
+				helper.setFrom("eoguszan@gmail.com");
 				helper.setTo(to);
 				helper.setSubject(subject);
 				helper.setText(body);
@@ -45,7 +45,7 @@ public class MailService {
 			@Override
 			public void prepare(MimeMessage mimeMessage) throws Exception {
 				MimeMessageHelper helper = new MimeMessageHelper(mimeMessage,false,"UTF-8");
-				helper.setFrom("itsungnam202106@gmail.com");
+				helper.setFrom("eoguszan@gmail.com");
 				helper.setTo(memberVO.getEmail());
 				helper.setSubject(memberVO.getUsername() + "님 회원가입을 축하합니다.");
 				StringBuffer sb = new StringBuffer();

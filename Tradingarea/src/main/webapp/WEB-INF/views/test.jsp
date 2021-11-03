@@ -1,30 +1,31 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ page contentType="text/html; charset=UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>여기에 제목</title>
-<script src="https://code.jquery.com/jquery-3.5.1.min.js" ></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-<script	src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-<script>
-	$(function(){
-		
-	});
-</script>
+	<title>Home</title>
+	<meta charset="UTF-8">
+	<script type="text/javascript">
+	function fileDown(ofile, sfile){
+		location.href="download?of=" + encodeURI(ofile) + "&sf=" +  encodeURI(sfile)
+	}
+	</script>
 </head>
 <body>
-	<h2>오늘의 날짜 : <fmt:formatDate value="${today }" type="both" dateStyle="long" timeStyle="long"/> </h2>
-	<h2>합계 : ${num1 } + ${num2 } = ${sum }</h2>
-	<h2>곱셈 : ${num1 } * ${num2 } = ${mul }</h2>
-	<hr />
-	<h2>오늘의 날짜 : <fmt:formatDate value="${vo.today }" type="both" dateStyle="long" timeStyle="long"/> </h2>
-	<h2>합계 : ${vo.num1 } + ${vo.num2 } = ${vo.sum }</h2>
-	<h2>곱셈 : ${vo.num1 } * ${vo.num2 } = ${vo.mul }</h2>
-	
+<h1>
+	Hello world!  
+</h1>
+
+<P>  현재시간 : ${today}. </P>
+<P>  덧셈 : ${sum} </P>
+<P>  곱셈 : ${mul} </P>
+<hr />
+<a href="javascript:fileDown('강아지.jpg','2.jpg')">
+	<img src="${pageContext.request.contextPath }/upload/2.jpg" alt="시무룩한 강아지"  title="시무룩한 강아지" />
+</a>
+<br /><br />
+<button onclick="fileDown('애국가.txt','song.txt')">애국가 다운로드</button>
+<br /><br />
+<a href='<c:url value="/"/>'>홈으로</a>
 </body>
 </html>

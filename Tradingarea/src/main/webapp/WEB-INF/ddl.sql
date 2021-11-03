@@ -10,11 +10,6 @@ CREATE TABLE smember(
     email       VARCHAR2(100)    NULL, 
     birth       date         	 NULL, 
     phone       VARCHAR2(20)     NULL, 
-    zipcode     VARCHAR2(10)     NULL, 
-    addr1       VARCHAR2(100)    NULL, 
-    addr2       VARCHAR2(100)    NULL, 
-    enabled     NUMBER(1)        DEFAULT 0, 
-    regdate     TIMESTAMP        DEFAULT SYSDATE	
 );
 
 SELECT * FROM SMEMBER;
@@ -27,14 +22,12 @@ CREATE TABLE smember_roles(
 	role	varchar2(50)  NOT NULL
 );
 
+select table_name,constraint_name
+from user_constraints;
 
-SELECT * FROM smember_roles;
 
-CREATE TABLE t(birth       date);
 
-SELECT * FROM t;
 
-INSERT INTO t VALUES ('2021-10-11');
 
 
 
