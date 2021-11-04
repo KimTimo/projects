@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import kr.green.tda.dao.TestDao;
+import kr.green.tda.dao.TestDAO;
 
 
 @Service("testService")
@@ -14,11 +14,11 @@ import kr.green.tda.dao.TestDao;
 public class TestServiceImpl implements TestService {
 
 	@Autowired
-	TestDao testDao;
+	TestDAO TestDAO;
 	
 	@Override
 	public String selectToday() {
-		return testDao.selectToday();
+		return TestDAO.selectToday();
 	}
 
 	@Override
@@ -26,7 +26,7 @@ public class TestServiceImpl implements TestService {
 		HashMap<String, Integer> map = new HashMap<>();
 		map.put("num1", n1);
 		map.put("num2", n2);
-		return testDao.selectSum(map);
+		return TestDAO.selectSum(map);
 	}
 
 	@Override
@@ -35,7 +35,7 @@ public class TestServiceImpl implements TestService {
 		map.put("num1", n1);
 		map.put("num2", n2);
 		map.put("num3", n3);
-		return testDao.selectMul(map);
+		return TestDAO.selectMul(map);
 	}
 
 }
