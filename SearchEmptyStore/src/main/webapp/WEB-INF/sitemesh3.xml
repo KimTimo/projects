@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemesh>
+	<!-- 모든 요청을 resources/layout.jsp를 커쳐서 화면에 나타내라!!! -->
+	<mapping path="/*" decorator="/resources/layout.jsp"/>
+	
+	<!-- 제외할 주소를 등록 -->
+	<mapping path="/admin/*" exclue="true"/>
+	<mapping path="/resources/*" exclue="true"/>
+	<mapping path="/download**" exclue="true"/>
+</sitemesh>

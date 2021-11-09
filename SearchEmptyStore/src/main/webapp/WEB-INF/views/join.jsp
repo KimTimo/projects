@@ -211,24 +211,18 @@
 						<!-- 아이디 입력폼 -->
 						<div class="input-group input-sm">
 							<label class="input-group-addon" for="userid" style="font-size: 18pt;margin-right: 5px;"><i class="axi axi-user"></i></label>
-							<input type="text" class="form-control"
-								id="userid" name="userid" placeholder="사용자 아이디 입력" required>
-							<div id="idMessage"
-										style="margin-left: 20px; line-height30px; vertical-align: middle;"></div>
+							<input type="text" class="form-control"	id="userid" name="userid" placeholder="사용자 아이디 입력" required>
+							<div id="idMessage"	style="margin-left: 20px; line-height30px; vertical-align: middle;"></div>
 						</div>
 						<!-- 비밀번호 입력폼 -->
 						<div class="input-group input-sm">
 							<label class="input-group-addon" for="password" style="font-size: 18pt;margin-right: 5px;"><i class="axi axi-lock2"></i></label> 
-								<input type="password"
-								class="form-control" id="password" name="password"
-								placeholder="사용자 비밀번호 입력" required>
+								<input type="password" class="form-control" id="password" name="password" placeholder="사용자 비밀번호 입력" required>
 						</div>
 						<!-- 비밀번호 확인 입력폼 -->
 						<div class="input-group input-sm">
 							<label class="input-group-addon" for="password2" style="font-size: 18pt;margin-right: 5px;"><i class="axi axi-lock2"></i></label> 
-								<input type="password"
-								class="form-control" id="password2" name="password2"
-								placeholder="사용자 비밀번호 확인 입력" required >
+								<input type="password" class="form-control" id="password2" name="password2"	placeholder="사용자 비밀번호 확인 입력" required >
 						</div>
 						<!-- 사용자이름 입력폼 -->
 						<div class="input-group input-sm">
