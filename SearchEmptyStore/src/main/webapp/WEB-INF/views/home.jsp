@@ -29,8 +29,5 @@
 			<input type="button" value="회원탈퇴" onclick="location.href='${pageContext.request.contextPath }/delete'">
 		</form>
 	</c:if>
-	<hr />
-	로그인 정보 :  ${user } <br />
-	세션정보 : ${sessionScope.mvo } <br />
 </body>
 </html>

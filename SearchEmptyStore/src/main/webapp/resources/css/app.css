@@ -25,7 +25,7 @@ body, #mainWrapper, .form-control{
 }
  
 #mainWrapper {
-    height: 800px; 
+    height: 500px; 
     padding-left:10px;
     padding-right:10px;
     padding-bottom:10px;
@@ -62,6 +62,7 @@ body, #mainWrapper, .form-control{
  
 .login-card {
     width: 80%;
+    height: 50%;
     margin: auto;
 }
 .login-form {
