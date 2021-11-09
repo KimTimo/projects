@@ -212,7 +212,7 @@
 						<div class="input-group input-sm">
 							<label class="input-group-addon" for="userid" style="font-size: 18pt;margin-right: 5px;"><i class="axi axi-user"></i></label>
 							<input type="text" class="form-control"	id="userid" name="userid" placeholder="사용자 아이디 입력" required>
-							<div id="idMessage"	style="margin-left: 20px; line-height30px; vertical-align: middle;"></div>
+							<div id="idMessage"	style=" line-height:30px; vertical-align: middle;"></div>
 						</div>
 						<!-- 비밀번호 입력폼 -->
 						<div class="input-group input-sm">
