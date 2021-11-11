@@ -197,6 +197,13 @@
 		}
 	}	
 </script>
+
+<!-- 
+<script>
+	alert('회원가입이 완료되었습니다.');
+	location.href = "/searches";
+</script>
+ -->
 </head>
 <body>
 	<div id="mainWrapper">
@@ -266,8 +273,7 @@
 						
 						<!-- 전송 입력폼 -->
 						<div class="form-actions" style="margin-bottom: 5px;">
-							<input type="submit"
-								class="btn btn-block btn-primary btn-default" value="회원가입하기">
+							<input type="submit" class="btn btn-block btn-primary btn-default" value="회원가입하기">
 						</div>
 					</form>
 				</div>

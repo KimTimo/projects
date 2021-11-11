@@ -45,12 +45,11 @@
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav ms-auto">
 					<!--  <li class="nav-item"><a class="nav-link" href="#about">About</a></li>-->
-					<li class="nav-item"><a class="nav-link"
-						href="${pageContext.request.contextPath }/login">로그인</a></li>
-					<li class="nav-item"><a class="nav-link"
-						href="${pageContext.request.contextPath }/join">회원가입</a></li>
+					<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath }/login">로그인</a></li>
+					<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath }/join">회원가입</a></li>
 					<li class="nav-item"><a class="nav-link" href="#services">지도보기</a></li>
 					<li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+					<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath }/">홈으로</a></li>
 				</ul>
 			</div>
 		</div>
@@ -81,6 +80,7 @@
 
 	<!-- 서브영역 시작 -->
 	<!-- Services section-->
+	<section class="bg-light" id="services">
 	<div class="map_wrap">
     <div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"></div>
 
@@ -98,6 +98,7 @@
        	 	<div id="pagination"></div>
     	</div>
 	</div>
+	</section>
 	<!-- Contact section-->
 	<section id="contact">
 		<div class="container px-4">
