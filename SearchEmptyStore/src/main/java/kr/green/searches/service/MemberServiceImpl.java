@@ -150,5 +150,7 @@ public class MemberServiceImpl implements MemberService{
 		log.info("{}의 selectByIdx 리턴 : {}", this.getClass().getName(), memberVO);
 		return memberVO;
 	}
+	
+	
 
 }

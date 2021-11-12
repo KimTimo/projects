@@ -67,10 +67,10 @@
 	</util:properties>	
 	<!-- 메일 보내는 객체 등록 -->
 	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl"> 
-		<property name="host" value="smtp.gmail.com"/> 
+		<property name="host" value="smtp.naver.com"/> 
 		<property name="port" value="587"/> 
-		<property name="username" value="@"/> 
-		<property name="password" value="@"/> 
+		<property name="username" value="eogsu8548@naver.com"/> 
+		<property name="password" value="Daehyun12@"/> 
 		<property name="javaMailProperties" ref="properties"/> 
 	</bean>
 	<!-- ****************** 메일 보내기 빈 등록 종료 ************************** -->	

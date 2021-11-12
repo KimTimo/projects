@@ -185,7 +185,13 @@
 			<groupId>javax.mail</groupId>
 			<artifactId>mail</artifactId>
 			<version>1.4.7</version>
-		</dependency>		
+		</dependency>	
+		<!-- json-simple -->	
+		 <dependency>
+            <groupId>com.googlecode.json-simple</groupId>
+            <artifactId>json-simple</artifactId>
+            <version>1.1.1</version>
+        </dependency>
 		<!-- ***************************************** 외부 라이브러리	추가 종료 -->
 		
 		<!-- AspectJ -->
