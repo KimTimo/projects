@@ -97,15 +97,8 @@ public class MemberServiceImpl implements MemberService{
 		return count;
 	}
 
-	@Override
-	public MemberVO passwordSearch(MemberVO memberVO) {
-		log.info("{}의 passwordSearch 호출 : {}", this.getClass().getName(), memberVO);
-		MemberVO memberVO2 = null;
-		
-		log.info("{}의 passwordSearch 리턴 : {}", this.getClass().getName(), memberVO2);
-		return memberVO2;
-	}
 
+	// 아이디찾기
 	@Override
 	public MemberVO useridSearch(MemberVO memberVO) {
 		log.info("{}의 useridSearch 호출 : {}", this.getClass().getName(), memberVO);
@@ -115,6 +108,17 @@ public class MemberServiceImpl implements MemberService{
 		return memberVO2;
 	}
 
+	// 비밀번호찾기
+	@Override
+	public MemberVO passwordSearch(MemberVO memberVO) {
+		log.info("{}의 passwordSearch 호출 : {}", this.getClass().getName(), memberVO);
+		MemberVO memberVO2 = null;
+		
+		log.info("{}의 passwordSearch 리턴 : {}", this.getClass().getName(), memberVO2);
+		return memberVO2;
+	}
+	
+	
 	@Override
 	public MemberVO emailConfirm(MemberVO memberVO) {
 		log.info("{}의 emailConfirm 호출 : {}", this.getClass().getName(), memberVO);
@@ -143,6 +147,7 @@ public class MemberServiceImpl implements MemberService{
 		return memberVO;
 	}
 
+	// 아이디 찾기
 	@Override
 	public MemberVO selectByUserid(String userid) {
 		log.info("{}의 selectByIdx 호출 : {}", this.getClass().getName(), userid);

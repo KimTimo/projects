@@ -147,7 +147,6 @@
 			$("#username").focus();
 			return false;
 		}
-
 		var value = $("#email").val();
 		if(!value || value.trim().length==0){
 			alert('이메일 주소는 반드시 입력해야 합니다.');
@@ -155,7 +154,6 @@
 			$("#email").focus();
 			return false;
 		}
-
 		// 이메일 주소가 유효한지 검증해야 한다.
 		if(!verifyEmail(value)){
 			alert('올바른 이메일 주소가 아닙니다.\n이메일 주소는 정확하게 입력해야 합니다.');

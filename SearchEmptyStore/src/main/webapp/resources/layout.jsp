@@ -16,21 +16,32 @@
 <!-- axicon 사용하기 -->
 <link rel="stylesheet" type="text/css"	href="${pageContext.request.contextPath }/resources/axicon/axicon.min.css" />
 
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=8d8453d3d027fd23b918e1436eaea4d3"></script>
+
 <!-- Jquery사용하기 -->
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script	src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=8d8453d3d027fd23b918e1436eaea4d3"></script>
 
 <!-- Bootstrap사용하기 -->
 <link rel="stylesheet"	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 <script	src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
 
+<!-- Bootstrap core JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Core theme JS-->
+
+<script src="resources/js/scripts.js"></script>
+
+
+
 <!-- 헤더 태그안의 모든 내용을 여기에 넣어라 -->
 <sitemesh:write property='head' />
 </head>
 <body id="page-top">
+
+
 	<!-- Navigation-->
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"
 		id="mainNav">
@@ -88,7 +99,7 @@
         <div class="option">
             <div>
                 <form onsubmit="searchPlaces(); return false;">
-                    키워드 : <input type="text" value="이태원 맛집" id="keyword" size="15"> 
+                    키워드 : <input type="text" value="송탄출장소 맛집" id="keyword" size="15"> 
                     <button type="submit">검색하기</button> 
                 </form>
             </div>
@@ -123,14 +134,8 @@
 			</p>
 		</div>
 	</footer>
-	<!-- Bootstrap core JS-->
-	<script
-		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-	<!-- Core theme JS-->
-	<script src="resources/js/scripts.js"></script>
 	
 	<!-- 카카오맵 -->
 	<script type="text/javascript" src="resources/js/map.js"></script>
-
 </body>
 </html>

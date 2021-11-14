@@ -60,9 +60,9 @@
 						</div>
 						<!-- 회원가입/아이디 찾기/비번찾기/홈으로 링크 보이기 -->
 						<div style="margin-bottom: 10px; text-align: center;">
-							  <a href="${pageContext.request.contextPath }/join">회원가입</a> &nbsp;
-							<!--<a href="">아이디 찾기</a> &nbsp;
-							<a href="">비밀번호 찾기</a> &nbsp; -->
+							<a href="${pageContext.request.contextPath }/join">회원가입</a> &nbsp;
+							<a href="${pageContext.request.contextPath }/findUserId">아이디 찾기</a> &nbsp;
+							<a href="${pageContext.request.contextPath }/findUserPassword">비밀번호 찾기</a> &nbsp;
 							<a href="${pageContext.request.contextPath }/">홈으로</a>
 						</div>
 					</form>

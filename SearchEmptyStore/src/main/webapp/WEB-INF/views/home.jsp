@@ -17,8 +17,8 @@
 	<c:if test='${pageContext.request.userPrincipal.name == null }'>
 		<a href="${pageContext.request.contextPath }/login">로그인</a>
 		<a href="${pageContext.request.contextPath }/join">회원가입</a>
-		<a href="${pageContext.request.contextPath }/useridSearch">아이디찾기</a>
-		<a href="${pageContext.request.contextPath }/passwordSearch">비번찾기</a>
+		<a href="${pageContext.request.contextPath }/findUserId">아이디찾기</a>
+		<a href="${pageContext.request.contextPath }/findUserPassword">비번찾기</a>
 	</c:if>
 	<c:if test="${pageContext.request.userPrincipal.name != null}">
 		<c:url value="/logout" var="logoutUrl" />

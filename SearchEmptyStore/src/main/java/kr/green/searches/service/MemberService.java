@@ -20,10 +20,10 @@ public interface MemberService {
 	MemberVO emailConfirm(MemberVO memberVO);
 	// 아이디 중복 검사
 	int idCheck(String userid);
-	// 비번찾기
-	MemberVO passwordSearch(MemberVO memberVO);
 	// 아이디찾기
 	MemberVO useridSearch(MemberVO memberVO);
+	// 비번찾기
+	MemberVO passwordSearch(MemberVO memberVO);
 	
 	// 1개얻기
 	MemberVO selectByIdx(int idx);

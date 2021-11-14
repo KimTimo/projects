@@ -25,6 +25,9 @@
 		where
 			idx=#{idx}
 	</update>
+	
+	
+	
 	<!-- 삭제하기 : 회원 탈퇴 -->
 	<delete id="delete" parameterType="int">
 		delete from smember where idx=#{idx}
