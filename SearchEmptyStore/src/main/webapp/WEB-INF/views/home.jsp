@@ -7,18 +7,19 @@
 </head>
 <body>
 
-    <!-- 
+    
 	<h1>Hello world!</h1>
 	<P>  The time on the server is ${serverTime}. </P>
 	<a href='<c:url value="/test"/>'>테스트해보기</a>
 	<a href='<c:url value="/mem/list"/>'>회원 전용 페이지 가기</a>
-	<a href='<c:url value="/admin/list"/>'>관리자 전용 페이지 가기</a> <br /> -->
+	<a href='<c:url value="/admin/list"/>'>관리자 전용 페이지 가기</a> <br />
 	<hr />
 	<c:if test='${pageContext.request.userPrincipal.name == null }'>
 		<a href="${pageContext.request.contextPath }/login">로그인</a>
 		<a href="${pageContext.request.contextPath }/join">회원가입</a>
 		<a href="${pageContext.request.contextPath }/findUserId">아이디찾기</a>
 		<a href="${pageContext.request.contextPath }/findPassword">비번찾기</a>
+		<a href="${pageContext.request.contextPath }/list">게시판가기</a>
 	</c:if>
 	<c:if test="${pageContext.request.userPrincipal.name != null}">
 		<c:url value="/logout" var="logoutUrl" />
