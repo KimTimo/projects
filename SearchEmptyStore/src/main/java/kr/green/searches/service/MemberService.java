@@ -9,7 +9,7 @@ public interface MemberService {
 	// 회원 정보 수정
 	void update(MemberVO memberVO);
 	// 회원 탈퇴
-	void delete(MemberVO memberVO);
+	MemberVO delete(MemberVO memberVO);
 	// 로그인
 	void login(MemberVO memberVO);
 	// 로그아웃
@@ -24,6 +24,8 @@ public interface MemberService {
 	MemberVO useridSearch(MemberVO memberVO);
 	// 비번찾기
 	MemberVO passwordSearch(MemberVO memberVO);
+	// 비밀번호 바꾸기
+	MemberVO changePassword(MemberVO memberVO);
 	
 	// 1개얻기
 	MemberVO selectByIdx(int idx);

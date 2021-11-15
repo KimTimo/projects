@@ -3,6 +3,7 @@ package kr.green.searches.controller;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
@@ -19,6 +20,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import kr.green.searches.service.MemberService;
+import kr.green.searches.service.MemberServiceImpl;
 import kr.green.searches.vo.MemberRoleVO;
 import kr.green.searches.vo.MemberVO;
 import lombok.extern.slf4j.Slf4j;
@@ -83,7 +85,7 @@ public class MemberController {
 		log.info("{}의 login 호출 : {}", this.getClass().getName(), param);
 		return "login";
 	}
-	
+
 	// 접근 권한이 없는 페이지에 접근하면 보여줄 페이지
 	@RequestMapping(value = "/403")
 	public String page403(Model model) {
@@ -119,6 +121,74 @@ public class MemberController {
 		ModelAndView mv = new ModelAndView("mem/list");
 		mv.addObject("msg", "여기는 회원 전용페이지입니다.");
 		return mv;
+	}
+
+	// 아이디 찾기 실행
+	@RequestMapping(value = "/findUserId", method = RequestMethod.GET)
+	public String findIdAction(MemberVO memberVO, Model model) {
+		MemberVO userId = memberService.useridSearch(memberVO);
+
+		if (userId == null) {
+			model.addAttribute("check", 1);
+		} else {
+			model.addAttribute("check", 0);
+			model.addAttribute("id", userId.getUserid());
+		}
+
+		return "findUserId";
+	}
+
+	// 비밀번호 찾기 실행
+	@RequestMapping(value = "findPassword", method = RequestMethod.GET)
+	public String findPasswordAction(MemberVO memberVO, Model model) {
+		MemberVO password = memberService.passwordSearch(memberVO);
+
+		if (password == null) {
+			model.addAttribute("check", 1);
+		} else {
+			model.addAttribute("check", 0);
+			model.addAttribute("updateid", password.getPassword());
+		}
+
+		return "findPassword";
+	}
+
+	// 비밀번호 바꾸기 실행
+	@RequestMapping(value = "changePassword", method = RequestMethod.GET)
+	public String updatePasswordAction(@RequestParam(value = "updateid", defaultValue = "", required = false) String id,
+			MemberVO memberVO) {
+		memberVO.setPassword(id);
+		;
+		System.out.println(memberVO);
+		memberService.changePassword(memberVO);
+		return "changePassword";
+	}
+
+//	// 비밀번호 바꾸기할 경우 성공 페이지 이동
+//	@RequestMapping(value = "/login")
+//	public String checkPasswordForModify(MemberVO memberVO, Model model) {
+//		MemberVO chagepw = (MemberVO) memberService.getAttribute("loginUser");
+//
+//		if (chagepw == null) {
+//			return "login";
+//		} else {
+//			return "/403";
+//		}
+//	}
+
+	// 회원탈퇴
+	@RequestMapping(value = "/delete", method = RequestMethod.GET)
+	public String delete(MemberVO memberVO, Model model) {
+		MemberVO delete = memberService.delete(memberVO);
+
+		if (delete == null) {
+			model.addAttribute("check", 1);
+		} else {
+			model.addAttribute("check", 0);
+			model.addAttribute("id", delete.getIdx());
+		}
+
+		return "/delete";
 	}
 
 }

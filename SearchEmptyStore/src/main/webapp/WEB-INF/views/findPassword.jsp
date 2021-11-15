@@ -68,7 +68,7 @@
 		<div class="join-container">
 			<div class="login-card">
 				<div class="login-form">
-					<form action="<c:url value="/findUserPasswordOk"/>" method="post" class="form-horizontal" onsubmit="return formCheck();">
+					<form action="<c:url value="/findPassword"/>" method=get class="form-horizontal" onsubmit="return formCheck();">
 						<!-- 에러메세지가 나타날 부분 -->
 						<div style="margin-bottom: 10px;font-size: 16pt;font-weight: bold;text-align: center;">
 							비밀번호 찾기

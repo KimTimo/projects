@@ -63,8 +63,9 @@ public class MemberServiceImpl implements MemberService{
 	}
 
 	@Override
-	public void delete(MemberVO memberVO) {
+	public MemberVO delete(MemberVO memberVO) {
 		log.info("{}의 delete호출 : {}", this.getClass().getName(), memberVO);
+		return memberVO;
 		
 	}
 
@@ -118,6 +119,16 @@ public class MemberServiceImpl implements MemberService{
 		return memberVO2;
 	}
 	
+	// 비밀번호바꾸기
+	@Override
+	public MemberVO changePassword(MemberVO memberVO) {
+		log.info("{}의 changePasswrod 호출 : {}", this.getClass().getName(), memberVO);
+		MemberVO memberVO2 = null;
+		
+		log.info("{}의 changePasswrod 리턴 : {}", this.getClass().getName(), memberVO2);
+		return memberVO2;
+	}
+	
 	
 	@Override
 	public MemberVO emailConfirm(MemberVO memberVO) {
@@ -147,7 +158,7 @@ public class MemberServiceImpl implements MemberService{
 		return memberVO;
 	}
 
-	// 아이디 찾기
+	
 	@Override
 	public MemberVO selectByUserid(String userid) {
 		log.info("{}의 selectByIdx 호출 : {}", this.getClass().getName(), userid);

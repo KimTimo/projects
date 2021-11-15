@@ -10,19 +10,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>회원 정보 수정</title>
-<link
-	href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"
-	rel="stylesheet" id="bootstrap-css">
-<link href="./css/login.css" rel="stylesheet">
-<script
-	src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<script src="${pageContext.request.contextPath}/js/comm.js"></script>
-<!-- 카카오 우편번호를 사용하겠다. 아래의 자바스크립트 라이브러리를 반드시 포함해야 한다. -->
-<script
-	src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-
+<title>비밀번호 바꾸기</title>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/resources/css/app.css" />
+<script src="${pageContext.request.contextPath}/resources/js/comm.js"></script>
+<!-- Jquery datepicker사용 -->
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <script>
 	$(function() {
 		
@@ -66,59 +60,32 @@
 </style>
 </head>
 <body>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-6 col-md-offset-3">
-				<div class="panel panel-login">
-					<div class="panel-heading">
-						<div class="row">
-							<div class="col-xs-12">
-								<a href="#" id="register-form-link" class="active">회원 비밀 번호 수정</a>
-							</div>
+	<div id="mainWrapper">
+		<div class="join-container">
+			<div class="login-card">
+				<div class="login-form">
+					<form action="<c:url value="/changePasswordOk"/>" method="post" class="form-horizontal" onsubmit="return formCheck();">
+						<!-- 에러메세지가 나타날 부분 -->
+						<div style="margin-bottom: 10px;font-size: 16pt;font-weight: bold;text-align: center;">
+							비밀번호 바꾸기
 						</div>
-						<hr>
-					</div>
-					<div class="panel-body">
-						<div class="row">
-							<div class="col-lg-12">
-								<%-- 여기가 회원 정보 수정 화면 시작 --%>
-								<form id="register-form" action="changePasswordOk.jsp" method="post"
-									role="form" onsubmit="return formCheck();">
-									<div class="form-group">
-										<input type="text" name="userid" id="userid" tabindex="1"
-											class="form-control"
-											style="width: 50%; float: left; margin-bottom: 15px;"
-											placeholder="사용자아이디" value="${mvo.userid }" readonly="readonly">
-									</div>
-									<div class="form-group">
-										<input type="password" name="password" id="password"
-											tabindex="2" class="form-control" placeholder="이전 비밀 번호">
-									</div>
-									<div class="form-group">
-										<input type="password" name="newPassword" id="newPassword"
-											tabindex="2" class="form-control" placeholder="새로운 비밀 번호">
-									</div>
-									<div class="form-group">
-										<input type="password" name="confirmNewPassword" id="confirmNewPassword"
-											tabindex="2" class="form-control" placeholder="새로운 비밀 번호 확인">
-									</div>
-									<div class="form-group">
-										<div class="row">
-											<div class="col-sm-12" style="text-align: center;">
-												<input type="submit" 
-													class="btn btn-outline-success btn-sm" value="   비밀번호수정   " >
-												&nbsp;&nbsp;&nbsp;
-												<input type="button" 
-													class="btn btn-outline-success btn-sm" value="   취 소 하 기   " 
-													onclick="location.href='index.jsp'">
-											</div>
-										</div>
-									</div>
-								</form>
-								<%-- 여기가 회원 정보 수정 화면 종료 --%>
-							</div>
+						<!-- 비밀번호 입력폼 -->
+						<div class="input-group input-sm">
+							<label class="input-group-addon" for="password" style="font-size: 18pt;margin-right: 5px;"><i class="axi axi-lock2"></i></label> 
+								<input type="password" class="form-control" id="password" name="password" placeholder="사용자 비밀번호 입력" required>
 						</div>
-					</div>
+						<!-- 비밀번호 확인 입력폼 -->
+						<div class="input-group input-sm">
+							<label class="input-group-addon" for="password2" style="font-size: 18pt;margin-right: 5px;"><i class="axi axi-lock2"></i></label> 
+								<input type="password" class="form-control" id="password2" name="password2"	placeholder="사용자 비밀번호 확인 입력" required >
+						</div>
+						<%-- 시큐리티에서 사용하려면 아래의 내용도 넘겨줘야 한다. --%>
+						<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+						<!-- 전송 입력폼 -->
+						<div class="form-actions" style="margin-bottom: 5px;">
+							<input type="submit" class="btn btn-block btn-primary btn-default" value="회원가입하기">
+						</div>
+					</form>
 				</div>
 			</div>
 		</div>

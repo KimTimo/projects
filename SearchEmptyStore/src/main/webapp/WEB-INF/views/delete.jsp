@@ -2,20 +2,15 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
-<%-- 로그인 여부 확인 --%>
-<!--  
-<c:if test="${empty sessionScope.mvo }">
-	<c:redirect url="index.jsp"></c:redirect>
-</c:if>
--->
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>회원 탈퇴</title>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/resources/css/app.css" />
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="//code.jquery.com/jquery-1. 11.1.min.js"></script>
 <script src="${pageContext.request.contextPath}/js/comm.js"></script>
 <script>
 	$(function() {
@@ -24,6 +19,14 @@
 		
 	function formCheck(){
 		// 폼의 유효성을 검사한다.
+		var value = $("#userid").val();
+		if(!value || value.trim().length==0){
+			alert('아이디는 반드시 입력해야 합니다.');
+			$("#userid").val("");
+			$("#userid").focus();
+			return false;
+		}
+		
 		var value = $("#password").val();
 		if(!value || value.trim().length==0){
 			alert('비밀번호는 반드시 입력해야 합니다.');
@@ -31,19 +34,41 @@
 			$("#password").focus();
 			return false;
 		}
-		var value = $("#confirmPassword").val();
+		var value = $("#password2").val();
 		if(!value || value.trim().length==0){
 			alert('비밀번호 확인은 반드시 입력해야 합니다.');
-			$("#confirmPassword").val("");
-			$("#confirmPassword").focus();
+			$("#password2").val("");
+			$("#password2").focus();
 			return false;
 		}
 		var value1 = $("#password").val();
-		var value2 = $("#confirmPassword").val();
+		var value2 = $("#password2").val();
 		if(value1 != value2){
 			alert('비밀번호가 일치하지 않습니다.');
-			$("#confirmPassword").val("");
-			$("#confirmPassword").focus();
+			$("#password2").val("");
+			$("#password2").focus();
+			return false;
+		}
+		
+		var value = $("#username").val();
+		if(!value || value.trim().length==0){
+			alert('사용자 이름은 반드시 입력해야 합니다.');
+			$("#username").val("");
+			$("#username").focus();
+			return false;
+		}
+		var value = $("#email").val();
+		if(!value || value.trim().length==0){
+			alert('이메일 주소는 반드시 입력해야 합니다.');
+			$("#email").val("");
+			$("#email").focus();
+			return false;
+		}
+		// 이메일 주소가 유효한지 검증해야 한다.
+		if(!verifyEmail(value)){
+			alert('올바른 이메일 주소가 아닙니다.\n이메일 주소는 정확하게 입력해야 합니다.');
+			$("#email").val("");
+			$("#email").focus();
 			return false;
 		}
 	}
@@ -52,55 +77,51 @@
 </style>
 </head>
 <body>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-6 col-md-offset-3">
-				<div class="panel panel-login">
-					<div class="panel-heading">
-						<div class="row">
-							<div class="col-xs-12">
-								<a href="#" id="register-form-link" class="active">회원 탈퇴</a>
-							</div>
+	<div id="mainWrapper">
+		<div class="join-container">
+			<div class="login-card">
+				<div class="login-form">
+					<form action="<c:url value="delete"/>" method="get" class="form-horizontal" onsubmit="return formCheck();">
+						<!-- 에러메세지가 나타날 부분 -->
+						<div style="margin-bottom: 10px;font-size: 16pt;font-weight: bold;text-align: center;">
+							회원탈퇴
 						</div>
-						<hr>
-					</div>
-					<div class="panel-body">
-						<div class="row">
-							<div class="col-lg-12">
-								<%-- 여기가 회원 정보 수정 화면 시작 --%>
-								<form id="register-form" action="deleteOk.jsp" method="post"
-									role="form" onsubmit="return formCheck();">
-									<div class="form-group">
-										<input type="text" name="userid" id="userid" tabindex="1"
-											class="form-control"
-											style="width: 50%; float: left; margin-bottom: 15px;"
-											placeholder="사용자아이디" value="${mvo.userid }" readonly="readonly">
-									</div>
-									<div class="form-group">
-										<input type="password" name="password" id="password"
-											tabindex="2" class="form-control" placeholder="비밀 번호">
-									</div>
-									<div class="form-group">
-										<input type="password" name="confirmPassword" id="confirmPassword"
-											tabindex="2" class="form-control" placeholder="비밀 번호 확인">
-									</div>
-									<div class="form-group">
-										<div class="row">
-											<div class="col-sm-12" style="text-align: center;">
-												<input type="submit" 
-													class="btn btn-outline-success btn-sm" value="   회 원 탈 퇴   " >
-												&nbsp;&nbsp;&nbsp;
-												<input type="button" 
-													class="btn btn-outline-success btn-sm" value="   취 소 하 기   " 
-													onclick="location.href='index.jsp'">
-											</div>
-										</div>
-									</div>
-								</form>
-								<%-- 여기가 회원 정보 수정 화면 종료 --%>
-							</div>
+						<!-- 아이디 입력폼 -->
+						<div class="input-group input-sm">
+							<label class="input-group-addon" for="userid" style="font-size: 18pt;margin-right: 5px;"><i class="axi axi-user"></i></label>
+							<input type="text" class="form-control"	id="userid" name="userid" placeholder="사용자 아이디 입력" required>
+							<div id="idMessage"	style=" line-height:30px; vertical-align: middle;"></div>
 						</div>
-					</div>
+						<!-- 비밀번호 입력폼 -->
+						<div class="input-group input-sm">
+							<label class="input-group-addon" for="password" style="font-size: 18pt;margin-right: 5px;"><i class="axi axi-lock2"></i></label> 
+								<input type="password" class="form-control" id="password" name="password" placeholder="사용자 비밀번호 입력" required>
+						</div>
+						<!-- 비밀번호 확인 입력폼 -->
+						<div class="input-group input-sm">
+							<label class="input-group-addon" for="password2" style="font-size: 18pt;margin-right: 5px;"><i class="axi axi-lock2"></i></label> 
+								<input type="password" class="form-control" id="password2" name="password2"	placeholder="사용자 비밀번호 확인 입력" required >
+						</div>
+						<!-- 사용자이름 입력폼 -->
+						<div class="input-group input-sm">
+							<label class="input-group-addon" for="username" style="font-size: 18pt;margin-right: 5px;"><i class="axi axi-user"></i></label>
+							<input type="text" class="form-control"
+								id="username" name="username" placeholder="사용자 이름 입력" required>
+						</div>
+						<!-- 사용자 이메일 입력폼 -->
+						<div class="input-group input-sm">
+							<label class="input-group-addon" for="email" style="font-size: 18pt;margin-right: 5px;"><i class="axi axi-email"></i></label>
+							<input type="text" class="form-control"
+								id="email" name="email" placeholder="이메일 주소 입력" required>
+						</div>
+						<%-- 시큐리티에서 사용하려면 아래의 내용도 넘겨줘야 한다. --%>
+						<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+						
+						<!-- 전송 입력폼 -->
+						<div class="form-actions" style="margin-bottom: 5px;">
+							<input type="submit" class="btn btn-block btn-primary btn-default" value="회원탈퇴">
+						</div>
+					</form>
 				</div>
 			</div>
 		</div>

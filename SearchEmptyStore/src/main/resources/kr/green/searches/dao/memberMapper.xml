@@ -66,6 +66,12 @@
 	<update id="updateEnabled" parameterType="hashmap">
 		update smember set enabled = #{enabled} where userid=#{userid}	
 	</update>
+	
+	<!-- 비밀번호 찾기 -->
+	<select id="selectByPassword" parameterType="string" resultType="MemberVO">
+		select * from smember where password=#{password}
+	</select>
+	
 	<!-- 비밀번호 변경하기 -->
 	<update id="updatePassword" parameterType="hashmap">
 		update smember set password = #{password} where userid=#{userid}	and username=#{username}

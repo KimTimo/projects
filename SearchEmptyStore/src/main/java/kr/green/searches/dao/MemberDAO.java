@@ -13,7 +13,7 @@ public interface MemberDAO {
 	void update(MemberVO memberVO);
 	
 	// <!-- 삭제하기 : 회원 탈퇴 -->
-	void delete(int idx);
+	MemberVO delete(int idx);
 	
 	// <!-- 1개얻기하기 : 수정/삭제/로그인 -->
 	MemberVO selectByIdx(int idx);
