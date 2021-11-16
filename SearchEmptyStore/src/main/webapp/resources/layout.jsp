@@ -22,11 +22,9 @@
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script	src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 
-
 <!-- Bootstrap사용하기 -->
 <link rel="stylesheet"	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 <script	src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-
 
 <!-- Bootstrap core JS-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -46,7 +44,7 @@
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"
 		id="mainNav">
 		<div class="container px-4">
-			<a class="navbar-brand" href="#page-top">회사이름</a>
+			<a class="navbar-brand" href="#page-top">상권찾자</a>
 			<button class="navbar-toggler" type="button"
 				data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
 				aria-controls="navbarResponsive" aria-expanded="false"
@@ -58,8 +56,10 @@
 					<!--  <li class="nav-item"><a class="nav-link" href="#about">About</a></li>-->
 					<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath }/login">로그인</a></li>
 					<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath }/join">회원가입</a></li>
-					<li class="nav-item"><a class="nav-link" href="#services">지도보기</a></li>
-					<li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+					<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath }/findUserId">아이디찾기</a></li>
+					<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath }/findPassword">비밀번호찾기</a></li>
+					<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath }/list">게시판</a></li>
+					<li class="nav-item"><a class="nav-link" href="#contact">지도보기</a></li>
 					<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath }/">홈으로</a></li>
 				</ul>
 			</div>
@@ -67,11 +67,12 @@
 	</nav>
 	<!-- Header-->
 
-	<header class="bg-primary bg-gradient text-white">
+
+	<header>
 		<div class="container px-4 text-center">
-			<h1 class="fw-bolder">Welcome to Scrolling Nav</h1>
-			<p class="lead">A functional Bootstrap 5 boilerplate for one page
-				scrolling websites</p>
+			<h1 class="fw-bolder">헤더사진</h1>
+			<!--  <p class="lead">A functional Bootstrap 5 boilerplate for one page
+				scrolling websites</p>-->
 			<a class="btn btn-lg btn-light" href="#about">Start scrolling!</a>
 		</div>
 	</header>
@@ -83,6 +84,8 @@
 			<div class="row gx-4 justify-content-center">
 				<div class="col-lg-8">
 					<sitemesh:write property='body' />
+					
+					
 				</div>
 			</div>
 		</div>
@@ -90,16 +93,16 @@
 
 
 	<!-- 서브영역 시작 -->
-	<!-- Services section-->
-	<section class="bg-light" id="services">
-	<div class="map_wrap">
+	<!-- Contact section-->
+	<section id="contact">
+		<div class="map_wrap">
     <div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"></div>
 
     <div id="menu_wrap" class="bg_white">
         <div class="option">
             <div>
                 <form onsubmit="searchPlaces(); return false;">
-                    키워드 : <input type="text" value="송탄출장소 맛집" id="keyword" size="15"> 
+                    키워드 : <input type="text" value="미금역" id="keyword" size="15"> 
                     <button type="submit">검색하기</button> 
                 </form>
             </div>
@@ -110,19 +113,16 @@
     	</div>
 	</div>
 	</section>
-	<!-- Contact section-->
-	<section id="contact">
+	
+	<section class="bg-light" id="services2">
 		<div class="container px-4">
-			<div class="row gx-4 justify-content-center">
-				<div class="col-lg-8">
-					<h2>Contact us</h2>
-					<p class="lead">Lorem ipsum dolor sit amet, consectetur
-						adipisicing elit. Vero odio fugiat voluptatem dolor, provident
-						officiis, id iusto! Obcaecati incidunt, qui nihil beatae magnam et
-						repudiandae ipsa exercitationem, in, quo totam.</p>
-				</div>
-			</div>
-		</div>
+                <div class="row gx-4 justify-content-center">
+                    <div class="col-lg-8">
+                        <h2>Services we offer</h2>
+                        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut optio velit inventore, expedita quo laboriosam possimus ea consequatur vitae, doloribus consequuntur ex. Nemo assumenda laborum vel, labore ut velit dignissimos.</p>
+                    </div>
+                </div>
+            </div>
 	</section>
 	<!-- 서브영역 종료 -->
 

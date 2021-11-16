@@ -47,6 +47,10 @@ CREATE TABLE fileBoard(
 	regDate timestamp  DEFAULT SYSDATE,
 	ip varchar2(50) NOT NULL
 );
+
+SELECT * FROM FILEBOARD;
+
+
 -- 해당글의 첨부파일 정보를 저장할 테이블
 CREATE SEQUENCE fileBoardFile_idx_seq;
 CREATE TABLE fileBoardFile(

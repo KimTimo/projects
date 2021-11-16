@@ -81,7 +81,7 @@
 	//-----------------------------------------------------------------------------------------------------------
 	// 돌아가기버튼 클릭시 사용할 함수
 	function goBack(){
-		SendPost("index.jsp", {"p":${cv.currentPage},"s":${cv.pageSize},"b":${cv.blockSize}});
+		SendPost("/", {"p":${cv.currentPage},"s":${cv.pageSize},"b":${cv.blockSize}});
 	}
 	// 폼의 값 유효성 검사하기 스크립트
 	function formCheck(){
@@ -117,7 +117,7 @@
 		return true;
 	}
 	function goList(){
-		SendPost("${pageContext.request.contextPath }/board/list",{"p":${cv.currentPage },"s":${cv.pageSize },"b":${cv.blockSize }},"post");
+		SendPost("${pageContext.request.contextPath }/list",{"p":${cv.currentPage },"s":${cv.pageSize },"b":${cv.blockSize }},"post");
 	}
 </script>
 <style type="text/css">
@@ -133,7 +133,7 @@
 </head>
 <body>
 	<%-- ${cv } --%>
-	<form action="${pageContext.request.contextPath}/board/insertOk" method="get" enctype="multipart/form-data" onsubmit="return formCheck();" >
+	<form action="${pageContext.request.contextPath}/list/insertOk" method="get" enctype="multipart/form-data" onsubmit="return formCheck();" >
 		<table id="main_content">
 			<tr>
 				<td colspan="4" class="title" >

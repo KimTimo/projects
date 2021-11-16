@@ -40,7 +40,7 @@ public class FileBoardController {
 	private FileBoardService fileBoardService;
 	
 	@SuppressWarnings("unchecked")
-	@RequestMapping(value = "/board/list")
+	@RequestMapping(value = "/list")
 	// public String selectList(@ModelAttribute CommVO commVO, Model model) {
 	// POST전송을 받기위한 방법
 	public String selectList(@RequestParam Map<String, String> params, HttpServletRequest request,@ModelAttribute CommVO commVO, Model model) {
@@ -59,10 +59,10 @@ public class FileBoardController {
 		return "list";
 	}
 	// 입력폼 띄우기
-	@RequestMapping(value = "/board/insertForm")
+	@RequestMapping(value = "/insertForm")
 	public String insertForm(@ModelAttribute CommVO commVO, Model model) {
 		model.addAttribute("cv", commVO);
-		return "insertForm";
+		return "/insertForm";
 	}
 	// 저장하기
 	@RequestMapping(value = "/board/insertOk", method = RequestMethod.GET)
@@ -119,12 +119,12 @@ public class FileBoardController {
 		map.put("s", commVO.getPageSize() + "");
 		map.put("b",commVO.getBlockSize() + "");
 		redirectAttributes.addFlashAttribute("map", map);
-		return "redirect:/board/list";
+		return "redirect:/list";
 	}
 	
 	// 내용보기 : 글 1개를 읽어서 보여준다
 	@SuppressWarnings("unchecked")
-	@RequestMapping(value = "/board/view")
+	@RequestMapping(value = "/list/view")
 	public String view(@RequestParam Map<String, String> params, HttpServletRequest request,@ModelAttribute CommVO commVO,Model model) {
 		log.info("{}의 view호출 : {}", this.getClass().getName(), commVO);
 		// POST전송된것을 받으려면 RequestContextUtils.getInputFlashMap(request)로 맵이 존재하는지 판단해서
@@ -291,4 +291,5 @@ public class FileBoardController {
 	      log.info("{}의 imageUpload 리턴 : {}",this.getClass().getName(),filePath);
 	      return filePath;
 	   }
+	   
 }

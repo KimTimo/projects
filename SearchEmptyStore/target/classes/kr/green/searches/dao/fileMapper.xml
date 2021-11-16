@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="kr.green.searches.board.FileBoardFileDAO">
+<mapper namespace="kr.green.searches.dao.FileBoardFileDAO">
  	<!-- id: 메서드명 , parameterType : 인수, resultType : 리턴값 -->
   	<!-- 1. 첨부파일 저장 -->
   	<insert id="insert" parameterType="fileBoardFileVO">

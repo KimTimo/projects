@@ -73,7 +73,7 @@
 				<tr align="center">
 					<td>${vo.idx }</td>
 					<td align="left" >
-						<a href="#" onclick='SendPost("${pageContext.request.contextPath }/board/view",{"p":${pv.currentPage },"s":${pv.pageSize },"b":${pv.blockSize },"idx":${vo.idx },"m":"view","h":"true"},"post")'><c:out value="${vo.subject }"></c:out></a>
+						<a href="#" onclick='SendPost("${pageContext.request.contextPath }/list/view",{"p":${pv.currentPage },"s":${pv.pageSize },"b":${pv.blockSize },"idx":${vo.idx },"m":"view","h":"true"},"post")'><c:out value="${vo.subject }"></c:out></a>
 						<%-- 오늘 저장한 글이면 new 아이콘을 달아보자  --%>		
 						<jsp:useBean id="today" scope="request" class="java.util.Date"></jsp:useBean>				
 						<fmt:formatDate value="${today }" pattern="yyyyMMdd" var="day"/> 
@@ -92,7 +92,7 @@
 						<%-- 첨부파일을 다운 받도록 링크를 달아준다. --%>
 						<c:if test="${not empty vo.fileList }">
 							<c:forEach var="fvo" items="${vo.fileList }">
-								<c:url var="url" value="/board/download">
+								<c:url var="url" value="/list/download">
 									<c:param name="of" value="${fvo.oriName }"></c:param>
 									<c:param name="sf" value="${fvo.saveName }"></c:param>
 								</c:url>
@@ -111,7 +111,7 @@
 		<tr>
 			<td class="info" colspan="5">
 				<button type="button" class="btn btn-outline-success btn-sm" 
-			        onclick='SendPost("${pageContext.request.contextPath }/board/insertForm",{"p":${pv.currentPage },"s":${pv.pageSize },"b":${pv.blockSize }},"get")'>글쓰기</button>
+			        onclick='SendPost("${pageContext.request.contextPath }/list/insertForm",{"p":${pv.currentPage },"s":${pv.pageSize },"b":${pv.blockSize }},"post")'>글쓰기</button>
 			</td>
 		</tr>
 	</table>	

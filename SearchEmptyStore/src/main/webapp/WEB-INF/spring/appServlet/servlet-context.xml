@@ -23,7 +23,6 @@
 	</beans:bean>
 	
 	<context:component-scan base-package="kr.green.searches" />
-	<context:component-scan base-package="kr.green.searches.board" />
 	
 	<!-- ********************************************************************************** -->
 	<!-- 업로드된 파일이 저장될 폴더는 직접 접근이 가능해야 한다. -->
