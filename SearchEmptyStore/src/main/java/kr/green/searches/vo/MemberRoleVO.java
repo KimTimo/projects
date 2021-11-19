@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @XmlRootElement
 public class MemberRoleVO {
-	private int idx;
-	private String username;
-	private String role;
+	private int idx;  			// 글번호
+	private String username;	// 이름
+	private String role;		// 역할
 }

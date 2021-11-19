@@ -59,7 +59,6 @@
 					<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath }/findUserId">아이디찾기</a></li>
 					<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath }/findPassword">비밀번호찾기</a></li>
 					<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath }/list">게시판</a></li>
-					<li class="nav-item"><a class="nav-link" href="#contact">지도보기</a></li>
 					<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath }/">홈으로</a></li>
 				</ul>
 			</div>
@@ -68,14 +67,13 @@
 	<!-- Header-->
 
 
-	<header>
-		<div class="container px-4 text-center">
-			<h1 class="fw-bolder">헤더사진</h1>
-			<!--  <p class="lead">A functional Bootstrap 5 boilerplate for one page
-				scrolling websites</p>-->
-			<a class="btn btn-lg btn-light" href="#about">Start scrolling!</a>
-		</div>
-	</header>
+	<header class="bg-primary bg-gradient text-white">
+            <div class="container px-4 text-center">
+            <br><br><br>
+                <h1 class="fw-bolder">찾아보자 상권정보!</h1>
+                <a class="btn btn-lg btn-light" href="#about">시작하기!</a>
+            </div>
+       </header>
 
 
 	<!-- 메인컨텐츠가 보여질 영역 -->
@@ -84,7 +82,6 @@
 			<div class="row gx-4 justify-content-center">
 				<div class="col-lg-8">
 					<sitemesh:write property='body' />
-					
 					
 				</div>
 			</div>
@@ -114,23 +111,11 @@
 	</div>
 	</section>
 	
-	<section class="bg-light" id="services2">
-		<div class="container px-4">
-                <div class="row gx-4 justify-content-center">
-                    <div class="col-lg-8">
-                        <h2>Services we offer</h2>
-                        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut optio velit inventore, expedita quo laboriosam possimus ea consequatur vitae, doloribus consequuntur ex. Nemo assumenda laborum vel, labore ut velit dignissimos.</p>
-                    </div>
-                </div>
-            </div>
-	</section>
-	<!-- 서브영역 종료 -->
 
 	<!-- Footer-->
 	<footer class="py-5 bg-dark">
 		<div class="container px-4">
 			<p class="m-0 text-center text-white">Copyright &copy; Your	Website 2021<br/>
-			성남그린
 			</p>
 		</div>
 	</footer>

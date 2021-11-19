@@ -122,10 +122,10 @@ public class MemberServiceImpl implements MemberService{
 	// 비밀번호바꾸기
 	@Override
 	public MemberVO changePassword(MemberVO memberVO) {
-		log.info("{}의 changePasswrod 호출 : {}", this.getClass().getName(), memberVO);
+		log.info("{}의 changePassword 호출 : {}", this.getClass().getName(), memberVO);
 		MemberVO memberVO2 = null;
 		
-		log.info("{}의 changePasswrod 리턴 : {}", this.getClass().getName(), memberVO2);
+		log.info("{}의 changePassword 리턴 : {}", this.getClass().getName(), memberVO2);
 		return memberVO2;
 	}
 	

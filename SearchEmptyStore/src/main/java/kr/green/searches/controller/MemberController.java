@@ -135,7 +135,7 @@ public class MemberController {
 			model.addAttribute("id", userId.getUserid());
 		}
 
-		return "findUserId";
+		return "/findUserId";
 	}
 
 	// 비밀번호 찾기 실행
@@ -164,17 +164,17 @@ public class MemberController {
 		return "changePassword";
 	}
 
-//	// 비밀번호 바꾸기할 경우 성공 페이지 이동
-//	@RequestMapping(value = "/login")
-//	public String checkPasswordForModify(MemberVO memberVO, Model model) {
-//		MemberVO chagepw = (MemberVO) memberService.getAttribute("loginUser");
-//
-//		if (chagepw == null) {
-//			return "login";
-//		} else {
-//			return "/403";
-//		}
-//	}
+	// 비밀번호 바꾸기할 경우 성공 페이지 이동
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public String checkPasswordForModify(MemberVO memberVO, Model model) {
+		MemberVO chagepw = (MemberVO) memberService.changePassword(memberVO);
+
+		if (chagepw == null) {
+			return "/login";
+		} else {
+			return "/403";
+		}
+	}
 
 	// 회원탈퇴
 	@RequestMapping(value = "/delete", method = RequestMethod.GET)

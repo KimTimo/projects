@@ -81,7 +81,7 @@
 		<div class="join-container">
 			<div class="login-card">
 				<div class="login-form">
-					<form action="<c:url value="delete"/>" method="get" class="form-horizontal" onsubmit="return formCheck();">
+					<form action="<c:url value="delete"/>" method="post" class="form-horizontal" onsubmit="return formCheck();">
 						<!-- 에러메세지가 나타날 부분 -->
 						<div style="margin-bottom: 10px;font-size: 16pt;font-weight: bold;text-align: center;">
 							회원탈퇴

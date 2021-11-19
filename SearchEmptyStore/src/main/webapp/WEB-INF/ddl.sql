@@ -8,7 +8,7 @@ CREATE TABLE smember(
 	uuid  		varchar2(200) NULL,
 	username	varchar2(50)  NOT NULL,
     email       VARCHAR2(100)    NULL, 
-    birth       date         	 NULL, 
+    birth       DATE         	 NULL, 
     phone       VARCHAR2(20)     NULL, 
     zipcode     VARCHAR2(10)     NULL, 
     addr1       VARCHAR2(100)    NULL, 

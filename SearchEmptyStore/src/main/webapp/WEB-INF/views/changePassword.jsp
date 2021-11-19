@@ -38,19 +38,19 @@
 			$("#newPassword").focus();
 			return false;
 		}
-		var value = $("#confirmNewPassword").val();
+		var value = $("#password2").val();
 		if(!value || value.trim().length==0){
 			alert('새 비밀번호 확인은 반드시 입력해야 합니다.');
-			$("#confirmNewPassword").val("");
-			$("#confirmNewPassword").focus();
+			$("#password2").val("");
+			$("#password2").focus();
 			return false;
 		}
 		var value1 = $("#newPassword").val();
-		var value2 = $("#confirmNewPassword").val();
+		var value2 = $("#password2").val();
 		if(value1 != value2){
 			alert('새 비밀번호가 일치하지 않습니다.');
-			$("#confirmNewPassword").val("");
-			$("#confirmNewPassword").focus();
+			$("#password2").val("");
+			$("#password2").focus();
 			return false;
 		}
 
@@ -83,7 +83,7 @@
 						<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 						<!-- 전송 입력폼 -->
 						<div class="form-actions" style="margin-bottom: 5px;">
-							<input type="submit" class="btn btn-block btn-primary btn-default" value="회원가입하기">
+							<input type="submit" class="btn btn-block btn-primary btn-default" value="비밀번호 바꾸기">
 						</div>
 					</form>
 				</div>

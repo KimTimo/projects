@@ -17,8 +17,8 @@ CREATE TABLE fileBoardFile(
 @XmlRootElement
 @Data
 public class FileBoardFileVO {
-	private int 	idx;
-	private int 	ref;
-	private String 	saveName;
-	private String 	oriName;
+	private int 	idx;		//	글번호			
+	private int 	ref;		//	원본글번호
+	private String 	saveName;	//	저장파일명
+	private String 	oriName;	//	원본파일명
 }

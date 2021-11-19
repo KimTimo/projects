@@ -15,7 +15,7 @@
 			<%-- 시큐리티에 있는 로그아웃을 사용하려면 아래의 내용도 넘겨줘야 한다. --%>
 			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 			<input type="submit" value="로그아웃">
-			<input type="button" value="정보수정" onclick="location.href='${pageContext.request.contextPath }/update'">
+			<input type="button" value="비밀번호바꾸기" onclick="location.href='${pageContext.request.contextPath }/changePassword'">
 			<input type="button" value="회원탈퇴" onclick="location.href='${pageContext.request.contextPath }/delete'">
 			<input type="button" value="게시판" onclick="location.href='${pageContext.request.contextPath }/list'">
 		</form>

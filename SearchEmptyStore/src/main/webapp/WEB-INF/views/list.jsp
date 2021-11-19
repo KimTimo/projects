@@ -34,7 +34,7 @@
 <body>
 	<table id="content">
 		<tr>
-			<td colspan="5" class="title">자료실 게시판 - 목록보기</td>
+			<td colspan="5" class="title">상권정보</td>
 		</tr>
 		<tr>
 			<td colspan="5" class="info">

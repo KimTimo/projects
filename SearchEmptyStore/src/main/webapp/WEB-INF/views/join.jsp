@@ -106,16 +106,7 @@
 			$("#userid").focus();
 			return false;
 		}
-		// 사용불가능한 아이디인 경우 검사
-		/*
-		if($("#idMessage").css('color')!='rgb(0, 0, 255)'){
-			alert('사용불가능한 아이디 입니다.');
-			$("#idMessage").html("");
-			$("#userid").val("");
-			$("#userid").focus();
-			return false;
-		}
-		*/
+		
 		var value = $("#password").val();
 		if(!value || value.trim().length==0){
 			alert('비밀번호는 반드시 입력해야 합니다.');

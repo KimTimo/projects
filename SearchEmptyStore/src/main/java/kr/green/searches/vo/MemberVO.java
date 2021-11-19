@@ -33,18 +33,18 @@ CREATE TABLE smember(
 @NoArgsConstructor
 @XmlRootElement
 public class MemberVO {
-	private int 	idx;
-	private String 	userid;
-	private String 	password;
-	private String 	uuid;
-	private String 	username;
-	private String 	email;
+	private int 	idx;  // 글번호
+	private String 	userid;  // 아이디
+	private String 	password; // 비밀번호
+	private String 	uuid; // 방문자 식별자 고유번호
+	private String 	username; // 이름
+	private String 	email; // 이메일
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	private Date 	birth;
-	private String 	phone;
-	private String 	zipcode;
-	private String 	addr1;
-	private String 	addr2;
-	private int 	enabled;
-	private Date 	regdate;
+	private Date 	birth; // 생년월일
+	private String 	phone; // 핸드폰번호 
+	private String 	zipcode; // 우편번호
+	private String 	addr1; // 도로명 주소
+	private String 	addr2; // 지번주소(상세주소)
+	private int 	enabled; // 활성화여부
+	private Date 	regdate; // 가입일
 }

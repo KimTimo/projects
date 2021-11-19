@@ -10,14 +10,14 @@ import lombok.Data;
 @XmlRootElement
 @Data
 public class FileBoardVO {
-	private int 	idx;
-	private String 	name;
-	private String 	password;
-	private String 	subject;
-	private String 	content;
-	private Date 	regDate;
-	private String 	ip;
+	private int 	idx;					//	글번호
+	private String 	name;					//	이름	
+	private String 	password;				//	비밀번호
+	private String 	subject;				//	제목
+	private String 	content;				//	내용
+	private Date 	regDate;				//	등록일자
+	private String 	ip;						//	아이피
 	// 첨부파일의 정보를 저장할 필드 추가
-	private List<FileBoardFileVO> fileList;
+	private List<FileBoardFileVO> fileList;	//	파일정보
 	
 }
