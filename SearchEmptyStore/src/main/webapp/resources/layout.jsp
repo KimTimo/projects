@@ -65,13 +65,11 @@
 		</div>
 	</nav>
 	<!-- Header-->
-
-
 	<header class="bg-primary bg-gradient text-white">
             <div class="container px-4 text-center">
             <br><br><br>
                 <h1 class="fw-bolder">찾아보자 상권정보!</h1>
-                <a class="btn btn-lg btn-light" href="#about">시작하기!</a>
+                <a class="btn btn-lg btn-light" href="#about">START!</a>
             </div>
        </header>
 

@@ -31,7 +31,7 @@
 			$("#password").focus();
 			return false;
 		}
-		var value = $("#newPassword").val();
+		var value = $("#password2").val();
 		if(!value || value.trim().length==0){
 			alert('새 비밀번호는 반드시 입력해야 합니다.');
 			$("#newPassword").val("");
@@ -45,7 +45,7 @@
 			$("#password2").focus();
 			return false;
 		}
-		var value1 = $("#newPassword").val();
+		var value1 = $("#password2").val();
 		var value2 = $("#password2").val();
 		if(value1 != value2){
 			alert('새 비밀번호가 일치하지 않습니다.');
@@ -64,7 +64,7 @@
 		<div class="join-container">
 			<div class="login-card">
 				<div class="login-form">
-					<form action="<c:url value="/changePasswordOk"/>" method="post" class="form-horizontal" onsubmit="return formCheck();">
+					<form action="<c:url value="/login"/>" method="post" class="form-horizontal" onsubmit="return formCheck();">
 						<!-- 에러메세지가 나타날 부분 -->
 						<div style="margin-bottom: 10px;font-size: 16pt;font-weight: bold;text-align: center;">
 							비밀번호 바꾸기
@@ -73,6 +73,11 @@
 						<div class="input-group input-sm">
 							<label class="input-group-addon" for="password" style="font-size: 18pt;margin-right: 5px;"><i class="axi axi-lock2"></i></label> 
 								<input type="password" class="form-control" id="password" name="password" placeholder="사용자 비밀번호 입력" required>
+						</div>
+						<!-- 비밀번호 확인 입력폼 -->
+						<div class="input-group input-sm">
+							<label class="input-group-addon" for="password2" style="font-size: 18pt;margin-right: 5px;"><i class="axi axi-lock2"></i></label> 
+								<input type="password" class="form-control" id="password2" name="password2"	placeholder="사용자 비밀번호 확인 입력" required >
 						</div>
 						<!-- 비밀번호 확인 입력폼 -->
 						<div class="input-group input-sm">
