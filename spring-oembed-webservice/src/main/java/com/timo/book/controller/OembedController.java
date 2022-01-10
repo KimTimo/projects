@@ -114,7 +114,6 @@ public class OembedController extends JSONParser {
 		return oembedUrl;
 	}
 
-	// oembed 리턴
 	@GetMapping("/oembed/api")
 	@ResponseBody
 	public String oembedResponse(@RequestParam("userUrlData") String userUrlData, Model model)
