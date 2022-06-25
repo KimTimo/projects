@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<programming_languages>
+	<language>
+		<name>HTML</name>
+		<category>web</category>
+		<developer>W3C</developer>
+	</language>
+	<language>
+		<name>CSS</name>
+		<category>web</category>
+		<developer>W3C</developer>
+	</language>
+	<language>
+		<name korean="자바">Java</name>
+		<category>application</category>
+		<developer>Oracle</developer>
+	</language>
+	<language>
+		<name korean="파이썬">Python</name>
+		<category>application</category>
+		<developer>Python</developer>
+	</language>
+</programming_languages>
