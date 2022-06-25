@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!-- 지정 프로퍼티 파일을 사용하겠다. -->
+	<properties resource="application.properties"></properties>
+	<!-- 클래스 이름을 줄여서 사용 하겠다. -->
+	<typeAliases>
+		<!-- 이미 내부적으로  HashMap은 hashmap으로 등록되어 있어서 등록할 필요가 없다.
+		<typeAlias type="java.util.HashMap" alias="HashMap"/>
+		 -->
+		<typeAlias type="kr.green.mybatis.memo.vo.TestVO" alias="testVO"/>
+		<!-- VO가 추가되면 별칭을 추가한다. ========================================== 이부분 추가 -->
+		<typeAlias type="kr.green.mybatis.memo.vo.MemoVO" alias="memoVO"/>
+	</typeAliases>
+	<!-- 연결 설정 정보 지정 -->
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="${o.driver}" />
+				<property name="url" value="${o.url}" />
+				<property name="username" value="${o.username}" />
+				<property name="password" value="${o.password}" />
+			</dataSource>
+		</environment>
+	</environments>
+	<!-- SQL명령어들이 들어있는 맵퍼 파일을 기술한다. -->
+	<mappers>
+		<mapper resource="mapper/testMapper.xml" />
+		<!-- mapper가 추가되면 맵퍼 파이을 추가한다. ========================================== 이부분 추가 -->
+		<mapper resource="mapper/memoMapper.xml" />
+	</mappers>
+</configuration>

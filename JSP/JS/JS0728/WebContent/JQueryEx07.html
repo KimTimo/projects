@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>전체 선택자, 태그 선택자</title>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script type="text/javascript">
+	$(function() {
+		// * : 전체 선택자
+		$('*').css('font-weight', 'bold');
+	    // 태그 선택자
+		$('h1').css('color', 'blue');
+		$('p').css('color', 'green');
+		$('p').eq(1).css('color', 'red');
+		
+		
+		
+	// 두번째 h1을 찾아서 글자색을 빨간색으로 만들어라
+		//$('h1').eq(1).css('color', 'yellow');
+	    document.getElementsByTagName("h1")[1].style.color='pink';
+	    
+	    $('h1, p').css('text-decoration','underline');
+	});
+	
+	
+	
+</script>
+</head>
+<body>
+	<h1>나는 제목 01</h1>
+	<p>나는 문단01</p>
+	<h1>나는 제목 02</h1>
+	<p>나는 문단02</p>
+	<h1>나는 제목 03</h1>
+	<p>나는 문단03</p>
+
+</body>
+</html>

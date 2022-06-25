@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>내부 함수</title>
+<script type="text/javascript">
+	// 직각 삼각형의 빗변의 길이를 구하는 함수
+	function pythagoras(width, height) {
+		return Math.sqrt(width * width + height * height);
+
+	}
+	// alert(pythagoras(3, 4));
+	// 위 함수를 보니 제곱이 두번이나 나온다.
+	// 제곱을 하는 함수를 만들어 주자
+
+	function square(x) {
+		return x * x;
+	}
+
+	// 그리고 위의 피타고라스 함수를 다음과 같이 바꿔보자
+	function pythagoras(width, height) {
+		return Math.sqrt(square(width) + square(height));
+	}
+	//alert(pythagoras(3, 4));
+	// 다른 사람이 직각 삼각형인지 확인하는 함수를 다음과 같이 만들었다.
+	function square(width, height, hypotenuse) {
+		return width * width + height * height == hypotenuse * hypotenuse;
+	}
+	// 이럴때 빗변의 길이를 구하는 피타고라스 함수를 호출하면 틀린답이다.
+	// why? 같은 이름으로 함수를 선언해서 square 함수가 변경 되었다.
+	// 그러므로 아래의 답이 틀리게 나온다.
+	// 이런 경우에 내부 함수를 사용하면된다.
+	alert(pythagoras(3, 4));
+	// 그럼 square 함수를 pythagoras의 내부에 넣으면 해결이 된다.
+	function pythagoras(width, height) {
+		// 내부 함수
+		function square(x) {
+			return x * x;
+		}
+		return Math.sqrt(square(width) + square(height));
+	}
+	alert(pythagoras(3, 4)); // 5
+</script>
+</head>
+<body>
+	<h2>내부 함수 : 함수 안에 함수를 선언한다</h2>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>window 객체의 타이머 메서드</title>
+<script type="text/javascript">
+	/*
+	setTimeout(function, millisecond)      : 일정 시간 후에 함수를 한 번 실행합니다.
+	setlnterval(function, millisecond)     : 일정 시간마다 함수를 반복해서 실행합니다.
+
+	ClearTimeout(id)        : 일정 시간 후에 함수를 한 번 실행하는 것을 중지합니다.
+	CIearlnteIrval(id)      : 일정 시간마다 힘수를 반복하는 것을 중단합니다.
+	 */
+	var str = "개노잼 자바스크립트!";
+	window.onload = function() {
+		var obj = document.getElementById("box");
+		var count = 0;
+		setInterval(function() {                      // 타이핑 1
+			count++;
+			obj.innerHTML = str.substr(0, count);
+			if(count==str.length) count = 0;
+		}, 100);
+		
+		var obj2 = document.getElementById("box2");
+		var sw = 1, cnt=0;
+		setInterval(function() {                      // 타이핑 2
+			cnt += sw;
+			obj2.innerHTML = str.substr(0, cnt);
+			if(cnt==str.length || cnt == 0) sw *= -1;
+		}, 100);
+		
+		var obj3 = document.getElementById("box3");
+		var sw2 = 1, cnt2 = 0;
+		setInterval(function() {                      // 타이핑 3
+			cnt2 += sw;
+		    var result = "";
+		    for(i = 0; i < cnt2; i++) result += "&nbsp;";
+			obj3.innerHTML = result + str;
+			if(cnt2==str.length || cnt2 == 0) sw2 *= -1;
+		}, 100);
+	}
+</script>
+<style type="text/css">
+div {
+	padding: 5px;
+	border: 1px solid gray;
+}
+</style>
+</head>
+<body>
+	<div id="box"></div>
+	<div id="box2"></div>
+	<div id="box3"></div>
+
+</body>
+</html>

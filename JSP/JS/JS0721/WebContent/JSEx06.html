@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>함수를 매개변수로 받는 함수</title>
+<script type="text/javascript">
+	// 매개 변수로 넘어온 함수를 10번 실행시켜주는 함수
+	function callFunctionTenTimes(otherFunction) {
+		for (i = 0; i < 10; i++)
+			otherFunction(); // 10번 호출!
+	}
+
+	// 함수를 실행해보자
+	// 매개변수로 함수를 전달해줌!! 전달된 함수가 10번 실행된다.
+	callFunctionTenTimes(function() {
+		document.write("라고할뻔ㅋ<br>");
+	});
+	callFunctionTenTimes(function() {
+		document.write("♠");
+	});
+    // 가감승제와 누승을 구해주는 함수
+	function add(x, y) {
+		return x + y;
+	}
+	function sub(x, y) {
+		return x - y;
+	}
+	function mul(x, y) {
+		return x * y;
+	}
+	function div(x, y) {
+		return x / y;
+	}
+	function pow(x, y) {
+		return Math.pow(x,y);
+	}
+	// 앞의 두개 데이터를 이용하여 세번째 함수를 실행시켜주는 함수
+	function fiveCalc(x,y,fn) {
+		return fn(x, y);
+	}
+	document.write("<br>")
+	x = 10, y = 5;
+	document.writeln(" 가 : " + fiveCalc(x, y, add) + "<br>");
+	document.writeln(" 감 : " + fiveCalc(x, y, sub) + "<br>");
+	document.writeln(" 승 : " + fiveCalc(x, y, mul) + "<br>");
+	document.writeln(" 제 : " + fiveCalc(x, y, div) + "<br>");
+	document.writeln(" 재곱 : " + fiveCalc(x, y, pow) + "<br>");
+	document.writeln(" 빗변의 길이 : " + fiveCalc(x, y, function() {
+		return Math.sqrt(x * x + y * y);
+	}) + "<br>");
+</script>
+</head>
+<body>
+
+</body>
+</html>

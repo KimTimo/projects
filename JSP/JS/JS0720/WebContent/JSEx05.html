@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>조건문</title>
+<script type="text/javascript">
+    // || 연산의 경우 앞의 값이 참이면 뒤는 계산하지 않는다.
+	document.writeln((true  || "히히히히1") + "<br>")  // true
+	document.writeln((false || "호호호호1") + "<br>") // 호호호호1
+	
+	// && 연산의 경우 앞의 값이 거짓이면 뒤는 계산하지 않는다.
+	document.writeln((true  && "히히히히2") + "<br>")  // 히히히히2
+	document.writeln((false && "호호호호2") + "<br>") // false
+	
+	var n = 12;
+    document.writeln((n%2 || "짝수") + "<br>");
+    
+	var n = 13;
+    document.writeln((n%2 || "홀수") + "<br>");
+</script>
+</head>
+<body>
+
+</body>
+</html>

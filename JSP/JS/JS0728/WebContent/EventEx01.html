@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이벤트 연결하기</title>
+<script type="text/javascript">
+	window.onload = function(){ // onload : 문서가 모두 읽은 다음에
+		document.getElementById("header1").onclick = function(){ // onclick : 클릭하면
+			alert(this.innerHTML);
+		}
+		var header2 = document.getElementById("header2");
+		header2.onclick = function(){
+			alert(this.innerHTML);
+			// 이벤트 제거
+			header2.onclick = null;
+			// 커서모양 변경
+			header2.style.cursor = 'default';
+		}
+		document.getElementById("header3").onclick = function(){
+			// this는 이벤트가 발생한 객체
+			alert(this.innerHTML);
+			// 이벤트 제거
+			this.onclick = null;
+			// 커서모양 변경
+			this.style.cursor = 'default';
+			this.style.color = 'red';
+			this.style.backgroundColor = 'pink';
+		}
+	}
+</script>
+<style type="text/css">
+	#header1, #header2, #header3 { cursor: pointer;}
+</style>
+</head>
+<body>
+	<h1 id="header1">눌러봐1</h1>
+	<h1 id="header2">눌러봐2(나는 1번만 클릭됨)</h1>
+	<h1 id="header3">눌러봐3(나는 1번만 클릭됨)</h1>
+</body>
+</html>

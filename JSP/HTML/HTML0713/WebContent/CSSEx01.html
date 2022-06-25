@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS 사용법</title>
+<!-- Internal Style Sheet : style태그에 지정 -->
+<style type="text/css">
+#blueColor {
+	color: blue;
+	text-decoration: underline;
+	font-weight: bold;
+}
+</style>
+<!-- Linking Style Sheet : 외부에 CSS 파일을 만들어놓고 불러서 사용한다. -->
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/my.css">
+</head>
+<body>
+	<!-- Inline Style Sheet : 태그에 style 속성을 지정하여 사용하는 방법 -->
+	<div style="color: red;">나는 머선 색일까요?</div>
+	<div id = "blueColor" style="font-size:25px;">나는 머선 색일까요?</div>
+	<div id = "greenColor">나는 머선 색일까요?</div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>변수의 선언</title>
+<script type="text/javascript">
+	var a = 10; // 전역변수 : window영역에 생성
+	b = 20; // 전역변수
+
+	// 함수는 호출전에는 실행되지 않는다.
+	function hello() {
+		document.writeln("a = " + a + ", b = " + b + " == 함수 전<br>"); // 2
+		var a = 100; // 지역변수
+		b = 200; // 전역변수
+		document.writeln("a = " + a + ", b = " + b + " == 함수 후<br>"); // 3
+	}
+	document.writeln("a = " + a + ", b = " + b + "<br>"); // 1
+	hello();
+	document.writeln("a = " + a + ", b = " + b + "<br>"); // 4번째 출력
+	/*
+	a = 10, b = 20
+	a = undefined, b = 20 == 함수 전
+	a = 100, b = 200 == 함수 후
+	a = 10, b = 200
+	 */
+</script>
+</head>
+<body>
+
+</body>
+</html>
