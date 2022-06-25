@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Answer 객체 등록 -->
+    <bean class="kr.green.core.vo.Answer" id="answer1">
+        <constructor-arg value="1"/>
+        <constructor-arg value="곤듀"/>
+        <constructor-arg value="98/05/07"/>
+    </bean>
+    <bean class="kr.green.core.vo.Answer" id="answer2">
+        <constructor-arg value="2"/>
+        <constructor-arg value="머현"/>
+        <constructor-arg value="96/09/01"/>
+    </bean>
+    
+    <!-- User 객체 등록 -->
+    <bean id="user1" class="kr.green.core.vo.User">
+        <property name="id" value="1"/>
+        <property name="name" value="안자몽"/>
+        <property name="email" value="jamong@xyz.com"/>
+    </bean>
+    <bean id="user2" class="kr.green.core.vo.User">
+        <property name="id" value="2"/>
+        <property name="name" value="안몽쉘"/>
+        <property name="email" value="mongshell@xyz.com"/>
+    </bean>
+    
+    <!-- Question 객체 등록 -->
+    <bean id="question" class="kr.green.core.vo.Question">
+        <constructor-arg value="1"/>
+        <constructor-arg value="자몽이가 좋아하는건?"/>
+        <constructor-arg>
+            <map>
+                <entry key-ref="answer1" value-ref="user1"></entry>
+                <entry key-ref="answer2" value-ref="user2"></entry>
+            </map>
+        </constructor-arg>
+    </bean>
+
+</beans>

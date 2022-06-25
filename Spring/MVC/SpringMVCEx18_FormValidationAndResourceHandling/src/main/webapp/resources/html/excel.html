@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript" src="../scripts/jquery-1.11.0.js"></script>
+    <script type="text/javascript" src="../scripts/jquery.table2excel.js"></script>
+</head>
+<body>
+<table id="TableToExcel" border=2 width=710 cellpadding=0 cellspacing=0 class='table table-bordered' align=center style='border-collapse:collapse;' >
+    <thead>
+        <tr>
+            <td>번호</td>
+            <td>번호</td>
+            <td>번호</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>2</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>3</td>
+            <td>3</td>
+        </tr>
+    </tbody>
+</table>
+<iframe id="txtArea1" style="display:none"></iframe>
+<!-- IE 호환을 위해서 iframe을 추가해야한다 -->
+<!-- IE에서는 txtArea1 의 객체를 찾기 때문이다. 크롬은 없어도 된다. 있어도 상관은 없다. -->
+
+<input type='button' class='btn btn-inverse' value='excel 다운' style='width:100px;height:36px;font-weight:bold;' onclick="ReportToExcelConverter()" />
+</body>
+<script>
+	function ReportToExcelConverter() {
+		$("#TableToExcel").table2excel({
+			exclude: ".noExl",
+			name: "Excel Document Name",
+			filename: "report" +'.xls', //확장자를 여기서 붙여줘야한다.
+			fileext: ".xls",
+			exclude_img: true,
+			exclude_links: true,
+			exclude_inputs: true
+		});
+	};
+</script>
+</html>

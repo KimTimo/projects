@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="employeeAssress" class="kr.green.core.vo.EmployeeAssress">
+        <property name="city" value="평택"/>
+        <property name="street" value="이충로 60"/>
+    </bean>
+
+    <bean id="employee" class="kr.green.core.vo.Employee" autowire="byType"/>
+        
+</beans>

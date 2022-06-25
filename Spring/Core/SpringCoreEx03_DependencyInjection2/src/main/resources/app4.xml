@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- Set에 주입하기 -->
+	<!-- 1. 생성자를 통한 주입 -->
+	<bean id="setObject1" class="kr.green.core.vo.SetObject">
+		<constructor-arg>
+			<set>
+				<value>한사람</value>
+				<value>두사람</value>
+				<value>세사람</value>
+				<value>한사람</value>
+				<value>두사람</value>
+			</set>
+		</constructor-arg>
+	</bean>
+	<!-- 2. Setter를 통한 주입 -->
+	<bean id="setObject2" class="kr.green.core.vo.SetObject">
+		<property name="nameSet">
+			<set>
+				<value>한사람</value>
+				<value>두사람</value>
+				<value>세사람</value>
+				<value>한사람</value>
+				<value>두사람</value>
+			</set>
+		</property>
+	</bean>
+	
+	<!-- Set객체 만들기 -->
+	<bean id="treeSet" class="java.util.TreeSet">
+		<constructor-arg>
+			<set>
+				<value>한사람</value>
+				<value>두사람</value>
+				<value>세사람</value>
+				<value>한사람</value>
+				<value>두사람</value>
+			</set>
+		</constructor-arg>
+	</bean>
+	<!-- 참조로 Set객체 전달 -->
+	<bean id="setObject3" class="kr.green.core.vo.SetObject">
+		<property name="nameSet" ref="treeSet"/>
+	</bean>
+</beans>

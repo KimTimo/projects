@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+<sqlMap namespace="emp">
+	<!-- 1. 저장 -->
+	<insert id="insert"  parameterClass="employeeVO">
+		insert into employee (name,role) values (#name#, #role#)
+	</insert>
+	<!-- 2. 수정 -->
+	<update id="update" parameterClass="employeeVO">
+		update employee set name=#name#, role=#role# where id=#id#
+	</update>
+	<!-- 3. 삭제 -->
+	<delete id="delete" parameterClass="int">
+		delete from employee where id=#id#
+	</delete>
+	<!-- 4. 1개얻기 -->
+	<select id="selectById"  parameterClass="int" resultClass="employeeVO">
+		select * from employee where id=#id#
+	</select>
+	<!-- 5. 모두얻기 -->
+	<select id="selectList"  resultClass="employeeVO">
+		select * from employee order by id desc
+	</select>
+	
+</sqlMap>

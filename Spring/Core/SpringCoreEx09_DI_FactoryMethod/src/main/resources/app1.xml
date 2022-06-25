@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- FactoryMethod1 method1 = new FactoryMethod1() 이 실행이된다. -->
+	<bean id="method1" class="kr.green.core.vo.FactoryMethod1"></bean>
+	
+	<!-- FactoryMethod1 method2 = FactoryMethod1.getFactoryMethod1() 이 실행이된다. -->
+	<bean id="method2" class="kr.green.core.vo.FactoryMethod1" factory-method="getFactoryMethod1"></bean>
+	
+</beans>

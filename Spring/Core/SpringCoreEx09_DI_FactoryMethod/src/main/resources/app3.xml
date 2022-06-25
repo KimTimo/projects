@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="a" class="kr.green.core.vo2.PrintableFactory" factory-method="getPrintableA"></bean>
+	
+	<bean id="b" class="kr.green.core.vo2.PrintableFactory" factory-method="getPrintableB"></bean>
+	
+	<bean id="printableFactory" class="kr.green.core.vo2.PrintableFactory"></bean>
+	
+	<bean id="c" class="kr.green.core.vo2.PrintableFactory" factory-method="getPrintableC" ></bean>
+	
+	
+</beans>

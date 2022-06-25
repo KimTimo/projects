@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:batch="http://www.springframework.org/schema/batch"
+	xsi:schemaLocation="http://www.springframework.org/schema/batch https://www.springframework.org/schema/batch/spring-batch.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<import resource="classpath:data-source.xml"/>
+	
+	<bean id="jobRepository" class="org.springframework.batch.core.repository.support.MapJobRepositoryFactoryBean"/>
+	
+	<bean id="jobLauncher" class="org.springframework.batch.core.launch.support.SimpleJobLauncher">
+		<property name="jobRepository" ref="jobRepository"/>
+	</bean>
+	
+	<!-- JSON 읽기를 담당할 객체 등록 -->
+	<bean id="jsonItemReader" class="kr.green.batch.service.JsonFileItemReader" scope="step">
+		<property name="resource" value="classpath:hanjatest.json"/>
+		<property name="classToBound" value="kr.green.batch.vo.HanjaVO"/>	
+	</bean>
+	<!-- DB에 쓰기를 담당할 객체 등록 -->
+	<bean id="dbItemWriter" class="org.springframework.batch.item.database.JdbcBatchItemWriter">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="sql">
+			<value>
+ 				<![CDATA[        
+                    insert into hanjatest 
+                    values (hanjatest_idx_seq.nextval, ?,?,?,?,?,?,?,?,?)
+                ]]>				
+			</value>
+		</property>
+		<property name="itemPreparedStatementSetter">
+			<bean class="kr.green.batch.service.HanjaVOItemPreparedStatementSetter"/>
+		</property>
+	</bean>
+	
+	<!-- 선택사항 : ItemProcessor 등록 -->
+	<bean id="itemProcessor" class="kr.green.batch.service.HanjaVOItemProcessor"/>
+	<!-- 선택사항 : JobExecutionListener 등록 -->
+	<bean id="jobListener" class="kr.green.batch.service.HanjaVOJobListener"/>
+	<!-- 트랜젝션 메니저 등록 -->
+	<bean id="transactionManager" class="org.springframework.batch.support.transaction.ResourcelessTransactionManager"/>
+	
+	<!-- 실제 실행할 일 등록 -->
+	<batch:job id="examResultJob">
+		<!-- 첫번째 작업 -->
+		<batch:step id="step1">
+			<batch:tasklet transaction-manager="transactionManager">
+				<batch:chunk reader="jsonItemReader" writer="dbItemWriter" processor="itemProcessor" commit-interval="100"/>
+			</batch:tasklet>
+		</batch:step>
+		<!-- 작업에 리스너 붙이기 -->
+		<batch:listeners>
+			<batch:listener ref="jobListener"/>
+		</batch:listeners>
+	</batch:job>
+</beans>

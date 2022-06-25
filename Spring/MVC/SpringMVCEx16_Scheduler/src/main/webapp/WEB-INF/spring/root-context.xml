@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-4.3.xsd
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	
+	<!-- 스케쥴 설정 -->
+	<bean id="alarmTask" class="kr.green.mvc16.scheduler.AlarmTask"/>
+	<task:scheduler id="gsScheduler" pool-size="10" />
+	<task:executor id="gsTaskExecutor" pool-size="10" />
+	<task:annotation-driven executor="gsTaskExecutor" scheduler="gsScheduler" />
+
+</beans>

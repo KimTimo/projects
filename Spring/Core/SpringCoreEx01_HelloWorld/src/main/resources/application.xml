@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!--
+	 스프링 설정파일로 
+	 이 어플리케이션에서 사용할 모든 객체를 
+	 여기에 등록해주면 관리를 스프링 프레임워크가 하게된다. 
+	 -->
+	 
+	 <!-- bean태그 하나가 new 명령어이고 id가 변수명 class가 타입이다. -->
+	<bean id="helloWorld" class="kr.green.core.vo.HelloWorldImpl"></bean>
+</beans>

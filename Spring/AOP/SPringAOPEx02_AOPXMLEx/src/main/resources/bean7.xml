@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+
+	<bean id="employeeService" class="kr.green.aop.service.EmployeeServiceImpl"/>
+	<bean id="loggingAspect" class="kr.green.aop.aop.EmployeeAspect"/>
+	
+	<!-- AOP 설정 시작 -->
+	<aop:config>
+		<!-- 위에 등록된 loggingAspect객체를 이용하여 설정하겠다.  -->
+		<aop:aspect ref="loggingAspect">
+			<!-- 적용 위치 설정 -->
+			<aop:pointcut expression="execution(* kr.green.aop.service.EmployeeServiceImpl.*(..) )" id="loggingPointcut"/>
+			<!-- 언제 적용하겠다. : aop:around 앞뒤에 모두 적용 -->
+			<aop:around method="aroundTimeLog" pointcut-ref="loggingPointcut"/>
+		</aop:aspect>
+	</aop:config>
+	<!-- AOP 설정 종료 -->
+</beans>
