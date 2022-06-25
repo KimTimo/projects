@@ -1,0 +1,204 @@
+@charset "utf-8";
+
+/*------------------------------------------
+   한글 폰트
+-------------------------------------------*/
+/* NanumGothic */
+@font-face {
+	font-family:'NanumGothic';
+	font-style: normal;
+	font-weight: 400;
+	src:url(../Font2/NanumGothic.eot); /* IE9~IE11 */
+	src:url(../Font/NanumGothic.eot?#iefix) format('embedded-opentype'), /* IE6~IE8 */
+	url(../Font/NanumGothic.woff) format('woff'); /* IE9,IE10,IE11,파이어폭스,크롬 */
+	}
+@font-face {
+	font-family:'NanumGothic';
+	font-style: normal;
+	font-weight: 700;
+	src:url(../Font/NanumGothicBold.eot); /* IE9~IE11 */
+	src:url(../Font/NanumGothicBold.eot?#iefix) format('embedded-opentype'), /* IE6~IE8 */
+	url(../Font/NanumGothicBold.woff) format('woff'); /* IE9,IE10,IE11,파이어폭스,크롬 */
+	}
+@font-face {
+	font-family:'NanumGothic';
+	font-style: normal;
+	font-weight: 800;
+	src:url(../Font/NanumGothicExtraBold.eot); /* IE9~IE11 */
+	src:url(../Font/NanumGothicExtraBold.eot?#iefix) format('embedded-opentype'), /* IE6~IE8 */
+	url(../Font/NanumGothicExtraBold.woff) format('woff'); /* IE9,IE10,IE11,파이어폭스,크롬 */
+	}
+@font-face {
+	font-family:'NanumGothicCoding';
+	font-style: normal;
+	font-weight: 400;
+	src:url(../Font/NanumGothicCoding.eot); /* IE9~IE11 */
+	src:url(../Font/NanumGothicCoding.eot?#iefix) format('embedded-opentype'), /* IE6~IE8 */
+	url(../Font/NanumGothicCoding.woff) format('woff'); /* IE9,IE10,IE11,파이어폭스,크롬 */
+	}
+@font-face {
+	font-family:'NanumGothicCoding';
+	font-style: normal;
+	font-weight: 700;
+	src:url(../Font/NanumGothicCodingBold.eot); /* IE9~IE11 */
+	src:url(../Font/NanumGothicCodingBold.eot?#iefix) format('embedded-opentype'), /* IE6~IE8 */
+	url(../Font/NanumGothicCodingBold.woff) format('woff'); /* IE9,IE10,IE11,파이어폭스,크롬 */
+	}
+
+/* Noto Sans */
+@font-face {
+	font-family:'NotoSans';
+	font-style: normal;
+	font-weight: 100;
+	src: url(../Font/NotoSansLight.eot); /* IE9~IE11 */
+	src: url(../Font/NotoSansLight.eot?#iefix) format('embedded-opentype'), /* IE6~IE8 */
+	url(../Font/NotoSansLight.woff) format('woff'); /* IE9,IE10,IE11,파이어폭스,크롬 */
+	}
+@font-face {
+	font-family:'NotoSans';
+	font-style: normal;
+	font-weight: 400;
+	src: url(../Font/NotoSansRegular.eot); /* IE9~IE11 */
+	src: url(../Font/NotoSansRegular.eot?#iefix) format('embedded-opentype'), /* IE6~IE8 */
+	url(../Font/NotoSansRegular.woff) format('woff'); /* IE9,IE10,IE11,파이어폭스,크롬 */
+	}
+@font-face {
+	font-family:'NotoSans';
+	font-style: normal;
+	font-weight: 500;
+	src: url(../Font/NotoSansMedium.eot); /* IE9~IE11 */
+	src: url(../Font/NotoSansMedium.eot?#iefix) format('embedded-opentype'), /* IE6~IE8 */
+	url(../Font/NotoSansMedium.woff) format('woff'); /* IE9,IE10,IE11,파이어폭스,크롬 */
+	}
+@font-face {
+	font-family:'NotoSans';
+	font-style: normal;
+	font-weight: 600;
+	src: url(../Font/NotoSansSemiBold.eot); /* IE9~IE11 */
+	src: url(../Font/NotoSansSemiBold.eot?#iefix) format('embedded-opentype'), /* IE6~IE8 */
+	url(../Font/NotoSansSemiBold.woff) format('woff'); /* IE9,IE10,IE11,파이어폭스,크롬 */
+	}
+@font-face {
+	font-family:'NotoSans';
+	font-style: normal;
+	font-weight: 700;
+	src: url(../Font/NotoSansBold.eot); /* IE9~IE11 */
+	src: url(../Font/NotoSansBold.eot?#iefix) format('embedded-opentype'), /* IE6~IE8 */
+	url(../Font/NotoSansBold.woff) format('woff'); /* IE9,IE10,IE11,파이어폭스,크롬 */
+	}
+@font-face {
+	font-family:'NotoSans';
+	font-style: normal;
+	font-weight: 900;
+	src: url(../Font/NotoSansBlack.eot); /* IE9~IE11 */
+	src: url(../Font/NotoSansBlack.eot?#iefix) format('embedded-opentype'), /* IE6~IE8 */
+	url(../Font/NotoSansBlack.woff) format('woff'); /* IE9,IE10,IE11,파이어폭스,크롬 */
+	}
+
+
+/*------------------------------------------
+   영문 폰트
+-------------------------------------------*/
+/* Gotham */
+@font-face {
+	font-family:'Gotham';
+	font-style: normal;
+	font-weight: 300;
+	src: url(../Font/GothamLight.eot); /* IE9~IE11 */
+	src: url(../Font/GothamLight.eot?#iefix) format('embedded-opentype'), /* IE6~IE8 */
+	url(../Font/GothamLight.woff) format('woff'); /* IE9,IE10,IE11,파이어폭스,크롬 */
+	}
+@font-face {
+	font-family:'Gotham';
+	font-style: normal;
+	font-weight: 400;
+	src: url(../Font/GothamBook.eot); /* IE9~IE11 */
+	src: url(../Font/GothamBook.eot?#iefix) format('embedded-opentype'), /* IE6~IE8 */
+	url(../Font/GothamBook.woff) format('woff'); /* IE9,IE10,IE11,파이어폭스,크롬 */
+	}
+@font-face {
+	font-family:'Gotham';
+	font-style: normal;
+	font-weight: 500;
+	src: url(../Font/GothamMedium.eot); /* IE9~IE11 */
+	src: url(../Font/GothamMedium.eot?#iefix) format('embedded-opentype'), /* IE6~IE8 */
+	url(../Font/GothamMedium.woff) format('woff'); /* IE9,IE10,IE11,파이어폭스,크롬 */
+	}
+@font-face {
+	font-family:'Gotham';
+	font-style: normal;
+	font-weight: 700;
+	src: url(../Font/GothamBold.eot); /* IE9~IE11 */
+	src: url(../Font/GothamBold.eot?#iefix) format('embedded-opentype'), /* IE6~IE8 */
+	url(../Font/GothamBold.woff) format('woff'); /* IE9,IE10,IE11,파이어폭스,크롬 */
+	}
+@font-face {
+	font-family:'Gotham';
+	font-style: normal;
+	font-weight: 900;
+	src: url(../Font/GothamBlack.eot); /* IE9~IE11 */
+	src: url(../Font/GothamBlack.eot?#iefix) format('embedded-opentype'), /* IE6~IE8 */
+	url(../Font/GothamBlack.woff) format('woff'); /* IE9,IE10,IE11,파이어폭스,크롬 */
+	}
+
+/* Roboto : 날짜 표시에 적합 */
+@font-face {
+	font-family:'Roboto';
+	font-style: normal;
+	font-weight: 300;
+	src: url(../Font/RobotoLight.eot); /* IE9~IE11 */
+	src: url(../Font/RobotoLight.eot?#iefix) format('embedded-opentype'), /* IE6~IE8 */
+	url(../Font/RobotoLight.woff) format('woff'); /* IE9,IE10,IE11,파이어폭스,크롬 */
+	}
+@font-face {
+	font-family:'Roboto';
+	font-style: normal;
+	font-weight: 400;
+	src: url(../Font/RobotoRegular.eot); /* IE9~IE11 */
+	src: url(../Font/RobotoRegular.eot?#iefix) format('embedded-opentype'), /* IE6~IE8 */
+	url(../Font/RobotoRegular.woff) format('woff'); /* IE9,IE10,IE11,파이어폭스,크롬 */
+	}
+@font-face {
+	font-family:'Roboto';
+	font-style: normal;
+	font-weight: 500;
+	src: url(../Font/RobotoMedium.eot); /* IE9~IE11 */
+	src: url(../Font/RobotoMedium.eot?#iefix) format('embedded-opentype'), /* IE6~IE8 */
+	url(../Font/RobotoMedium.woff) format('woff'); /* IE9,IE10,IE11,파이어폭스,크롬 */
+	}
+@font-face {
+	font-family:'Roboto';
+	font-style: normal;
+	font-weight: 700;
+	src: url(../Font/RobotoBold.eot); /* IE9~IE11 */
+	src: url(../Font/RobotoBold.eot?#iefix) format('embedded-opentype'), /* IE6~IE8 */
+	url(../Font/RobotoBold.woff) format('woff'); /* IE9,IE10,IE11,파이어폭스,크롬 */
+	}
+@font-face {
+	font-family:'Roboto';
+	font-style: normal;
+	font-weight: 900;
+	src: url(../Font/RobotoBlack.eot); /* IE9~IE11 */
+	src: url(../Font/RobotoBlack.eot?#iefix) format('embedded-opentype'), /* IE6~IE8 */
+	url(../Font/RobotoBlack.woff) format('woff'); /* IE9,IE10,IE11,파이어폭스,크롬 */
+	}
+
+/* Tahoma : 작은 글씨에 효과적 */
+/* Tahoma */
+@font-face {
+	font-family:'Tahoma';
+	font-style: normal;
+	font-weight: 400;
+	src: url(../Font/tahoma.eot); /* IE9~IE11 */
+	src: url(../Font/tahoma.eot?#iefix) format('embedded-opentype'), /* IE6~IE8 */
+	url(../Font/tahoma.woff) format('woff'); /* IE9,IE10,IE11,파이어폭스,크롬 */
+	}
+@font-face {
+	font-family:'Tahoma';
+	font-style: normal;
+	font-weight: 700;
+	src: url(../Font/tahomaBold.eot); /* IE9~IE11 */
+	src: url(../Font/tahomaBold.eot?#iefix) format('embedded-opentype'), /* IE6~IE8 */
+	url(../Font/tahomaBold.woff) format('woff'); /* IE9,IE10,IE11,파이어폭스,크롬 */
+}
+

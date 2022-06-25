@@ -1,0 +1,263 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="css/reset.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/font.css">
+<link rel="stylesheet" type="text/css" href="css/font2.css">
+<link rel="stylesheet" type="text/css" href="css/jdSlider-style.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="js/jquery.jdSlider-latest.min.js"></script>
+
+    
+    
+
+<title>머현이 기말고사</title>
+    
+    
+</head>
+<body>
+<div id="wrap">
+<!-- Header -->
+    
+    
+    
+
+  <div class="header">
+    <div class="utility-menu">
+      <ul>
+        <li><input class="input animate-input ico-search" style="top:0;right:102px" type="text" placeholder="Click on me!"></li>
+        <li><a href="#" class="ico-manage"></a></li>
+        <li><a href="#" class="ico-setting"></a></li>
+        <li><a href="#" class="ico-logout"></a></li>
+      </ul>
+    </div>
+    <div class="top-menu">
+      <h1 class="logo"><img src="img/Logo2.png" alt="logo"></h1>
+        <br>
+      <div class="gnb">
+        <li><a href="menu01" title="menu1">베스트</a></li>
+        <li><a href="menu02" title="menu2">신상품</a></li>
+        <li><a href="menu03" title="menu3">이벤트</a></li>
+        <li><a href="menu04" title="menu4">사은품</a></li>
+      </div>
+    </div>
+  </div>
+ <!-- //Header -->  
+ <!-- Container -->
+  <div id="container" class="container">
+    <!-- Spot -->
+    <div class="spot" style ="max-width:100%">
+    	<div class="jd-slider slider">
+    		<div class="slide-inner">
+    			<div>
+                	<ul class="slide-area">
+                    <li class="spot-img1">
+                        	<img src="img/book.jpg" alt="그림1" style="width: 100px; height: 670px">
+                            <div class="ani-txt">
+                            	<h2 class="ani-title"></h2>
+                                <p class="dsc"></p>
+                            </div>
+                        </li>
+                        <li class="spot-img2">
+                        	<img src="img/book2.jpg" alt="그림2">
+                            <div class="ani-txt">
+                            	<h2 class="ani-title"></h2>
+                                <p class="dsc"></p>
+                            </div>
+                        </li>
+                    	<li class="spot-img3">
+                        	<img src="img/book3.jpg" alt="그림3">
+                            <div class="ani-txt">
+                            	<h2 class="ani-title"></h2>
+                                <p class="dsc"></p>
+                            </div>
+                        </li>
+                        <li class="spot-img4">
+                        	<img src="img/book4.jpg" alt="그림4">
+                            <div class="ani-txt">
+                            	<h2 class="ani-title"></h2>
+                                <p class="dsc"></p>
+                            </div>
+                        </li>
+                        <li class="spot-img5">
+                        	<img src="img/kane.jpg" alt="그림5">
+                            <div class="ani-txt">
+                            	<h2 class="ani-title"></h2>
+                                <p class="dsc"></p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="btn-control">
+            	<a class="prev" href="#">
+                	<i class="fas fa-angle-left fa-2x"></i></a>
+                <a class="next" href="#">
+                	<i class="fas fa-angle-right fa-2x"></i></a>
+            </div>
+            <div class="controller">
+            	<a class="auto pause" href="#" data-state="false" title="정지">
+                	<i class="fas fa-play fa-xs"></i>
+                    <i class="fas fa-pause fa-xs"></i></a>
+                <div class="indicate-area">
+                        	<a href="#" class="">1</a>
+                        	<a href="#" class="">2</a>
+                            <a href="#" class="">3</a>
+                            <a href="#" class="">4</a>
+                            <a href="#" class="on">5</a>
+            	</div>
+            </div>
+        </div>
+        <script>
+			window.onload = function () {
+				$('.slider').jdSlider({
+					wrap: '.slide-inner',
+					isAuto: true,
+					isLoop: true
+				});
+			}
+		</script>
+    </div>
+    <!-- //Spot -->
+    <!-- Service -->
+    <div class="container service">
+      <h2 class="title">Awesome & Great Services</h2>
+      <p class="dsc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+      <div class="content">
+        <div class="item1">
+          <a href="#" class="itm-ico" title="item-icon"></a>
+          <h3 class="title">Item-Title</h3>
+          <h6 class="dsc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</h6>
+          <button class="btn-more">Read More</button>
+        </div>
+<div class="item2">
+          <a href="#" class="itm-ico" title="item-icon"></a>
+          <h3 class="title">Item-Title</h3>
+          <h6 class="dsc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</h6>
+          <button class="btn-more">Read More</button>
+        </div>
+        <div class="item3">
+          <a href="#" class="itm-ico" title="item-icon"></a>
+          <h3 class="title">Item-Title</h3>
+          <h6 class="dsc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</h6>
+          <button class="btn-more">Read More</button>
+        </div>
+        <div class="item4">
+          <a href="#" class="itm-ico" title="item-icon"></a>
+          <h3 class="title">Item-Title</h3>
+          <h6 class="dsc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</h6>
+          <button class="btn-more">Read More</button>
+        </div>
+      </div>
+    </div>
+    <!-- //Service -->
+    <!-- Works -->
+    <div class="container works">
+      <h2 class="title">신간도서</h2>
+      <p class="dsc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+      <div class="content">
+        <div class="card1" style="height: 370px;">
+          <img src="img/book.jpg" alt="img01" />
+          <div class="box">
+            <a href="#" class="ico fas fa-cat" title=""></a>
+            <h4 class="pjt-name">죽고 싶지만 떡볶이는 먹고 싶어</h4>
+            <p class="ctgr">Category</p>
+          </div>
+        </div>
+        <div class="card2" style="height: 370px;">
+          <img src="img/book2.jpg" alt="img02" />
+          <div class="box">
+            <a href="#" class="ico fas fa-cannabis" title=""></a>
+            <h4 class="pjt-name">나는 나로 살기로 했다</h4>
+            <p class="ctgr">Category</p>
+          </div>
+        </div>
+        <div class="card3" style="height: 370px;">
+          <img src="img/book3.jpg" alt="img03" />
+          <div class="box">
+            <a href="#" class="ico fas fa-dog" title=""></a>
+            <h4 class="pjt-name">IZ*ONE</h4>
+            <p class="ctgr">Category</p>
+          </div>
+        </div>
+        <div class="card4" style="height: 370px;">
+          <img src="img/book4.jpg" alt="img04" />
+          <div class="box">
+            <a href="#" class="ico fas fa-fish" title=""></a>
+            <h4 class="pjt-name">IZ*ONE</h4>
+            <p class="ctgr">Category</p>
+          </div>
+        </div>
+        <div class="scroll-group">
+        </div>
+      </div>
+    </div>
+    <!-- //Works -->
+    <!-- Blog -->
+    <div class="container blog">
+      <h2 class="title">Our Blog</h2>
+      <p class="dsc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+      <div class="content">
+        <div class="sec-left">
+          <div class="thumb-lg">
+              <div class="img-zoom-container">
+            <img id="myimage" img src="img/book.jpg" alt="image" style="width: 445px; height: 590px;"/>
+                  <div id="myresult" class="img-zoom-result"></div>
+              </div>      
+          </div>
+          <div class="date-group"><span>09</span><span>NOV</span></div>
+              <h3 class="title">DESIGN IS THINKING MAKE VISUAL</h3>
+              <p class="name">by Hong GIL Dong</p>
+              <p class="dsc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        </div>
+        <div class="sec-right">
+          <div class="thumb-list">
+            <div class="thumb-md">
+              <img src="img/reus.jpg" alt="image" style="width: 262px; height: 150px" />
+            </div>
+            <p class="date-group"><span>09</span><span>NOV</span></p>
+            <div>
+              <h3 class="title">THE DETAIL ARE NOT THE DETAIL, THEY MAKE THE DESIGN</h3>
+              <p class="name">by Hong GIL Dong</p>
+              <p class="dsc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+            </div>          
+          </div>
+          <div class="thumb-list">
+            <div class="thumb-md">
+                <img src="img/dybala.jpg" alt="image" style="width: 262px; height: 150px" />
+              </div>
+            <p class="date-group"><span>09</span><span>NOV</span></p>
+            <div>
+              <h3 class="title">5 THINGS WILL MAKE YOUR ROOM MORE BEAUTIFUL</h3>
+              <p class="name">by Hong GIL Dong</p>
+              <p class="dsc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+            </div>          
+          </div>
+          <div class="thumb-list">
+            <div class="thumb-md"></div>
+            <p class="date-group"><span>09</span><span>NOV</span></p>
+            <div>
+              <h3 class="title">THE BEST DESIGN PROJECTS ARE THE ONES WHERE PEOPLE BROKE THE RULES</h3>
+              <p class="name">by Hong GIL Dong</p>
+              <p class="dsc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+            </div>          
+          </div>
+          <button class="btn-rnd-more">More</button>
+        </div>
+      </div>
+    </div>
+    <!-- //Blog -->
+  </div>
+  <!-- //Container -->
+  <!-- Footer -->
+  <div id="footer">
+    <p class="cpr">COPYRIGHTⓒ 2018 DAELIM SMART CONTENTS. ALL RIGHTS RESERVED.</p>
+    <button class="back-to-top"><i class="fas fa-angle-up"></i></button>
+  </div>
+  <!-- //Footer -->
+</div>
+</body>
+</html>
