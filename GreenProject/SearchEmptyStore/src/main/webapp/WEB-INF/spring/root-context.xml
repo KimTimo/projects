@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-5.3.xsd
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
+
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	<!-- 메세지 컨버터 -->
+	<bean id="xmlMessageConverter" class="org.springframework.http.converter.xml.MarshallingHttpMessageConverter"/>
+	<bean id="jsonMessageConverter" class="org.springframework.http.converter.json.GsonHttpMessageConverter"/>
+
+	<!-- 등록된 메세지 컨버터 맵핑 -->
+	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+		<property name="messageConverters">
+			<list>
+				<ref bean="jsonMessageConverter"/>
+				<ref bean="xmlMessageConverter"/>
+			</list>
+		</property>
+	</bean>	
+
+	<!-- 프로퍼티파일 사용 등록 -->
+	<context:property-placeholder location="classpath:jdbc.properties" />
+	<!-- <context:property-placeholder location="/WEB-INF/*.properties" /> -->		
+	<tx:annotation-driven transaction-manager="transactionManager"/>
+
+	<!-- dataSource 설정 -->
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="${o.driver}" />
+		<property name="url" value="${o.url}" />
+		<property name="username" value="${o.username}" />
+		<property name="password" value="${o.password}" />
+	</bean>
+	<!-- mybatis추가 -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<!-- 아래부분은 매핑할 xml파일이 있는 패키지경로를 설정한다. -->
+		<property name="typeAliasesPackage"	value="kr.green.searches.vo" />
+		<property name="mapperLocations" value="classpath:/kr/green/searches/dao/*.xml"/> 
+	</bean>
+
+	<!-- scan for mappers and let them be autowired -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="kr.green.searches.dao" />
+		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
+	</bean>
+
+	<!-- 트랜젝션 관리자 추가 -->
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	<!-- ****************** 메일 보내기 빈 등록 시작 ************************** -->
+	<!-- 메일센더가 사용할 프로퍼티 등록 -->
+	<util:properties id="properties">
+		<prop key="mail.smtp.starttls.enable">true</prop>
+		<prop key="mail.smtp.auth">true</prop>
+		<prop key="mail.transport.protocol">smtp</prop>
+		<prop key="mail.debug">false</prop>
+	</util:properties>	
+	<!-- 메일 보내는 객체 등록 -->
+	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl"> 
+		<property name="host" value="smtp.naver.com"/> 
+		<property name="port" value="587"/> 
+		<property name="username" value="eogsu8548@naver.com"/> 
+		<property name="password" value="Daehyun12@"/> 
+		<property name="javaMailProperties" ref="properties"/> 
+	</bean>
+	<!-- ****************** 메일 보내기 빈 등록 종료 ************************** -->	
+
+	<!-- ************* 로그인 성공시 처리해야할 내용을 빈으로 등록 ************ -->
+	<bean id="myLoginSuccessHandler" class="kr.green.searches.service.MyLoginSuccessHandler"></bean>
+	<!-- ************* 로그아웃 성공시 처리해야할 내용을 빈으로 등록 ************ -->
+	<bean id="myLogoutSuccessHandler" class="kr.green.searches.service.MyLogoutSuccessHandler"></bean>
+
+	<!-- 시큐리티 권한설정 시작 -->
+	<security:http auto-config="true" use-expressions="true">
+		<security:intercept-url pattern="/*" access="permitAll" />
+		<security:intercept-url pattern="/list/*" access="permitAll" />
+		<security:intercept-url pattern="/admin/**" access="hasRole('ADMIN')" />
+		<security:intercept-url pattern="/mem/**" access="hasRole('USER') and hasRole('ADMIN')" />
+		<!-- 접근 불가능한 곳에 접근시 처리할 페이지 지정 -->
+		<security:access-denied-handler error-page="/403" />
+		<!-- 사용자가 만든 로그인 페이지를 사용하려면 이부분을 수정한다. -->
+		<security:form-login 
+		login-page="/login" 
+		username-parameter="userid" 
+		password-parameter="password"
+		default-target-url="/"
+		authentication-success-handler-ref="myLoginSuccessHandler"
+		authentication-failure-url="/login?error" /> <!-- 로그인 실패시 이동하 페이지 지정 -->
+		<!-- login?logout 을 /로 변경 로그아웃 성공시 이동할 페이지 지정 
+		-->
+		<security:logout success-handler-ref="myLogoutSuccessHandler"/>
+		<!-- 
+		<security:logout 
+			logout-success-url="/" 
+			invalidate-session="true"/>
+		 -->
+
+		<!-- csrf 프로텍션을 사용하겠다. -->
+		<security:csrf />
+	</security:http>
+	<!-- 시큐리티 권한설정 종료 -->
+	<!-- 시큐리티 사용자 설정 시작 -->
+	<security:authentication-manager>
+		<security:authentication-provider>
+			<security:jdbc-user-service data-source-ref="dataSource"
+			users-by-username-query="select userid as username,  '{bcrypt}'||password as password, enabled from smember where userid=?"
+			authorities-by-username-query="select username, role from smember_roles where username=?"
+			/>
+		</security:authentication-provider>
+	</security:authentication-manager>
+	<!-- 시큐리티 사용자 설정 종료 -->	
+
+	<!-- 시큐리트 암호화 객체 등록	-->
+	<bean id="bCryptPasswordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>
+
+</beans>
