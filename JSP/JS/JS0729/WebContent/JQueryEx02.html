@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>선택자 연습 : 속성 선택자</title>
+<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		// 요소[속성] : 지정 속성을 가지면
+		$('input[type]').css('border','1px solid pink');
+		// 요소[속성=값] : 지정 속성에 값을 가지면
+		$('input[type=text]').val('하하하하하');
+		// 요소[속성~=값] : 단어로 포함하는 값을 가지면
+		$('div[class~=as]').css('color', 'red');
+		// 요소[속성^=값] : 값으로 시작하면
+		$('div[class^=iasd]').css('color', 'blue');
+		// 요소[속성$=값] : 값으로 끝나면
+		$('div[class$=er]').css('color', 'green');
+		// 요소[속성*=값] : 포함하는 값을 가지면
+		$('div[class*=wer]').css('color', 'orange');
+	});
+</script>
+</head>
+<body>
+	<input type="text" /> <br />
+	<input type="password" /> <br />
+	<input type="radio" /> <br />
+	<input type="checkbox" /> <br />
+	<input type="file" /> <br />
+	<div class="asdf asdfg qer">나는 무슨색상!!!</div>
+	<div class="iasd asdfg qwert">나는 무슨색상!!!</div>
+	<div class="as asdfg qerty">나는 무슨색상!!!</div>
+	<div class="asdf asd wer">나는 무슨색상!!!</div>
+	<div class="asdf as wer qwerty">나는 무슨색상!!!</div>
+</body>
+</html>

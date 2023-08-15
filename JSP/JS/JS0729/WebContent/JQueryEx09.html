@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>문서객체 탐색 : filter</title>
+<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$('h3:even').css({
+			color:'red',
+			background : 'pink'
+		});
+		$('h3').filter(':odd').css({
+			color:'blue',
+			background : 'skyblue'
+		});
+		// odd, even은 전해져 있지만 filter에는 함수를 사용가능하기때문에 확장성이 더 좋다. 
+		$('h3').filter(function(i){
+			return i%3==0; // 조건식의 결과가 논리값이 이어야 한다.
+		}).css({
+			color:'white',
+			background : 'black'
+		});
+		
+	});
+</script>
+<style type="text/css">
+ 
+</style>
+</head>
+<body>
+	 h3{나는 $$번째 소제목 입니다.}*9
+	 <h3>나는 01번째 소제목 입니다.</h3>
+	 <h3>나는 02번째 소제목 입니다.</h3>
+	 <h3>나는 03번째 소제목 입니다.</h3>
+	 <h3>나는 04번째 소제목 입니다.</h3>
+	 <h3>나는 05번째 소제목 입니다.</h3>
+	 <h3>나는 06번째 소제목 입니다.</h3>
+	 <h3>나는 07번째 소제목 입니다.</h3>
+	 <h3>나는 08번째 소제목 입니다.</h3>
+	 <h3>나는 09번째 소제목 입니다.</h3>
+</body>
+</html>

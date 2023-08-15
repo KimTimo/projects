@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>문서객체 탐색 : end() => 탐색의 종료</title>
+<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		/*
+		$('h3').css('background','pink');
+		$('h3:even').css('color', 'red');
+		*/
+		// 위의 두줄을 1줄로 가능하다.
+		// $('h3').css('background','pink').filter('h3:even').css('color', 'red');
+		/*
+		$('h3').css('background','pink');
+		$('h3:even').css('color', 'red');
+		$('h3:odd').css('color', 'blue');
+		*/
+		// 위의 세줄을 1줄로 가능할까?
+		/*
+		$('h3').css('background','pink')
+		       .filter('h3:even').css('color', 'red')
+		       .filter('h3:odd').css('color', 'blue'); // 필터가 2중으로 적용되어 짝수들 중에서 홀수만 선택된다.
+		*/
+		$('h3').css('background','pink')
+		       .filter('h3:even').css('color', 'red')
+		       .end() // 이전 필터를 해제한다.
+		       .filter('h3:odd').css('color', 'blue')
+		       .end()
+		       .eq(0).css({background:'silver', color:'white'})
+		       .end()
+		       .eq(-1).css({background:'silver', color:'white'}); // -1은 뒤에서 첫번째이다.
+	});
+</script>
+<style type="text/css">
+ 
+</style>
+</head>
+<body>
+	 h3{나는 $$번째 소제목 입니다.}*9
+	 <h3>나는 01번째 소제목 입니다.</h3>
+	 <h3>나는 02번째 소제목 입니다.</h3>
+	 <h3>나는 03번째 소제목 입니다.</h3>
+	 <h3>나는 04번째 소제목 입니다.</h3>
+	 <h3>나는 05번째 소제목 입니다.</h3>
+	 <h3>나는 06번째 소제목 입니다.</h3>
+	 <h3>나는 07번째 소제목 입니다.</h3>
+	 <h3>나는 08번째 소제목 입니다.</h3>
+	 <h3>나는 09번째 소제목 입니다.</h3>
+</body>
+</html>

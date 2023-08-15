@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <!-- 숫자를 포맷하고 조작하기위한 자바 스크립트 라이브러리 -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
+    <!-- 날짜를 포맷하고 조작하기위한 자바 스크립트 라이브러리 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/locale/ko.js"></script>
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="KimcLunar.js"></script>
+  </head>
+  <body>
+    <script>
+      var year = moment().format("YYYY") * 1;
+      var month = moment().format("MM") * 1;
+      var date = moment().format("DD") * 1;
+      function updateTitle() {
+        $("#mainTitle").html(
+          numeral(year).format("0000") +
+            "년 " +
+            numeral(month).format("00") +
+            "월"
+        );
+        updateContennt();
+      }
+      function updateContennt() {
+        $("#myCalendar").empty();
+        var content = "<tr>\n";
+        for (i = 0; i < getLunar(year, month, 1).dayOfWeekNum; i++) {
+          content += "<td style='border:none;'>&nbsp;</td>\n";
+        }
+        for (i = 1; i <= getLastDayOfMonth(year, month); i++) {
+          var obj = isHoliday(year, month, i, false, false);
+          var lunar = getLunar(year, month, i);
+          if (obj[0] == "평") {
+            content +=
+              "<td>" +
+              i +
+              "<br>" +
+              lunar.lunMonth +
+              "." +
+              lunar.lunDay +
+              (lunar.leapMonth ? "(윤)" : "") +
+              "</td>\n";
+          } else {
+            if (obj[0] == "토") {
+              content +=
+                "<td style='color:blue'>" +
+                i +
+                "<br>" +
+                lunar.lunMonth +
+                "." +
+                lunar.lunDay +
+                (lunar.leapMonth ? "(윤)" : "") +
+                "</td>\n";
+              content += "</tr>";
+              if (i != getLastDayOfMonth(year, month)) content += "<tr>";
+            } else if (obj[0] == "일") {
+              content +=
+                "<td style='color:red'>" +
+                i +
+                "<br>" +
+                lunar.lunMonth +
+                "." +
+                lunar.lunDay +
+                (lunar.leapMonth ? "(윤)" : "") +
+                "</td>\n";
+            } else {
+              content +=
+                "<td style='color:red'>" +
+                i +
+                "<br>" +
+                lunar.lunMonth +
+                "." +
+                lunar.lunDay +
+                (lunar.leapMonth ? "(윤)" : "") +
+                "<br>" +
+                obj[0] +
+                "</td>\n";
+              if (lunar.dayOfWeekNum == 6) {
+                content += "</tr>";
+                if (i != getLastDayOfMonth(year, month)) content += "<tr>";
+              }
+            }
+          }
+        }
+        $("#myCalendar").append(content);
+      }
+      $(function() {
+        updateTitle();
+        $("#prevYear").click(function() {
+          if (year > 1) year--;
+          updateTitle();
+        });
+        $("#nextYear").click(function() {
+          year++;
+          updateTitle();
+        });
+        $("#prevMonth").click(function() {
+          month--;
+          if (month <= 0) {
+            month = 12;
+            if (year > 1) year--;
+          }
+          updateTitle();
+        });
+        $("#nextMonth").click(function() {
+          month++;
+          if (month > 12) {
+            month = 1;
+            year++;
+          }
+          updateTitle();
+        });
+      });
+    </script>
+    <style>
+      table {
+        margin: auto;
+      }
+      th {
+        background-color: silver;
+        width: 100px;
+        border: 1px solid gray;
+        padding: 5px;
+      }
+      td {
+        width: 100px;
+        height: 70px;
+        border: 1px solid gray;
+        padding: 5px;
+        text-align: right;
+        border-radius: 20pt;
+      }
+      .title {
+        font-size: 18pt;
+        text-align: center;
+        border: none;
+      }
+    </style>
+    <table>
+      <tr>
+        <td class="title" colspan="2">
+          <a href="#" id="prevYear">◀</a>
+          <a href="#" id="prevMonth">◁</a>
+        </td>
+        <td class="title" colspan="3" id="mainTitle"></td>
+        <td class="title" colspan="2">
+          <a href="#" id="nextMonth">▷</a>
+          <a href="#" id="nextYear">▶</a>
+        </td>
+      </tr>
+      <tr>
+        <th>일</th>
+        <th>월</th>
+        <th>화</th>
+        <th>수</th>
+        <th>목</th>
+        <th>금</th>
+        <th>토</th>
+      </tr>
+    </table>
+ 
+    <table id="myCalendar"></table>
+  </body>
+</html>

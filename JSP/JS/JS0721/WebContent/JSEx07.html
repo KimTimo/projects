@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>함수를 리턴하는 함수</title>
+<script type="text/javascript">
+    function outerFunction() {
+		return function(){
+			alert('반갑다 이쉐이야');
+		}
+	}
+    var fn = outerFunction();    // 함수를 호출해서 변수에 담기
+    fn();                        // 변수가 함수이므로 ()를 붙여 실행
+    
+    // 위의 두줄을 1줄로 쓰면
+    outerFunction()();           // 오타 아님 ㄹㅇ
+</script>
+</head>
+<body>
+
+</body>
+</html>

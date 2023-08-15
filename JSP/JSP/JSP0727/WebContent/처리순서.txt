@@ -1,0 +1,37 @@
+1. 글쓰기 과정 1
+목록보기 (selectList.jsp)에서 글쓰기를 누르면 
+---> 글쓰기 폼(insertForm3.jsp)  저장하기 버튼을 누르면
+---> 글쓰기 완료(insertOK.jsp)
+---> 목록보기 (selectList.jsp) 
+
+2. 글쓰기 과정 2
+목록보기 (selectList.jsp)에서 글쓰기를 누르면 
+---> 글쓰기 폼(insertForm3.jsp) 돌아가기 버튼을 누르면  
+---> 목록보기 (selectList.jsp) 
+
+3. 글 수정 과정 1
+목록보기 (selectList.jsp)에서 글수정(Edit)을 누르면 
+---> 글수정 폼(editForm.jsp)  수정하기 버튼을 누르면(글 1개를 읽어 폼에 표시)
+---> 글수정 완료(editOk.jsp)
+---> 목록보기 (selectList.jsp) 
+
+4. 글 수정 과정 2
+목록보기 (selectList.jsp)에서 글수정을 누르면 
+---> 글수정 폼(editForm.jsp)  돌아가기 버튼을 누르면  
+---> 목록보기 (selectList.jsp) 
+
+
+5. 글 삭제 과정 1
+목록보기 (selectList.jsp)에서 글삭제(Delete)을 누르면 
+---> 글삭제 폼(deleteForm.jsp)  삭제하기 버튼을 누르면(글 1개를 읽어 폼에 표시)
+---> 글삭제 완료(deleteOk.jsp)
+---> 목록보기 (selectList.jsp) 
+
+6. 글 삭제 과정 2
+목록보기 (selectList.jsp)에서 글삭제(Delete)을 누르면 
+---> 글삭제 폼(deleteForm.jsp)  돌아가기 버튼을 누르면(글 1개를 읽어 폼에 표시)
+---> 목록보기 (selectList.jsp) 
+
+
+
+

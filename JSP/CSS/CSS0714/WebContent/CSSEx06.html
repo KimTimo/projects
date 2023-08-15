@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Pseudo 선택자</title>
+<style type="text/css">
+/* Pseudo-elements에는 first-line, first-letter, before, after 네가지가 있습니다. 
+    
+    선택자 : Pseudo-elements{속성 : xxxxx;.....}
+    */
+p:first-line {
+	text-decoration: underline;
+}
+
+p:first-letter {
+	font-size: 25pt;
+}
+p:before {
+	content: "<<"
+}
+p:after {
+	content: ">>"
+}
+</style>
+</head>
+<body>
+	<p class="red">국가는 노인과 청소년의 복지향상을 위한 정책을 실시할 의무를 진다. 국가는 국민 모두의 생산
+		및 생활의 기반이 되는 국토의 효율적이고 균형있는 이용·개발과 보전을 위하여 법률이 정하는 바에 의하여 그에 관한 필요한
+		제한과 의무를 과할 수 있다. 농업생산성의 제고와 농지의 합리적인 이용을 위하거나 불가피한 사정으로 발생하는 농지의 임대차와
+		위탁경영은 법률이 정하는 바에 의하여 인정된다. 국가는 노인과 청소년의 복지향상을 위한 정책을 실시할 의무를 진다. 국가는
+		국민 모두의 생산 및 생활의 기반이 되는 국토의 효율적이고 균형있는 이용·개발과 보전을 위하여 법률이 정하는 바에 의하여 그에
+		관한 필요한 제한과 의무를 과할 수 있다. 농업생산성의 제고와 농지의 합리적인 이용을 위하거나 불가피한 사정으로 발생하는
+		농지의 임대차와 위탁경영은 법률이 정하는 바에 의하여 인정된다.</p>
+
+</body>
+</html>

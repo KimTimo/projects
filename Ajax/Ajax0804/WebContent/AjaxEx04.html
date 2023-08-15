@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+<script>
+	$(function(){
+
+	});
+	
+	function sendData(command, name){
+		var data = {"c" : command};
+		if(command=='name'){ // 명령이 name일 경우만 이름을 추가로 전달
+			data.name = name;
+		}
+		// POST방식 요청
+		$.post({ // $.ajax(옵션객체);
+			url : 'hello.jsp',
+			data : data,
+			success : function(data){ // 성공하면 실행할 함수
+				$("#content").html(data);
+			},
+			error : function(xhr, status, errorThrown) { // 실패시
+				$("#content").html('에러발생<br>')
+				.append("오류 : " + errorThrown + "<br>")
+				.append("상태 : " + status + "<br>")
+			}
+		});
+	}
+</script>
+<style type="text/css">
+	#content {border: 1px solid gray; padding:10px; width: 600px; height:150px; margin: auto; text-align: center;}
+</style>
+</head>
+<body>
+ <button onclick="sendData('date')">날짜얻기</button>
+ <button onclick="sendData('time')">시간얻기</button>
+ <button onclick="sendData('now')">날짜/시간얻기</button>
+ <button onclick="sendData('name','한사람')">인사하기</button>
+ <button onclick="sendData('today')">알수 없는 명령</button> <br />
+ <hr />
+ <div id="content">여기의 내용이 바뀔겁니다.</div>
+ <hr />
+ 여기는 변화가 없어요
+ 
+</body>
+</html>

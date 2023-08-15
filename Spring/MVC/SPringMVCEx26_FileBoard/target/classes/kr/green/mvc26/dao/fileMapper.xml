@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.green.mvc26.dao.FileBoardFileDAO">
+ 	<!-- id: 메서드명 , parameterType : 인수, resultType : 리턴값 -->
+  	<!-- 1. 첨부파일 저장 -->
+  	<insert id="insert" parameterType="fileBoardFileVO">
+  		insert into fileBoardFile 
+  			(idx, ref, saveName, oriName) 
+  		values 
+  			(fileBoardFile_idx_seq.nextval,#{ref}, #{saveName},#{oriName})
+  	</insert>
+  	<!-- 2. 수정시 첨부파일 저장 : 이때는 원본글의 ref가 별도로 존재한다. -->
+  	<insert id="updateInsert" parameterType="fileBoardFileVO">
+  		insert into fileBoardFile 
+  			(idx, ref, saveName, oriName) 
+  		values 
+  			(fileBoardFile_idx_seq.nextval,#{ref}, #{saveName},#{oriName})
+  	</insert>
+  	<!-- 3. 첨부파일 삭제 -->
+  	<delete id="deleteByIdx" parameterType="int">
+  		delete from fileBoardFile where idx=#{idx}
+  	</delete> 
+  	<!-- 4. 원본글의 첨부파일 모두 읽기 -->
+  	<select id="selectList" parameterType="int" resultType="fileBoardFileVO">
+  		select * from fileBoardFile where ref=#{ref}
+  	</select>
+  	<!-- 5. 원본글의 첨부파일 모두 삭제하기 -->
+  	<delete id="deleteByRef" parameterType="int">
+  		delete from fileBoardFile where ref=#{ref}
+  	</delete> 
+  	<!-- 6. 글 1개 가져오기 -->
+  	<select id="selectByIdx" parameterType="int" resultType="fileBoardFileVO">
+  		select * from fileBoardFile where idx=#{idx}
+  	</select> 
+</mapper>

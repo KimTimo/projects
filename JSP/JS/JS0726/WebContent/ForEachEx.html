@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	ar = [3,2,6,1,8,9];
+	// ECMAScript5 Array 객체 
+	//                  (요소, 위치 , 배열)
+	ar.forEach(function(elt, i, array) {
+		document.writeln('ar[' + i + ']=' + elt + '<br>');
+	});
+	var sum = 0;
+	ar.forEach(function(n) {
+		sum += n;
+	});
+	document.writeln('합계 : ' + sum + '<br>');
+	document.writeln('평균 : ' + parseInt(sum/ar.length * 100)/100 + '<br>');
+</script>
+</head>
+<body>
+
+</body>
+</html>

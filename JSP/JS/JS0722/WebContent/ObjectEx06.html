@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>생성자 함수</title>
+<script type="text/javascript">
+// 생성자 함수는 new 키워드를 사용해 객체를 생성할 수 있는 함수를 말한다.
+function Student(name, kor, eng, mat, edps) {
+	this.name = name;
+	this.kor = kor;
+	this.eng = eng;
+	this.mat = mat;
+	this.edps = edps;
+	this.getTotal = function() {
+		return this.kor + this.eng + this.mat + this.edps;
+	}
+	this.getAverage = function() {
+		return this.getTotal()/4;
+	}
+	this.toString = function() {
+		return this.name + "\t" + this.getTotal() + "\t" + this.getAverage()
+	}
+}
+// 객체의 생성
+var student1 = new Student("김머현", 88, 99, 55, 97);
+var student2 = new Student("안곤듀", 78, 92, 84, 94);
+document.writeln(student1 + "<br>");
+document.writeln(student2 + "<br>");
+document.writeln("<br><hr>");
+// 객체 배열 생성
+var students = [];
+// 요소 추가
+students.push(student1);
+students.push(student2);
+students.push("안자몽", 78, 92, 84, 94);
+// 출력
+var output = "이름 총점 평균<br>";
+for(ket in students){
+	output += students[key] + "<br>";
+}
+document.write
+document.write
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

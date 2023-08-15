@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>표 위아래 정렬</title>
+</head>
+<body>
+	<!-- table>(tr>td{아이템 $$}*3)*2 -->
+	<table border="1" style="width: 500px; margin: auto; height: 200px;">
+		<tr>
+			<td valign="top">아이템 01</td>
+			<td valign="top" align="center" >아이템 02</td>
+			<td valign="top" align="right">아이템 03</td>
+		</tr>
+		<tr align="center" bgcolor="silver">
+			<td valign="top">아이템 01</td>
+			<td valign="middle">아이템 02</td>
+			<td valign="bottom">아이템 03</td>
+		</tr>
+		<tr>
+			<td valign="bottom" align="left" bgcolor="green">아이템 01</td>
+			<td valign="bottom" align="center" bgcolor="skyblue">아이템 02</td>
+			<td valign="bottom" align="right" bgcolor="yellow">아이템 03</td>
+		</tr>
+	</table>
+</body>
+</html>

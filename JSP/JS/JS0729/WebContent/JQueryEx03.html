@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>선택자 연습 : 양식 필터 선택자</title>
+<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		// 3초후에 select의 자식 option들 중에서 선택된 항목의 내용
+		setTimeout(function() {
+			// val() : value값 ---> 입력양식
+			// text() : 내용을 텍스트
+			// html() : 내용을 HTML로 가져온다.
+			alert($('select>option:selected').text());
+		}, 3000)
+	});
+</script>
+</head>
+<body>
+	select>option{옵션 $$$}*5
+	
+	<select name="" id="">
+		<option value="">옵션 001</option>
+		<option value="">옵션 002</option>
+		<option value="">옵션 003</option>
+		<option value="">옵션 004</option>
+		<option value="">옵션 005</option>
+	</select>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>문자를 숫자로 바꾸기</title>
+<script type="text/javascript">
+    document.writeln("123" + 1 + "<br>");
+    document.writeln(Number("123") + 1 + "<br>");
+    document.writeln(Number("+123") + 1 + "<br>");
+    document.writeln(Number("123a") + 1 + "<br>");  // NAN(Not a Number)
+    a = "123ㅁ";
+    document.writeln((isNaN(Number(a)) ? "숫자아님" : (Number(a) + 1)) + "<br>");
+    document.writeln("<br><hr>");
+    
+    document.writeln(parseInt("10", 2) + "<br>");
+    document.writeln(parseInt("10", 8) + "<br>");
+    document.writeln(parseInt("10", 16) + "<br>");
+    document.writeln(parseInt("FF", 16) + "<br>");
+    var exp = prompt("수식을 입력하세요");              //==> 문자열로 입력된다.
+    document.writeln(exp + "의 결과는" + exp + "<br>");
+    // eval() : 유효한 자바스크립트 식으로 변경해준다.
+    // eval을 절대 사용하지 말 것! (eval is evil)
+    document.writeln(exp + "의 결과는 " + eval(exp) + "<br>");
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

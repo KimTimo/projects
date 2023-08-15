@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+	
+	<!-- 빈등록 -->
+	<bean id="employeeService" class="kr.green.aop.service.EmployeeServiceImpl"/>	
+		
+	<!-- AOP에 사용할 빈 등록 -->
+	<bean id="loggingAspectBean" class="kr.green.aop.aop.EmployeeAspect"/>	
+	<bean id="transactionAspectBean" class="kr.green.aop.aop.EmployeeTransactionAspect"/>
+		
+	<!-- AOP를 XML로 셑팅해 보겠다!! -->
+	<aop:config>
+		<!-- Spring AOP PointCut(적용될 위치) 정의 -->
+		<aop:pointcut expression="execution(* kr.green.aop.service.EmployeeServiceImpl.*(..) )" id="loggingOperation"/>
+		<aop:pointcut expression="execution(* kr.green.aop.service.EmployeeServiceImpl.*Employee(..) )" id="transactionOperation"/>
+	
+		<!-- AOP 적용 :  aspect -->
+		<aop:aspect id="loggingAspect" ref="loggingAspectBean">
+			<!-- AOP advises -->
+			<aop:before method="beforeLog" pointcut-ref="loggingOperation"/>
+			<aop:after method="afterLog" pointcut-ref="loggingOperation"/>
+		</aop:aspect>
+
+		<aop:aspect id="transactionAspect" ref="transactionAspectBean">
+			<!-- AOP advises -->
+			<aop:before method="selectByEmployeeId" pointcut-ref="transactionOperation"/>
+		</aop:aspect>
+	</aop:config>
+	
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>하위 선택자(Descendant Selector)</title>
+<style type="text/css">
+    /* 자식 */
+    .as > p{
+        color: red;
+    }
+    /* 자손 : 공백 */
+    .as p{
+        text-decoration: underline;
+    }
+    /* 형지 : ~ */
+    div~p{ background-color: silver;}
+    p~h1 { background-color: pink;}
+    /* 인접형제 : + */
+</style>
+</head>
+<body>
+	<p>동해물과 백두산이 마르고 닳도록 하느님이 보우하사. --1</p>
+	<div class="as">
+	    <p>동해물과 백두산이 마르고 닳도록 하느님이 보우하사. --2</p>
+	    <p>동해물과 백두산이 마르고 닳도록 하느님이 보우하사. --3</p>
+	    <div class="qw">
+	        <p>동해물과 백두산이 마르고 닳도록 하느님이 보우하사. --4</p>
+	    </div>
+	</div>
+	<p>동해물과 백두산이 마르고 닳도록 하느님이 보우하사. --5</p>
+	<h1>동해물과 백두산이 마르고 닳도록 하느님이 보우하사. --6</h1>
+	<h2>동해물과 백두산이 마르고 닳도록 하느님이 보우하사. --7</h2>
+	<h1>동해물과 백두산이 마르고 닳도록 하느님이 보우하사. --8</h1>
+
+</body>
+</html>

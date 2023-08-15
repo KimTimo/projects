@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+   var path = location.pathname.substring(1);                // 맨앞 / 지우기
+   document.writeln(path + "<br>");
+   document.writeln(path.indexOf("/") + "<br>");             // 두번째 나타나는 / 위치
+   contextPath = path.substring(0, path.indexOf("/")) + "/"; // 앞뒤로 / 붙이고 경고로만 뽑기
+   
+   document.writeln(contextPath + "<br>");
+</script>
+</head>
+<body>
+
+</body>
+</html>

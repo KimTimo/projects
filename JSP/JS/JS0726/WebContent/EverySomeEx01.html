@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ES5 Array객체 filter</title>
+<script type="text/javascript">
+	ar = [3,2,6,1,8,9];
+	// 모두가 조건에 만족하냐
+	document.writeln("elt<5 = " + ar.every(function(elt, i, array) {
+		return elt<5;
+	}) + "<br>");
+	document.writeln("elt<20 = " + ar.every(function(elt, i, array) {
+		return elt<20;
+	}) + "<br>");
+	// 하나만이라도 조건에 만족하냐
+	document.writeln("elt<5 = " + ar.some(function(elt, i, array) {
+		return elt<5;
+	}) + "<br>");
+	document.writeln("elt<-5 = " + ar.some(function(elt, i, array) {
+		return elt<-5;
+	}) + "<br>");
+	document.writeln("elt<20 = " + ar.some(function(elt, i, array) {
+		return elt<20;
+	}) + "<br>");
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>객체 확장</title>
+<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		var obj1 = {}; // 객체 만들고
+		obj1.name='한사람'; // 속성추가
+		obj1.age=33;
+		
+		var msg = '';
+		 $.each(obj1, function(key, item){ // 반복 
+			msg += key + " : " + item + "<br>";
+			return msg;
+		});
+		document.writeln(msg);
+		
+		// Jquery를 이용한 속성 추가 한번에 추가(객체 결합)
+		$.extend(obj1, {
+			'gender' : 'F',
+			'part' : 'Second Guitar'
+		});
+		var msg = '';
+		 $.each(obj1, function(key, item){ // 반복 
+			msg += key + " : " + item + "<br>";
+			return msg;
+		});
+		document.writeln('<hr>');
+		document.writeln(msg);
+		
+	});
+</script>
+<style type="text/css">
+ 
+</style>
+</head>
+<body>
+	 
+</body>
+</html>

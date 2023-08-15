@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script type="text/javascript">
+    $(function() {
+    	// 이제부터는 여기에 자바스크립트 코드를 사용한다.
+    	
+    	// 순수 자바스크립트
+    	document.getElementById("header1").onclick = function() {
+			this.style.color = 'skyblue';
+			this.style.backgroundColor = 'yellow';
+			alert(this.innerHTML);
+		}
+    	
+    	// JQuery로 쓰게되면
+    	$("#header2").click(function() {
+    		$(this).css('color', 'red');
+    		$(this).css('background-color', 'green');
+			alert($(this).html());
+		});
+    	
+    	
+	});
+</script>
+</head>
+<body>
+    <h1 id="header1">눌러봐!!!! 1</h1>
+    <h1 id="header2">눌러봐!!!! 2</h1>
+
+</body>
+</html>

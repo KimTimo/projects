@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>조건문</title>
+<script type="text/javascript">
+	var today = new Date();
+	
+	document.writeln(today.getYear() + "<br>");     // 1900년 이후 연도수
+	document.writeln(today.getFullYear() + "<br>");
+	document.writeln(today.getMonth() + "<br>");    // 월(0~11)
+	document.writeln(today.getDate() + "<br>");     // 일
+	document.writeln(today.getDay() + "<br>");      // 요일
+	document.writeln(today.getHours() + "<br>");    // 시
+	document.writeln(today.getMinutes() + "<br>");  // 분
+	document.writeln(today.getSeconds() + "<br>");  // 초
+	
+	hh = today.getHours();
+	if(hh<=12){
+		document.writeln("오전<br>");
+	}else{
+		document.writeln("오후<br>");
+	}
+	
+	// switch 문의 이상한 표현
+	switch (true) {
+	case hh<11:  // 값으로 조건식이 어떻게 가능할까? 자동형변환이 이루어져서 가능
+		document.writeln("아침을 달라!!!!!<br>");
+		break;
+	case hh<15:
+		document.writeln("점심을 달라!!!!!!<br>");
+		break;
+	default:
+		document.writeln("저녁을 달라!!!!!!<br>");
+		break;
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>

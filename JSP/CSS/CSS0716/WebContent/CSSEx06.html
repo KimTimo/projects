@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>번호 붙이기</title>
+<style type="text/css">
+body {
+	counter-reset: chapter 0;
+}
+
+h1:before {
+	counter-increment: chapter;
+	content: counter(chapter) ". "
+}
+
+h1 {
+	counter-reset: section 0;
+}
+
+h2:before {
+	counter-increment: section;
+	content: counter(chapter) ". " counter(section) ". "
+}
+</style>
+</head>
+<body>
+	<h1>나는 큰제목 01</h1>
+	<h2>나는 작은제목 01</h2>
+	<h2>나는 작은제목 02</h2>
+
+	<h1>나는 큰제목 02</h1>
+	<h2>나는 작은제목 01</h2>
+	<h2>나는 작은제목 02</h2>
+
+	<h1>나는 큰제목 03</h1>
+	<h2>나는 작은제목 01</h2>
+	<h2>나는 작은제목 02</h2>
+
+	<h1>나는 큰제목 04</h1>
+	<h2>나는 작은제목 01</h2>
+	<h2>나는 작은제목 02</h2>
+
+
+</body>
+</html>

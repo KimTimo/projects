@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>새로운 창에서 부모창의 값 변경하기</title>
+<script type="text/javascript">
+	var child = null;
+	function searchAddr(){
+		child = window.open('child.html');
+	}
+	function setting(){
+		// 부모창에서 자식창에 값 전달
+		child.document.getElementById("addr1").value = "경기도 수원시 장안구 정자동 100-1";
+	}
+</script>
+</head>
+<body>
+	<button onclick = "searchAddr();">우편번호 입력</button>
+	<button onclick = "setting();">자식창에 값변경 </button>
+	<br />
+	주소 : <input type="text" id="address1"/> <br />
+	상세주소 : <input type="text" id="address2"/> <br />
+</body>
+</html>

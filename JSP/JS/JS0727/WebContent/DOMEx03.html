@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var max = 8, min = 2, index = 2;
+
+	function appendItem() {
+		if (index == max) {
+			alert('최대' + max + '개 까지만 가능합니다요.');
+			return;
+		}
+		index++;
+		var divTag = document.createElement("div");
+		divTag.id = "item" + index;
+		var textNode = document.createTextNode("항목" + index + " : ");
+		var inputTag = document.createElement("input");
+		inputTag.type = "text";
+		inputTag.type = "item";
+		inputTag.type = "50";
+		divTag.appendChild(textNode);
+		divTag.appendChild(inputTag);
+		document.getElementById("content").appendChild(divTag);
+	}
+	function aremoveItem() {
+		if (index == min) {
+			alert('최소' + min + '개는 반드시 있어야만 합니다요.');
+			return;
+		}
+		document.getElementById("content").removeChild(document.getElementById("item" + index))
+		index--;
+	}
+</script>
+</head>
+<body>
+	<button onclick="appendItem()">+</button>
+	<button onclick="aremoveItem()">-</button>
+	<hr />
+	<div id="content">
+		<div id="item1">항목1 : <input type="text" name="item" size="50"></div>
+		<div id="item2">항목2 : <input type="text" name="item" size="50"></div>
+	</div>
+</body>
+</html>

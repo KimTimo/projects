@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="member">
+ 	<!-- id: 메서드명 , parameterType : 인수, resultType : 리턴값 -->
+  	<!-- 저장 -->
+  	<insert id="insert" parameterType="memberVO">
+  		INSERT INTO MEMBER VALUES 
+		(member_idx_SEQ.nextval,#{userid},#{password},#{username},#{email}, #{phone},#{postCode},#{roadAddr},#{jibunAddr},#{dtailAddr},0);
+   	</insert>
+  	<!-- 수정 -->
+  	<update id="update" parameterType="memberVO">
+  		update member set 
+  		email = #{email}, phone=#{phone},postCode= #{postCode},roadAddr=#{roadAddr},jibunAddr=#{jibunAddr},dtailAddr=#{dtailAddr}
+  		where
+  			idx= #{idx}
+  	</update>
+  	<!-- 완전삭제 -->
+  	<delete  id="delete" parameterType="int">
+  		delete from member 	where	idx= #{idx}
+  	</delete>
+  	<!-- 인증여부 수정 : // 0 : 가입미인증, 1: 인증, 2:휴먼계정, 3:탈퇴 ..... 여러분이 맘대로 결정한다.-->
+  	<update id="updateUse" parameterType="HashMap">
+  		update member set 
+  			use = #{use}
+  		where
+  			idx= #{idx}
+  	</update>  	
+  	<!-- 아이디 중복확인 -->
+  	<select id="countUserID" parameterType="string" resultType="int">
+  		select count(*) from member where userid=#{userid}
+  	</select>
+  	<!-- 회원목록 : 관리자만 사용 -->
+  	<select id="selectList" resultType="memberVO">
+  		select * from member order by idx desc
+  	</select>
+  	<!-- idx로 1개얻기 -->
+  	<select id="selectByIdx" parameterType="int" resultType="memberVO">
+  		select * from member where idx=#{idx}
+  	</select>
+  	<!-- userid로 1개얻기 -->
+  	<select id="selectByUserID" parameterType="string" resultType="memberVO">
+  		select * from member where userid=#{userid}
+  	</select>
+  	<!-- 비밀번호 수정 -->
+   	<update id="updatePassword" parameterType="memberVO">
+  		update member set 
+  			password = #{newPassword}
+  		where
+  			userid= #{userid} and password=#{password} and username = #{username}
+  	</update>  	
+ </mapper>

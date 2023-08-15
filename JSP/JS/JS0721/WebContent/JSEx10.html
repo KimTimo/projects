@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+    div{
+        width: 150px;
+        height: 50px;
+        border: 1px solid gray;
+        background-color: silver;
+        cursor: pointer;
+        margin: 10px;
+        padding: 10px;
+        float: left;
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+	<h2>각각의 div를 클릭하면 각각 몇번째 div를 클릭했다고 메세지를 띄우고 싶다.</h2>
+	<div id="divScope0">Click me! DIV 0</div>
+	<div id="divScope1">Click me! DIV 1</div>
+	<div id="divScope2">Click me! DIV 2</div>
+	<script> 
+		// 이것을 실행하면 모두 3이 출력이 된다. 왜? for문이 실행되고 나면 i의 값은 3이다.
+		// 실행 시점이 아니라 이벤트 등록시점에 할당된 값이 보여야만 한다.		
+		var i, len = 3; 
+		for (i = 0; i < len; i++) { 
+			document.getElementById("divScope" + i).addEventListener("click", function() {
+				alert("You clicked div #" + i); 
+			}, false);
+		} 
+	</script>
+</body>
+</html>

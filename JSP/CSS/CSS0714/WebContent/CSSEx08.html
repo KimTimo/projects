@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>하위 선택자(Descendant Selector)</title>
+<style type="text/css">
+div p{
+    text-decoration: underline;
+}
+div#box1 p {
+	color: red;
+}
+div#box2 p {
+	color: blue;
+}
+</style>
+</head>
+<body>
+	<p>나는 문단 01</p>
+	<p>나는 문단 02</p>
+	<p>나는 문단 03</p>
+	<div id="box1">
+		<p>나도문단 01</p>
+		<p>나도문단 02</p>
+		<div id="box2">
+			<p>나도문단 01</p>
+			<p>나도문단 02</p>
+		</div>
+	</div>
+
+</body>
+</html>

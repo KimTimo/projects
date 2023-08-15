@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>ELProject</display-name>
+  <!-- 변수등록 시작 -->
+  
+  <!-- 변수등록 종료 -->
+  <!-- 사용자 정의 태그를 등록한다. 시작 -->
+  <jsp-config>
+ <taglib>
+ <taglib-uri>/my-math-functions.tld</taglib-uri>
+ <taglib-location>/WEB-INF/tlds/functions.tld</taglib-location>
+ </taglib>
+</jsp-config>
+  <!-- 사용자 정의 태그를 등록한다. 종료 -->
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>

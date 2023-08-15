@@ -1,0 +1,282 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>layout</title>
+<link rel="stylesheet" type="text/css" href="css/timo.css">
+</head>
+<body>
+ 
+
+<h1 class="logo"><img src="img/Logo2.png" alt="logo"></h1>
+
+    
+<div id="navbar" class="nav"> 
+     <ul>
+      <li><a href="#book1">1</a></li>
+      <li><a href="#book2">2</a></li>
+      <li><a href="#book3">3</a></li> 
+      <li><a href="#book4">4</a></li>
+      <li><a href="#book5">5</a></li> 
+     </ul> 
+    </div>
+    
+    
+    
+ <h2 id="demo"></h2>
+    
+    
+    <div class="row">
+  <div class="column">
+    <img src="img/book.jpg" style="width:300px; height: 450px;" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="img/book2.jpg" style="width:300px; height: 450px;" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="img/book3.jpg" style="width:300px; height: 450px;" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="img/book4.jpg" style="width:300px; height: 450px;" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+  </div>
+</div>
+
+<div id="myModal" class="modal">
+  <span class="close cursor" onclick="closeModal()">&times;</span>
+  <div class="modal-content">
+
+    <div class="mySlides">
+      <div class="numbertext">1 / 4</div>
+      <img src="img/book.jpg" style="width:300px; height: 450px; margin-left: auto; margin-right: auto; display: block;">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">2 / 4</div>
+      <img src="img/book2.jpg" style="width:300px; height: 450px; margin-left: auto; margin-right: auto; display: block;">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">3 / 4</div>
+      <img src="img/book3.jpg" style="width:300px; height: 450px; margin-left: auto; margin-right: auto; display: block;">
+    </div>
+    
+    <div class="mySlides">
+      <div class="numbertext">4 / 4</div>
+      <img src="img/book4.jpg" style="width:300px; height: 450px; margin-left: auto; margin-right: auto; display: block;">
+    </div>
+    
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    <div class="caption-container">
+      <p id="caption"></p>
+    </div>
+
+
+    <div class="column">
+      <img class="demo cursor" src="img/book.jpg" style="width:300px; height: 450px;" onclick="currentSlide(1)" alt="죽고 싶지만 떡볶이는 먹고 싶어">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="img/book2.jpg" style="width:300px; height: 450px;" onclick="currentSlide(2)" alt="나는 나로 살기로 했다">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="img/book3.jpg" style="width:300px; height: 450px;" onclick="currentSlide(3)" alt="을의 연애">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="img/book4.jpg" style="width:300px; height: 450px;" onclick="currentSlide(4)" alt="곰돌이 푸, 행복한 일은 매일 있어">
+    </div>
+  </div>
+</div>    
+    
+    
+    
+    
+    
+    
+    <div class="content">
+     <div class="row1">
+     <a id="book1">Hwa</a>
+     <img src="img/book.jpg" alt="image" style="width: 300px; height: 450px">
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+         <span class="fa fa-star checked"></span>
+         <span class="fa fa-star checked"></span>
+         <span class="fa fa-star checked"></span>
+         <span class="fa fa-star checked"></span>
+         <span class="fa fa-star checked"></span>
+      <h2>죽고 싶지만 떡볶이는 먹고 싶어</h2>
+      <p>의심 없이 편안하게 사랑하고 사랑받고 싶은 한 사람의 이야기
+
+10년 넘게 기분부전장애(가벼운 우울 증상이 지속되는 상태)와 불안장애를 겪으며 정신과를 전전했던 저자와 정신과 전문의와의 12주간의 대화를 엮은 『죽고 싶지만 떡볶이는 먹고 싶어』. 지독히 우울하지도 행복하지도 않은 애매한 기분에 시달렸고, 이러한 감정들이 한 번에 일어날 수 있다는 사실을 알지 못해서 괴로웠던 저자는 2017년 잘 맞는 병원을 찾아 약물치료와 상담치료를 병행하고 있다.
+
+이 책은 저자의 치료 기록을 담고 있다. 사적인 이야기가 가득하지만 어두운 감정만 풀어내기보다는 구체적인 상황을 통해 근본적인 원인을 찾고, 건강한 방향으로 나아가는 것에 중점을 두고 있다. 겉보기에는 멀쩡하지만 속은 곪아 있는 사람들, 불안 속에 하루하루를 버티고 있는 사람들에게 이제까지 간과하고 있었지만 본인으로부터 나오고 있을지 모를 또 다른 소리에 귀 기울여보게 한다.</p>
+      </div>
+      <div class="row2">
+      <a id="book2"></a>
+      <img src="img/book2.jpg" alt="image" style="width: 300px; height: 450px">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+         <span class="fa fa-star checked"></span>
+         <span class="fa fa-star checked"></span>
+         <span class="fa fa-star checked"></span>
+         <span class="fa fa-star"></span>
+         <span class="fa fa-star"></span>
+      <h2>나는 나로 살기로 했다</h2>
+      <p>진짜 ‘나’로 살기 위한 뜨거운 조언들! 어른이 처음인 당신을 위한 단단한 위로들!
+진짜 ‘나’로 살기 위한 뜨거운 조언들! 어른이 처음인 당신을 위한 단단한 위로들!
+“어른이 되어보니 세상은 냉담한 곳이었다.” 김수현은 책을 펴내면서 이런 말을 했다. 부조리가 넘쳐났고, 사람들은 불필요할 정도로 서로에게 선을 긋고, 평범한 이들조차 기회가 있으면 차별과 멸시를 즐긴다. 우리는 자본주의 사회에서 철저한 갑과 을이 되어 살아가고 있다. 그것이 우리가 이토록 발버둥 치며 살고 있는 세상이다. 
+이 책은 우리가 온전한 ‘나’로 살아가기 위해 무엇이 필요한지 말해준다. 돈 많고 잘나가는 타인의 SNS를 훔쳐보며 비참해질 필요 없고, 스스로에게 변명하고 모두에게 이해받으려 애쓰지 말라고 이야기한다. 불안하다고 무작정 열심히 할 필요 없고, 세상의 정답에 굴복하지 말라고 응원한다. 인생의 지나가는 사람들에게 더 이상 상처받지 말고, 누군가의 말에 흔들리지 말고, 자신만의 문제라고 착각하지 말라고. 우리에게 가장 필요한 말, 나답게 살라고 말한다. 
+그래서 이 책은 내가 누구인지 고민할 시간조차 없는 현대인들에게, ‘나’를 돌아보게 하는 시간을 선물하고 있다. 남처럼 사는 것이 아니라 나처럼 살 수 있도록, 진짜 ‘나’로 살기 위해 우리가 한번쯤 생각하고 고민해야 할 것들을 수록했다. 길을 잃고 있는 당신에게 가장 필요한 책, 어른이 되어서도 ‘나’를 찾고자 하는 어른아이를 위한 책, 밥벌이와 어른살이에 지친 모든 현대인에게 이 책을 바친다.</p>
+      </div>
+      <div class="row3">
+      <a id="book3"></a>
+      <img src="img/book3.jpg" alt="image" style="width: 300px; height: 450px">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+         <span class="fa fa-star checked"></span>
+         <span class="fa fa-star checked"></span>
+         <span class="fa fa-star checked"></span>
+         <span class="fa fa-star checked"></span>
+         <span class="fa fa-star"></span>
+      <h2>을의 연애</h2>
+      <p>제가 더 좋아하기 때문에, 그 사람의 사랑을 억지로 삼키고 있습니다. 
+
+요즘 한창 들썩거리는 ‘갑과 을’ 관계는 사회적 이슈에만 있는 걸까? 누구보다 공정해야 할 사이인 연인관계에서도 갑과 을이 존재한다. 서로를 대하는 온도가 같다면 이상적인 연애가 될 테지만, 사람 마음이란 조금씩 어긋나기 마련이다. 씁쓸하지만 대부분 연인관계가 그렇게 흘러간다. 이 관계를 계속하기 위해서는 분명 참는 쪽이 생긴다. 이들은 보통 ‘더 좋아하는’ 쪽이다. 그들은 사랑을 억지로 견뎌내는 ‘을’이 되고 만다. 한쪽으로 기울어진 연애를 하게 되지만, 스스로가 놓으면 끝나버리는 관계인 걸 알기에 어떻게든 버틴다. 너무 사랑하는 그 사람과 헤어질 수 없기에… 그렇게 을은 잘못된 사랑의 늪에서 나오지 못하고 허우적거린다. 
+
+작가 ‘을냥이’(필명)도 과거 을로서 그 사람을 사랑했던 시간이 있었다. 그때의 눈물, 상처, 기억을 갖고 모든 을들을 치유해주기 위해 을의 연애담을 그렸다. 이를 보고 점차 다른 을들도 스스로의 이야기를 털어놓으며 서로에게 위로를 건네기 시작했다. 그렇게 9만 명 이상의 공감을 이끌어낸 페이스북 페이지 ‘을의 연애’ 에피소드를 책으로 엮었다. 이별하지 못하고 그 사람과 연애에서 오늘도 버티고 있는 모든 을의 마음에 소소한 위로를 건네줄 것이다.</p>
+      </div>
+      <div class="row4">
+      <a id="book4"></a>
+      <img src="img/book4.jpg" alt="image" style="width: 300px; height: 450px">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+         <span class="fa fa-star checked"></span>
+         <span class="fa fa-star checked"></span>
+         <span class="fa fa-star checked"></span>
+         <span class="fa fa-star checked"></span>
+         <span class="fa fa-star"></span>
+      <h2>곰돌이푸</h2>
+      <p>디즈니의 사랑스러운 푸가 전하는 행복!
+
+『곰돌이 푸, 행복한 일은 매일 있어』는 푸의 메시지와 삽화가 담긴 책이다. 어떤 상황에서든 여유와 미소를 잊지 않는 곰돌이 푸를 다시 기억하고 만나는 일은, 반복되는 삶 속에서 무엇이 나를 행복하게 하는지를 잊어가는 우리에게, 다시 한 번 행복에 관한 희망과 의미를 되새기게 해줄 것이다. 귀엽고 사랑스러운 모습부터 엉뚱한 모습까지 우리를 자꾸만 웃음 짓게 만드는 푸를, 진심 어린 말로 우리의 마음을 자꾸만 무장 해제시키는 푸를, 초기 삽화부터 우리에게 익숙한 만화영화 속 곰돌이 푸의 모습을 퀄리티 높은 디즈니의 삽화로 소장할 수 있는 것도 큰 즐거움이다.</p>
+      </div>
+        <div class="row5">
+      <a id="book5"></a>
+      <video autoplay muted loop id="myVideo">
+  <source src="video/video.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video>
+
+<div class="content">
+  <h1>교보문고</h1>
+  <h3>[ Kyobo Book Centre , 敎保文庫 ]</h3>    
+  <p>교보문고는 1980년 12월 세워진 후 이듬해 6월 광화문점을 열면서 대형서점 시장에 뛰어들었다. 교보생명의 창업자인 고(故) 신용호 회장은 교보생명 광화문 사옥 지하에 수익성 높은 상가를 유치할 것이란 예상을 깨고 세계 최대 규모 서점인 교보문고를 열었다. 이는 ‘자원이라고는 오직 사람밖에는 없다’는 창업자의 인재 육성의 신념과도 일치한다.
+
+설립 당시 교보문고는 수익성이 낮을 것이라는 우려를 일축하고 창립 5년여 만에 손익분기점을 넘어섰다. 1989년 8월 국내 서점업계 최초로 온라인 정보 시스템(천리안)을 이용한 통신판매 제도를 도입했다. 1994년 대전점에 이어 성남점을 열었다. 2003년 5월 국내 최대 규모인 강남점을 열었다. 2004년 교보문고 북클럽회원이 300만 명을 넘었으며, 같은 해 고객만족도 8년 연속 1위 기업에 선정되었다. 2008년 5월 자회사인 젠츄어를 합병했으며, 에듀교보문고를 출범시켰다. 2009년 4월 한국산업의 브랜드파워(K-BPI) 서적판매 부문 7년 연속 1위 기업에 선정되었다.
+
+2010년 6월 기준으로 교보문고가 그동안 판매한 책은 총 3억 8,961만 5,000여 권에 달한다. 이를 단행본 평균 크기(가로 152mm，세로 225mm) 기준으로 일렬로 늘어놓으면 지구 둘레(3만 9,960km)의 2배가 넘는 8만 7,663km가 되는 길이다. 교보문고의 도서회원제인 북클럽 회원도 1,000만 명을 넘어섰다. 국민 5명 중 1명꼴로 가입한 셈이다. 2012년 6월 본사 사옥을 파주출판문화산업단지로 이전했다.
+
+교보문고는 2015년 5월 말 현재 서울과 부산, 대구, 인천 등 전국에 24개 오프라인 매장과 온라인 서점을 운영하고 있다. 가장 넓은 매장은 1만 1,900m2인 서울 강남점이다. 그 다음은 광화문점(8,952m2)으로 단일 층으로는 세계 최대 규모다. 광화문점의 소장 도서는 약 60만 권에 이르며, 연평균 방문객은 1,500만 명, 연간 판매량도 1,000만 권에 달한다.
+
+교보문고의 주력 사업은 도서 유통사업이다. 면적 3,000여 평, 총 240만여 권의 도서를 보유한 교보문고 파주물류센터는 일일 35만여 권의 도서를 입 · 출고 처리할 수 있는 시스템을 갖추었다. 그 외 주요사업으로 문구, 음반, 기프트 상품 등을 판매하는 핫트랙스 사업, ELT 수입원서(교과서)와 국내서 교재공급 및 개발 사업, 수입원서, 번역서, 저서출판 등의 전공교재 공급사업, 온 · 오프라인 구내서점 개설 운영사업 등을 한다. 교육 프로그램 서비스 사업으로는 에듀교보(RBL), 독서스쿨, 창조독서대학, 교보에듀케어서비스 등이 있다. 교보문고는 문화여행(국내외), 강연회, 낭독공감, V-classic, 인터넷 문학미술관, 전시회 등 책과 음악을 기반으로 한 다양한 문화서비스를 북클럽 회원에게 제공한다.
+
+교보문고는 2014년도에 매출 5,245억 원, 영업이익 44억 원을 기록했다. 교보문고는 지난 2006년부터 신사업인 전자책 사업에 뛰어들었으나 전체 매출액에서 차지하는 기여도는 낮다. 국내 전자책 시장 규모는 2010년 1,975억 원, 2011년 2,891억 원, 2012년 3,250억 원, 2013년 5,838억 원으로 매년 꾸준히 성장하고 있지만(한국전자출판협회 자료), 2014년도 전체 도서 시장에서 전자책이 차지한 비중은 2~3%에 그쳤다.
+
+2015년 5월 말 기준 교보문고의 최대주주는 교보생명보험이며, 보유 지분은 100%다.
+[네이버 지식백과] 교보문고 [Kyobo Book Centre, 敎保文庫] (네이버 기관단체사전 : 기업, 굿모닝미디어)
+
+</p>
+  <button id="myBtn" onclick="myFunction()">Pause</button>
+</div>
+
+      </div>
+    </div>
+   <footer>
+     <address>H.P : 010-8875-8548 | E-mail : eogus8875@naver.com</address>
+     <p>COPYRIGHTⓒ2018 KIMDAEHYEON. ALL RIGHTS RESERVED</p>
+   </footer>
+  
+  </section>
+ <script>
+window.onscroll = function() {myFunction()};
+
+var navbar = document.getElementById("navbar");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+</script>
+    
+<script>
+function openModal() {
+  document.getElementById('myModal').style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById('myModal').style.display = "none";
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script> 
+    <!--<script>
+      // Set the date we're counting down to
+      var countDownDate = new Date("Jan 5, 2019 15:37:25").getTime();
+      
+      // Update the count down every 1 second
+      var x = setInterval(function() {
+      
+        // Get todays date and time
+        var now = new Date().getTime();
+          
+        // Find the distance between now and the count down date
+        var distance = countDownDate - now;
+          
+        // Time calculations for days, hours, minutes and seconds
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+          
+        // Output the result in an element with id="demo"
+        document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+        + minutes + "m " + seconds + "s ";
+          
+        // If the count down is over, write some text 
+        if (distance < 0) {
+          clearInterval(x);
+          document.getElementById("demo").innerHTML = "EXPIRED";
+        }
+      }, 1000);
+      </script>   
+    -->
+    
+</body>
+</html>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<examResults>
+    <examResult>
+        <name>한사람</name>
+        <dob>2120년 10월 24일(목) 12:00:00</dob>
+        <percentage>45.0</percentage>
+    </examResult>
+    <examResult>
+        <name>두사람</name>
+        <dob>2120년 10월 24일(목) 12:00:00</dob>
+        <percentage>45.0</percentage>
+    </examResult>
+    <examResult>
+        <name>세사람</name>
+        <dob>2120년 10월 24일(목) 12:00:00</dob>
+        <percentage>45.0</percentage>
+    </examResult>
+    <examResult>
+        <name>네사람</name>
+        <dob>2120년 10월 24일(목) 12:00:00</dob>
+        <percentage>45.0</percentage>
+    </examResult>
+</examResults>

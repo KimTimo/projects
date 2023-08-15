@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>클래스 선택자(Class Selector)</title>
+<style type="text/css">
+/* .으로 시작하면 사용하는 곳에서 class="이름" 으로 사용한다. */
+.redColor {
+	color: red;
+}
+
+/* 복수개의 태그 선택자 */
+h1, h2, p {
+	text-decoration: underline;
+}
+
+h2.redColor {
+	background-color: yellow;
+}
+</style>
+</head>
+<body>
+	<h1 class="redColor">제목 1</h1>
+	<p class="redColor">문단 01</p>
+	<h2 class="redColor">작은제목 1</h2>
+	<h1 class="redColor">제목 2</h1>
+	<p class="redColor">문단 02</p>
+	<h2 class="redColor">작은제목 2</h2>
+	<h1 class="redColor">제목 3</h1>
+	<p class="redColor">문단 03</p>
+	<h2 class="redColor">작은제목 3</h2>
+
+</body>
+</html>

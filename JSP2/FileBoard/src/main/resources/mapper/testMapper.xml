@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="oracledb.test">
+ 	<!-- id: 메서드명 , parameterType : 인수, resultType : 리턴값 -->
+  	<select id="today" resultType="date">
+  		select SYSDATE from dual
+  	</select>
+  	<select id="calc" parameterType="hashmap" resultType="int">
+  		select (#{num1} + #{num2}) * #{num3} from dual
+  	</select>
+  	<!-- 
+	쿼리에 <, <= >, >=가 들어갈 경우에는 반드시 <![CDATA[ ]]> 섹션안에 써야 한다. 왜? 태그로 인식할 수 있기 때문
+	<![CDATA[ 명령 ]]> 섹션 안의 내용은 태그가 아닌 내용으로 인식되기 때문이다.
+	 -->	
+	<select id="calcVO" parameterType="hashmap" resultType="testVO" >
+		<![CDATA[
+		select SYSDATE AS today, (#{num1} + #{num2}) * #{num3} AS result, #{name} || '씨 반갑습니다.' AS message from dual
+		]]>
+	</select>
+	<select id="calcMap" parameterType="hashmap" resultType="hashmap" >
+		<![CDATA[
+		select SYSDATE AS today, (#{num1} + #{num2}) * #{num3} AS result, #{name} || '씨 반갑습니다.' AS message from dual
+		]]>
+	</select>
+</mapper>

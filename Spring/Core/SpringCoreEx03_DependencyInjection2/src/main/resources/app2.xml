@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!-- 생성자를 통한 주입 -->
+	<bean id="address1" class="kr.green.core.vo.Address">
+		<constructor-arg value="성남"/>
+		<constructor-arg value="미금로 3가"/>
+		<constructor-arg value="대한민국"/>
+	</bean>
+	<bean id="address2" class="kr.green.core.vo.Address">
+		<constructor-arg value="대한민국"/>
+		<constructor-arg value="성남"/>
+		<constructor-arg value="미금로 3가"/>
+	</bean>
+	<bean id="address3" class="kr.green.core.vo.Address">
+		<constructor-arg value="대한민국" index="2"/>
+		<constructor-arg value="성남" index="0"/>
+		<constructor-arg value="미금로 3가" index="1"/>
+	</bean>
+	<!-- 기본자료형과 객체형을 생성자로 동시에 주입 -->
+	<bean id="person1" class="kr.green.core.vo.Person">
+		<constructor-arg value="35" type="int"/>
+		<constructor-arg value="한사람" type="java.lang.String"/>
+		<constructor-arg ref="address1"/>
+	</bean>
+	<bean id="person2" class="kr.green.core.vo.Person">
+		<constructor-arg ref="address1"/>
+		<constructor-arg value="35" type="int"/>
+		<constructor-arg value="한사람" type="java.lang.String"/>
+	</bean>
+	<!-- 기본자료형과 객체형을 Setter로 동시에 주입 -->
+	<bean id="person3" class="kr.green.core.vo.Person">
+		<property name="name" value="천송이"/>
+		<property name="age" value="32"/>
+		<property name="address" ref="address3"/>
+	</bean>
+	<bean id="person4" class="kr.green.core.vo.Person">
+		<property name="address" ref="address3"/>
+		<property name="age" value="32"/>
+		<property name="name" value="천송이"/>
+	</bean>
+	<bean id="person5" class="kr.green.core.vo.Person">
+		<property name="age" value="32"/>
+		<property name="name" value="천송이"/>
+		<property name="address">
+			<bean class="kr.green.core.vo.Address">
+				<property name="city" value="용인시"/>
+				<property name="state" value="고림로 34번길"/>
+				<property name="country" value="경기민국"/>
+			</bean>
+		</property>
+	</bean>
+	
+	
+	
+</beans>

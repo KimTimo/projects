@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
+
+	<aop:aspectj-autoproxy />
+
+	<bean id="opBean" class="kr.green.aop.aop.Operation" />
+	<bean id="trackAspect" class="kr.green.aop.aop.TrackOperation" />
+
+	<aop:config>
+		<aop:aspect id="myaspect" ref="trackAspect">
+			<!-- @Before 모든메소드에 적용 -->
+			<aop:pointcut id="pointCutBefore"
+				expression="execution(* kr.green.aop.aop.Operation.*(..))" />
+			<aop:before method="before" pointcut-ref="pointCutBefore" />
+
+			<!-- @After m으로시작되고 인수가 없는 메소드에 적용 -->
+			<aop:pointcut id="pointCutAfter"
+				expression="execution(* kr.green.aop.aop.Operation.m*())" />
+			<aop:after method="after" pointcut-ref="pointCutAfter" />
+
+			<!-- returning -->
+			<aop:after-returning returning="result" method="returning"
+				pointcut-ref="pointCutBefore" />
+
+			<!-- @Around -->
+			<aop:pointcut id="pointCutAround"
+				expression="execution(* kr.green.aop.aop.Operation.*(..))" />
+			<aop:around method="around" pointcut-ref="pointCutAround" />
+
+			<!-- @AfterThrowing -->
+			<aop:pointcut id="pointCutAfterThrowing"
+				expression="execution(* kr.green.aop.aop.Operation.v*(..))" />
+			<aop:after-throwing method="throwsMethod" throwing="error"
+				pointcut-ref="pointCutAfterThrowing" />
+		</aop:aspect>
+	</aop:config>
+</beans>

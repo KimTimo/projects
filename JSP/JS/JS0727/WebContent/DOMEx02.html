@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+    .title{
+        color: blue;
+        font-style: italic;
+    }
+</style>
+<script type="text/javascript">
+   window.onload = function() {
+	   var h1Tag = document.getElementsByTagName("h1");  // 태그 이름으로 찾아 배열로 만든다.
+	   alert(h1Tag.length + "개 있어용!!");
+	   var titleTag = document.getElementsByName("title");  // 태그 이름으로 찾아 배열로 만든다.
+	   alert(titleTag.length + "개 있어용!!");
+	   for(i in titleTag){
+		   titleTag[i].style.color = 'blue';
+		   titleTag[i].style.backgroundColor = 'yellow';
+		   titleTag[i].style.fontSize = '50pt';
+	   }
+}
+</script>
+</head>
+<body>
+    <h1>나는 001번째 제목입니다</h1>
+    <h2>나는 001번째 제목입니다</h2>
+    <h2 name="title">나는 002번째 제목입니다</h2>
+    <h1>나는 002번째 제목입니다</h1>
+    <h2>나는 001번째 제목입니다</h2>
+    <h2>나는 002번째 제목입니다</h2>
+    <h1 name="title">나는 003번째 제목입니다</h1>
+    <h2>나는 001번째 제목입니다</h2>
+    <h2>나는 002번째 제목입니다</h2>
+    <h1>나는 004번째 제목입니다</h1>
+    <h2 name="title">나는 001번째 제목입니다</h2>
+    <h2>나는 002번째 제목입니다</h2>
+
+</body>
+</html>

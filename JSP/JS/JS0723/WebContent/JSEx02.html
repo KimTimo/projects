@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>자바스크립트의 정보의 은폐</title>
+<script type="text/javascript">
+function Rectangle(w, h){
+	// 함수내에서 변수 선언시 var를 붙이면 지역변수가 된다. 정보의 은폐가 된다.
+	if(w>0)
+		var width = w;
+	else 
+		throw '폭은 음수가 될 수 없습니다.' // 예외를 던진다.
+	if(h>0)	
+		var height = h;
+	else
+		throw '높이는 음수가 될 수 없습니다.'
+		
+	// 간접적으로 접근이 가능하도록 getter & setter를 만들어 주어야 한다
+	this.getWidth = function(){ return width; }
+	this.getHeight = function(){ return height; }
+	// 코드로 작성되기 때문에 예외 처리가 가능하다.
+	this.setWidth = function(w){ 
+		if(w<0){
+			throw '폭은 음수가 될 수 없습니다.' // 예외를 던진다.
+		}
+		width = w; 
+	}
+	this.setHeight = function(h){ 
+		if(h<0) {
+			throw '높이는 음수가 될 수 없습니다.'
+		}
+		height = h; 
+	}
+}
+Rectangle.prototype.getArea = function(){
+	// return width * height; // 외부에서 직접 접근이 불가하다.
+	return this.getWidth() * this.getHeight();
+}
+// 자바스크립트 예외 처리
+try{
+	rect1 = new Rectangle(5, 7);
+	document.write("폭 : " + rect1.getWidth() + ", 높이 : " + rect1.getHeight() + "의 넓이 : " + rect1.getArea()+"<br>");
+	
+	rect2 = new Rectangle(-4, -8);
+	document.write("폭 : " + rect2.getWidth() + ", 높이 : " + rect2.getHeight() + "의 넓이 : " + rect2.getArea()+"<br>");
+	
+	rect1.setWidth(-7);
+	document.write("폭 : " + rect1.getWidth() + ", 높이 : " + rect1.getHeight() + "의 넓이 : " + rect1.getArea()+"<br>");
+}catch(e){
+	alert(e);
+}
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- Map에 주입하기 -->
+	<!-- 1. 생성자를 통한 주입 -->
+	<bean id="mapObject1" class="kr.green.core.vo.MapObject">
+		<constructor-arg>
+			<map>
+			    <entry key="computer" value="1500000"/>
+			    <entry key="modem" value="37000"/>
+			    <entry key="printer" value="220000"/>
+			    <entry key="keyboard" value="72000"/>
+			</map>
+		</constructor-arg>
+	</bean>
+	<!-- 2. Setter를 통한 주입 -->
+	<bean id="mapObject2" class="kr.green.core.vo.MapObject">
+		<property name="map">
+			<map>
+			    <entry key="computer" value="1500000"/>
+			    <entry key="modem" value="37000"/>
+			    <entry key="printer" value="220000"/>
+			    <entry key="keyboard" value="72000"/>
+			</map>
+		</property>
+	</bean>
+	
+	<!-- Map객체 만들기 -->
+	<bean id="map" class="java.util.TreeMap">
+		<constructor-arg>
+			<map>
+			    <entry key="computer" value="1500000"/>
+			    <entry key="modem" value="37000"/>
+			    <entry key="printer" value="220000"/>
+			    <entry key="keyboard" value="72000"/>
+			</map>
+		</constructor-arg>
+	</bean>
+	<!-- 참조로 Map객체 전달 -->
+	<bean id="mapObject3" class="kr.green.core.vo.MapObject">
+		<property name="map" ref="map"/>
+	</bean>
+</beans>

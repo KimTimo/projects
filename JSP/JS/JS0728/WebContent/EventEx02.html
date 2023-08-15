@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이벤트 연결하기</title>
+<script type="text/javascript">
+	window.onload = function(){ // onload : 문서가 모두 읽은 다음에
+		// 이벤트객체를 인수로 받을 수 있다.
+		document.getElementById("btn").onclick = function(e) {
+			alert("1. " + e);
+			var event = e || window.event; // 이벤트 정보가 넘어오지 않으면 이벤트 정보 얻기
+			alert("2. " + window.event);
+			document.body.innerHTML = '';
+			for(key in event){
+				document.body.innerHTML += "<div>" + key + " : " + event[key]   + "</div>" 
+			}
+		}
+	}
+</script>
+<style type="text/css">
+	
+</style>
+</head>
+<body>
+	<button id="btn">눌러봐!!</button>
+</body>
+</html>

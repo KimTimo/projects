@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>선택자 연습 : 함수 필터 선택자</title>
+<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		// 요소:contains(값)
+		$("td:contains('제목')").css('color','red'); // 포함
+		$("tr:eq(1)").css('background-color','pink'); // 몇번째
+		$("tr:gt(2)").css('background-color','silver'); // 크다
+		$("tr:lt(1)").css('background-color','silver'); // 적다
+		$("td:has(b)").css('background-color','skyblue'); // b태그를 가지고 있으면
+		
+		$("td:nth-child(3n)").css('color','green'); // 3, 6, 9 ...
+		$("td:nth-child(3n+1)").css('color','blue'); // 1, 4, 7
+		$("td:nth-child(3n+2)").css('color','orange'); // 2, 5, 8
+	});
+</script>
+</head>
+<body>
+	table[border='1']>(tr>td{항목 $$}*5)*4
+	<table border="1">
+		<tr>
+			<td>항목 01</td>
+			<td>항목 02</td>
+			<td>제목 03</td>
+			<td>항목 04</td>
+			<td>항목 <b>05</b></td>
+		</tr>
+		<tr>
+			<td>항목 01</td>
+			<td>제목 <b>02</b></td>
+			<td>항목 03</td>
+			<td>항목 04</td>
+			<td>항목 05</td>
+		</tr>
+		<tr>
+			<td>항목 01</td>
+			<td>항목 02</td>
+			<td>항목 03</td>
+			<td>제목 04</td>
+			<td>항목 05</td>
+		</tr>
+		<tr>
+			<td>항목 01</td>
+			<td>항목 02</td>
+			<td>항목 03</td>
+			<td>항목 04</td>
+			<td>항목 05</td>
+		</tr>
+	</table>
+	
+	
+</body>
+</html>

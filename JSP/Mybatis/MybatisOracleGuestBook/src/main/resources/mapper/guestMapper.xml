@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="guest">
+ 	<!-- 1. 개수얻기 -->
+ 	<select id="selectCount" resultType="int">
+ 		select count(*) from guest 	
+ 	</select>
+ 	<!-- 2. 1개 얻기 -->
+ 	<select id="selectByIdx" parameterType="int" resultType="guestBookVO">
+ 		select * from guest where idx=#{idx }
+ 	</select>
+ 	<!-- 3. 1페이지 얻기 -->
+ 	<select id="selectList" parameterType="hashmap" resultType="guestBookVO">
+ 		select 
+ 			*
+ 		from
+	 		(select 
+	 			rownum rnum, R.*
+	 		from
+	 			(select * from guest order by idx desc) R
+	 		where
+	 			<![CDATA[
+	 				rownum <= #{endNo}
+	 			]]>
+			) Q
+		where
+ 			<![CDATA[
+ 			rnum >= #{startNo}
+ 			]]>
+ 	</select>
+ 	
+ 	<!-- 4. 저장하기 -->
+ 	<insert id="insert" parameterType="guestBookVO">
+ 		insert into	guest 
+ 			(idx, name, password, content, regDate, ip) 
+ 		values 
+ 			(guest_idx_seq.nextval, #{name}, #{password}, #{content}, SYSDATE, #{ip})
+ 	</insert>
+ 	<!-- 5. 수정하기 -->
+ 	<update id="update" parameterType="guestBookVO">
+ 		update 
+ 			guest 
+ 		set
+ 			content=#{content}, regdate=SYSDATE, ip=#{ip}
+ 		where
+ 			idx = #{idx}
+ 	</update>
+ 	
+ 	<!-- 6. 삭제하기 -->
+ 	<delete id="delete" parameterType="int">
+ 		delete from guest where idx = #{idx }
+ 	</delete>
+</mapper>

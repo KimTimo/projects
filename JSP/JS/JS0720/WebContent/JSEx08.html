@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>자바스크립트로 달력 만들기</title>
+<script type="text/javascript">
+	var yy=0, mm=0; // 변수 선언
+	var today = new Date(); // 날짜객체
+	window.onload = function(){
+		yy = today.getFullYear(); // 년도
+		mm = today.getMonth() + 1;// 월
+		document.getElementById("yy").value = yy;
+		document.getElementById("mm").value = mm;
+	}
+	function viewCalendar(){
+		// 값읽기
+		yy = document.getElementById("yy").value;
+		mm = document.getElementById("mm").value;
+		// 표만들기
+		var html = "<table>";
+		 html += "<tr>";
+		 // 제목
+		 html += "<td colspan='7' class='title'>" + yy + "년 " + mm + "월</td>"
+		 html += "</tr>";
+		 html += "<tr>";
+		 html += "<th>일</th><th>월</th><th>화</th><th>수</th><th>목</th><th>금</th><th>토</th>";
+		 html += "</tr>";
+		 html += "<tr>";
+		 // 1일의 요일을 맞추기 위해 빈칸 출력
+		 for(i=0;i<weekDay(yy, mm, 1);i++) html += "<td>&nbsp;</td>";
+		 for(i=1;i<=lastDay(yy, mm);i++){// 날짜 출력
+			 html += "<td>" + i + "</td>";
+			 if(weekDay(yy, mm, i)==6){ // 출력한 날짜가 토요일이면
+				 html += "</tr>"; // 줄마무리
+				 if(i!=lastDay(yy, mm)){ // 마지막 날짜가 아니면 새로운 줄 시작
+					 html += "<tr>";
+				 }
+			 }
+		 }
+		 // 마지막 표 마무리
+		 if(weekDay(yy, mm, lastDay(yy, mm))!=6){ // 마지막날짜가 토요일이 아니면
+			 for(i=weekDay(yy, mm, lastDay(yy, mm));i<6;i++) { // 빈칸 출력
+				 html += "<td>&nbsp;</td>";
+			 }
+			 html += "</tr>";
+		 }
+		 html += "<table>"; // 테이블 마무리
+		 document.getElementById("cal").innerHTML = html; // 달력 출력
+	}
+	function isLeapYear(yy){ // 윤년을 판단하는 함수
+		return yy%400==0 || yy%4==0 && yy%100!=0;
+	}
+	function lastDay(yy, mm){ // 월의 마지막 날짜를 구하는 함수
+		var m = [31,28,31,30,31,30,31,31,30,31,30,31];
+		m[1] = isLeapYear(yy) ? 29 : 28;
+		return m[mm-1];
+	}
+	function totalDay(yy,mm,dd){ // 전체 일수를 구하는 함수
+		var t = (yy-1) * 365 +  parseInt((yy-1)/4) - parseInt((yy-1)/100) + parseInt((yy-1)/400);
+		for(var i=1;i<mm;i++) t += lastDay(yy, i);
+		return t + dd;
+	}
+	function weekDay(yy,mm,dd){ // 요일을 구하는 함수
+		return totalDay(yy, mm, dd)%7;
+	}
+</script>
+<style type="text/css">
+	table { margin: auto; border: none; }
+	th { width:30px; border: 1px solid gray; background-color: silver;}
+	td { border: 1px solid gray; text-align: right;}
+	.title { text-align: center; font-size: 18pt; border: none;}
+</style>
+</head>
+<body>
+	<input type="text" id="yy" size="5">년
+	<input type="text" id="mm" size="5">월
+	<br /><hr />
+	<button onclick="viewCalendar()">달력보여줘!!</button>
+	<br /><hr />
+	<div id="cal"></div>
+</body>
+</html>

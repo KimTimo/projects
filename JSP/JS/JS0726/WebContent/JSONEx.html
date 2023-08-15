@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>문자열/JSON 상호 변환</title>
+<script type="text/javascript">
+	// 객체
+	var obj ={
+			'name' : '한사람', 'age' : 37, 'gender' : '남'
+	};
+	document.writeln(typeof obj + " : " + obj + "<br>");
+	document.writeln(obj.name + "<br>");
+	
+	// 객체를 string으로
+	var objStr = JSON.stringify(obj); 
+	document.writeln(typeof objStr + " : " + objStr + "<br>");
+	
+	// string을 객체로 변환
+	var obj2 = JSON.parse(objStr); 
+	document.writeln(typeof obj2 + " : " + obj2 + "<br>");
+	document.writeln(obj2.name + "<br>");
+	
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

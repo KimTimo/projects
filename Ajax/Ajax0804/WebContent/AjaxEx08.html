@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JQuery Ajax 보조메서드</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+<script>
+	$(function(){
+		var data1 = {'name':'나인간','age':18, 'gender':'남'};
+		var data2 = {'name':'너인간','age':22, 'gender':'여'};
+		$('body').append('<h2>' + data1 + '</h2>');
+		$('body').append('<h2>' + $.param(data2) + '</h2>');
+		
+		//--------------------------------------------------------
+		$("#my_form").submit(function(event) {
+			var name = $("#name").val();
+			var age = $("#age").val();
+			
+			// var url = 'result.jsp?name=' + encodeURIComponent(name) + "&age=" + age;
+			// $("#result").load(url);
+			
+			/*
+			var url = 'result.jsp';
+			var data = {'name':name, 'age':age};
+			var params = $.param(data);
+			$("#result").load(url,params);
+			*/
+			
+			// serialize(), serializeArray() :  param과 같은 역할을 하지만 폼에서 넘어온 값을 처리해 준다.
+			/*
+			var url = 'result.jsp';
+			$("#result").load(url, $(this).serialize());
+			*/
+			
+			var url = 'result.jsp';
+			$("#result").load(url, $(this).serializeArray());
+			
+			event.preventDefault(); // 서버 전송을 해제
+		});
+	});
+</script>
+</head>
+<body>
+	<form action="#" id="my_form" method="post">
+		이름 : <input type="text" name="name" id="name"> <br />
+		나이 : <input type="text" name="age" id="age"> <br />
+		<input type="submit" value="Get Ajax String"/>
+	</form>
+	<hr />
+	<div id="result"></div>
+	<hr />
+</body>
+</html>

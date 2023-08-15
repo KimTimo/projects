@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>새창띄우기</title>
+<script type="text/javascript">
+	// open(URL, name, features, replace) : 새로운 window 객체를 생성합니다.
+	function open1(){
+		window.open(); // 빈윈도우
+	}
+	function open2(){
+		open('DateEx01.html'); // 지정문서가 있는 윈도우, 매번 새창이 나온다.
+	}
+	function open3(){
+		open('DateEx01.html','myWin'); // 지정문서가 있는 윈도우, 현재창이 바뀐다.
+	}
+	function open4(){
+		win = open('DateEx01.html','myWin', 'width=300,height=400');
+	}
+	function open5(){
+		win = open(); // 빈윈도우
+		win.document.writeln('<h1>Hello World!!!</h1>'); // 내용
+	}
+</script>
+</head>
+<body>
+	<button onclick="open1()">새창띄우기 1</button>
+	<button onclick="open2()">새창띄우기 2</button>
+	<button onclick="open3()">새창띄우기 3</button>
+	<button onclick="open4()">새창띄우기 4</button>
+	<button onclick="open5()">새창띄우기 5</button>
+</body>
+</html>

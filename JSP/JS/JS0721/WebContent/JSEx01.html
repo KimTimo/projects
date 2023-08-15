@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>함수</title>
+<script type="text/javascript">
+    var hello = function(message) {
+		alert("[" + message + "]");
+	}
+    // 함수도 타입(자료형)이다.
+    document.writeln(typeof(hello) + "<br>");
+    // 함수의 내용이 출력된다.
+    document.writeln(hello + "<br>");
+    // 내장함수는 내용이 보이지 않는다.
+    document.writeln(alert + "<br>");
+    // 함수의 호출
+    hello("반갑슴네다~");
+    // 변수에 함수를 대입할 수 있다.
+    showMessage = alert;
+    showMessage("반갑소~");
+    
+</script>
+</head>
+<body>
+
+</body>
+</html>

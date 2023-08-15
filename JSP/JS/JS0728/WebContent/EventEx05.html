@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이벤트 전달 2</title>
+<script type="text/javascript">
+	window.onload = function(){ // onload : 문서가 모두 읽은 다음에
+		document.getElementById("outerDIV").onclick = function(){
+			alert("밖의 DIV");
+		}
+		document.getElementById("innerDIV").onclick = function(){
+			alert("안의 DIV");
+		}
+		document.getElementById("header").onclick = function(){
+			alert("나는 제목");
+		}
+		document.getElementById("paragraph").onclick = function(e){
+			var event = e || window.event;
+			alert("나는 문단");
+			// 이벤트 전달을 맊는 방법
+			event.cancelBubble = true; // IE의 경우
+			// 그외 브라우저의 경우!!!
+			if(event.stopPropagation){ // event.stopPropagation이 존재하면
+				event.stopPropagation();
+			}
+		}
+	}
+</script>
+<style type="text/css">
+	* { border : 1px solid gray; padding:10px;}
+</style>
+</head>
+<body>
+	<!-- 이벤트 전달을 제거해 보자 -->
+	<div id="outerDIV">
+		<div id="innerDIV">
+			<h1 id="header">
+				<p id="paragraph">나는 문단</p>
+			</h1>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>매개변수의 개수</title>
+<script type="text/javascript">
+	// 매개변수의 개수에 따라 다르게 작동하는 함수
+	var ar1 = Array();
+	var ar2 = Array(10);
+	var ar3 = Array(1, 2, 3, 4, 5);
+
+	document.writeln(ar1.length + "개 : " + ar1 + "<br>");
+	document.writeln(ar2.length + "개 : " + ar2 + "<br>");
+	document.writeln(ar3.length + "개 : " + ar3 + "<br>");
+	document.writeln("<hr>");
+	ar1.push(1);
+	document.writeln(ar1.length + "개 : " + ar1 + "<br>");
+
+	// 위와 같은 함수는 가변인수를 이용하면 가능하다.
+	// JavaScript 함수에는 arguments라는 숨겨진 배열이 존재한다. 모든 인수를 배열로 받아준다.
+	function MyArray() {
+		if (arguments == null) {                    // 매개변수가 없으면 null
+
+			return null;
+		} else if (arguments.length == 1) {         // 매개변수가 1개면
+			var ar = [];                            // 배열 생성
+			for (i = 0; i < arguments[0]; i++)
+				ar.push(null);                      // 그 숫자만큼 null로 배열의 값을 초기화
+			return ar;
+		} else {                                    // 매개변수가 2개 이상이면
+			var ar = [];                            // 배열.push(값) : 추가, 배열.pop() : 제거
+			for (i in arguments)
+				ar.push(arguments[i]);              // 매개변수 개수만큼 배열만큼 배열에 추가
+			return ar;
+		}
+	}
+	var ar1 = MyArray();
+	var ar2 = MyArray(10);
+	var ar3 = MyArray(1, 2, 3, 4, 5);
+
+	document.writeln(ar1.length + "개 : " + ar1 + "<br>");
+	document.writeln(ar2.length + "개 : " + ar2 + "<br>");
+	document.writeln(ar3.length + "개 : " + ar3 + "<br>");
+	document.writeln("<hr>");
+</script>
+</head>
+<body>
+
+</body>
+</html>

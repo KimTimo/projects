@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!--  빈등록 -->
+	<bean id="activeMQMessaging" class="kr.green.core.vo.ActiveMQMessaging"></bean>
+	<bean id="smsMessaging" class="kr.green.core.vo.SMSMessaging"></bean>
+	<bean id="mmsMessaing" class="kr.green.core.vo.MMSMessaging"></bean>
+	
+	<!-- 생성자를 이용한 의존성 주입 -->
+	<bean id="communication1" class="kr.green.core.vo.Communication">
+		<constructor-arg>
+			<ref bean="activeMQMessaging"/>
+		</constructor-arg>
+	</bean>
+	<bean id="communication2" class="kr.green.core.vo.Communication">
+		<constructor-arg ref="smsMessaging"/>
+	</bean>
+	<bean id="communication3" class="kr.green.core.vo.Communication">
+		<constructor-arg ref="mmsMessaing"/>
+	</bean>
+	<bean id="communication4" class="kr.green.core.vo.Communication">
+		<constructor-arg>
+			<bean class="kr.green.core.vo.EmailMessaging"/>
+		</constructor-arg>
+	</bean>
+	
+	<bean id="communication5" class="kr.green.core.vo.Communication2">
+		<constructor-arg>
+			<bean class="kr.green.core.vo.MD5Encryption"/>
+		</constructor-arg>
+	</bean>
+	
+	<bean id="rsaEncryption" class="kr.green.core.vo.RSAEncryption"/>
+	
+	<bean id="communication6" class="kr.green.core.vo.Communication2">
+		<constructor-arg ref="rsaEncryption"/>
+	</bean>
+	
+	
+</beans>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>변수의 타입</title>
+<script type="text/javascript">
+	StringVar = "문자열";
+	numberVar = 123;
+	booleanVar = false;
+	// 함수도 타입이다.
+	functionVar = function() {    
+		return 3 + 8;
+	}
+	objectVar = {};               // 객체다!!
+	
+	document.writeln(typeof(StringVar) + " : " + StringVar + "<br>");
+	document.writeln(typeof(numberVar) + " : " + numberVar + "<br>");
+	document.writeln(typeof(booleanVar) + " : " + booleanVar + "<br>");
+	document.writeln(typeof(functionVar) + " : " + functionVar + "<br>");
+	document.writeln(typeof(objectVar) + " : " + objectVar + "<br>");
+	document.writeln(typeof(alert) + " : " + alert + "<br>");
+	// 다음은 어떻게 될까?
+	alert = 123;  // 기존 함수에 값 대입이 가능하다.
+	document.writeln(typeof(alert) + " : " + alert + "<br>");
+	
+	// 중복 선언하면 어떻게 될까? 에러아님.
+	var a = 10;
+	var a = 11;
+	var a = 12;
+	var a = 13;
+	document.writeln(typeof(a) + " : " + a + "<br>");
+	// 동적타입 언어이다. 어떤 타입이든 다 할당이 된다.
+	a='123';
+	a=true;
+	a=function(a,b){return a+b;};  // 변수에 함수 대입
+	document.writeln(typeof(a) + " : " + a + "<br>");
+	document.writeln(a(1, 3) + "<br>"); // 함수 호출
+	b = a;                              // 함수도 타입이기 때문에 변수에 대입 가능
+	document.writeln(b(1, 3) + "<br>"); // 함수 호출
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

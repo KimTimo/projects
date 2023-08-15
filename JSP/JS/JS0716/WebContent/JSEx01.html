@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JS를 실행시키는 3가지 방법</title>
+<!-- 외부 자바스크립트 -->
+<script type="text/javascript" src="./js/comm.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+
+<!-- Internal JavaScript -->
+<script>
+    /*
+    window.onload = function() {
+		document.getElementById("btn").onclick = function() {
+			alert("움하하하하하하");
+		}
+	}
+    */
+    $(function() {
+		$("#btn").click(function() {
+			alert('이히히히히히히')
+		})
+	})
+</script>
+</head>
+<body>
+	<!-- Inline JavaScript -->
+	<button onclick="alert('참을성이 없으시군요!')">이 버튼을 누르지 마세요</button>
+	<button id="btn">눌러보시죠</button>
+	<button onclick="my();">눌러보든가</button>
+
+</body>
+</html>

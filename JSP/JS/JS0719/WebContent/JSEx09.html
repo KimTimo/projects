@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>배열</title>
+<script type="text/javascript">
+    ar1 = [1,2,3,4,5,6,7];
+    ar2 = Array(1,2,3,4,5);
+    ar3 = Array(10);
+    ar4 = [123, '문자' , true, {}, [1,2,3],function(){}];  // 어떤 타입이든 된다.
+    
+    document.writeln(typeof(ar1) + " : " + ar1 + "<br>");  // 배열은 객체다.
+    document.writeln(typeof(ar2) + " : " + ar2 + "<br>");
+    document.writeln(typeof(ar3) + " : " + ar3 + "<br>");
+    document.writeln(typeof(ar4) + " : " + ar4 + "<br>");
+    document.writeln("ar4의 길이 : " + " : " + ar4.length + "개<br>");  // 길이는 length속성 사용
+    document.writeln("<br><hr>");
+    // 반복
+    for(i=0; i<ar4.length;i++){
+    	document.writeln("ar4[" + i + "] = " + ar4[i] + "<br>");
+    }
+    document.writeln("<br><hr>");
+    
+    // in을 하면 값이 아니라 인덱스가 넘어온다.
+    for(i in ar4){
+    	document.writeln("ar4[" + i + "] = " + ar4[i] + "<br>");
+    }
+    document.writeln("<br><hr>");
+    
+    document.writeln("ar2의 길이 : " + ar2.length + "개 : " + ar2 + "<br>");
+    ar2.push(11);
+    ar2.push(12);
+    ar2.push(13); // 요소의 추가
+    document.writeln("ar2의 길이 : " + ar2.length + "개 : " + ar2 + "<br>");
+    ar2.pop();
+    ar2.pop();    // 요소의 삭제
+    document.writeln("ar2의 길이 : " + ar2.length + "개 : " + ar2 + "<br>");
+</script>
+</head>
+<body>
+
+</body>
+</html>

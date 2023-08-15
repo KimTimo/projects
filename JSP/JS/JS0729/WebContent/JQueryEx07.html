@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>배열관리</title>
+<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		/*
+		$('h1').each(function(i, element) {
+			$(element).addClass('high_light_' + i);
+		});	
+		*/
+		/*
+		$('h1').each(function(i) {
+			$(this).addClass('high_light_' + i);
+		});
+		*/
+		$('h1').addClass(function (index) {
+			return 'high_light_' + index;
+		});
+		
+		var color = ['red','green','blue','pink', 'white'];
+		$('h1').css('color', function (i) {
+			return color[i];
+		});
+	});
+</script>
+<style type="text/css">
+	.high_light_0 { background-color: yellow; }
+	.high_light_1 { background-color: pink;   }
+	.high_light_2 { background-color: silver; }
+	.high_light_3 { background-color: orange; }
+	.high_light_4 { background-color: skyblue;}
+</style>
+</head>
+<body>
+	h1{나는 $$번째 제목입니다}*5	
+	<h1>나는 01번째 제목입니다</h1>
+	<h1>나는 02번째 제목입니다</h1>
+	<h1>나는 03번째 제목입니다</h1>
+	<h1>나는 04번째 제목입니다</h1>
+	<h1>나는 05번째 제목입니다</h1>	
+	
+</body>
+</html>

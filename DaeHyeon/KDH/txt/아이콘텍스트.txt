@@ -1,0 +1,12 @@
+<i class="far fa-comment"></i>
+<i class="far fa-flushed"></i>
+<i class="far fa-list-alt"></i>
+<i class="far fa-thumbs-up"></i>
+
+
+
+<i class="fas fa-cat"></i>
+<i class="fas fa-cannabis"></i>
+<i class="fas fa-dog"></i>
+<i class="fas fa-fish"></i>
+

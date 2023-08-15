@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+<script>
+	$(function() {
+
+	});
+</script>
+<style>
+ul {
+	margin-left: 20px;
+	color: blue;
+}
+
+li {
+	cursor: default;
+}
+
+span {
+	color: red;
+}
+</style>
+</head>
+<body>
+	<button>Toggle</button>
+	<p>Hello</p>
+	<p style="display: none">Good Bye</p>
+
+	<script>
+		$("button").click(function() {
+			$("p").toggle();
+		});
+	</script>
+
+	<ul>
+		<li>Milk</li>
+		<li>Bread</li>
+		<li>Chips</li>
+		<li>Socks</li>
+	</ul>
+
+	<script>
+		$("li").hover(function() {
+			$(this).append($("<span> ***</span>"));
+		}, function() {
+			$(this).find("span").last().remove();
+		});
+	</script>
+</body>
+</html>

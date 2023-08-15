@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.green.calendar.dao.EventDao">
+
+	<select id="selectList" resultType="EventVO2">
+		SELECT 
+			idx AS "_id", title, DESCRIPTION , 
+			STARTDATE "start" , ENDDATE "end" , "TYPE" , 
+			USERNAME , BACKGROUNDCOLOR , TEXTCOLOR , allDays
+		FROM 
+			event
+	</select>
+
+	<select id="selectList2" parameterType="string" resultType="EventVO2">
+		SELECT 
+			idx AS "_id", title, DESCRIPTION , 
+			STARTDATE "start" , ENDDATE "end" , "TYPE" , 
+			USERNAME , BACKGROUNDCOLOR , TEXTCOLOR , allDays
+		FROM 
+			event
+		<where>
+			<if test="username != null">
+				and USERNAME = #{username}
+			</if>
+		</where>	
+	</select>
+
+	<insert id="insert" parameterType="EventVO2">
+	INSERT INTO event VALUES 
+		(event_idx_seq.nextval, #{title},'추가설명',#{start},#{end},'카테고리1','다현','#D25565','#ffffff', 1)
+	</insert>
+
+	<insert id="insert2" parameterType="EventVO2">
+	INSERT INTO event VALUES 
+		(event_idx_seq.nextval, #{title},#{description},#{start},#{end},#{type},#{username},#{backgroundColor},#{textColor}, #{allDay})
+	</insert>
+
+	<update id="dropUpdate" parameterType="EventVO2">
+		update event set startDate=#{start}, endDate=#{end} where idx = #{idx} 
+	</update>
+
+
+</mapper>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+<script>
+	$(function(){
+		$("#date").change(function(){
+			// alert($(this).val());
+			var date = $(this).val();
+			date = date.replaceAll("-", "");
+			// alert(date);
+			$.ajax({
+				url : 'BoxOffice.jsp',
+				data : {"date":date},
+				dataType : 'json',
+				success : function(data){
+					// alert(data['boxOfficeResult']['dailyBoxOfficeList'][0]['movieNm']);
+					$("#title").html(data['boxOfficeResult']['boxofficeType']);
+					$("#info").html(data['boxOfficeResult']['showRange']);
+					$("#content").html("");
+					$.each(data['boxOfficeResult']['dailyBoxOfficeList'], function(i, elt) {
+						$('#content').append( elt['rank'] + ". " +  elt['movieNm'] + "(" +  elt['openDt'] + ")<br>");
+					});
+
+				}
+			});		
+		});
+		
+		/*
+		$.ajax({
+			url : 'BoxOffice.jsp',
+			data : {"date":"20210105"},
+			dataType : 'json',
+			success : function(data){
+				// alert(data['boxOfficeResult']['dailyBoxOfficeList'][0]['movieNm']);
+				$("#title").html(data['boxOfficeResult']['boxofficeType']);
+				$("#info").html(data['boxOfficeResult']['showRange']);
+				$("#content").html("");
+				$.each(data['boxOfficeResult']['dailyBoxOfficeList'], function(i, elt) {
+					$('#content').append( elt['rank'] + ". " +  elt['movieNm'] + "(" +  elt['openDt'] + ")<br>");
+				});
+			}
+		});
+		*/
+	});
+</script>
+</head>
+<body>
+	날짜 선택 : 
+	<input type="date" id="date" name="date" /> <br />
+	<h1 id="title"></h1>
+	<h2 id="info"></h2>
+	<div id="content"></div>
+</body>
+</html>

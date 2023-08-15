@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- Set에 주입하기 -->
+	<!-- 1. 생성자를 통한 주입 -->
+	<bean id="listObject1" class="kr.green.core.vo.ListObject">
+		<constructor-arg>
+			<list>
+				<value>한사람</value>
+				<value>두사람</value>
+				<value>세사람</value>
+				<value>한사람</value>
+				<value>두사람</value>
+			</list>
+		</constructor-arg>
+	</bean>
+	<!-- 2. Setter를 통한 주입 -->
+	<bean id="listObject2" class="kr.green.core.vo.ListObject">
+		<property name="list">
+			<list>
+				<value>한사람</value>
+				<value>두사람</value>
+				<value>세사람</value>
+				<value>한사람</value>
+				<value>두사람</value>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- List객체 만들기 -->
+	<bean id="arrayList" class="java.util.ArrayList">
+		<constructor-arg>
+			<list>
+				<value>한사람</value>
+				<value>두사람</value>
+				<value>세사람</value>
+				<value>한사람</value>
+				<value>두사람</value>
+			</list>
+		</constructor-arg>
+	</bean>
+	<!-- 참조로 List객체 전달 -->
+	<bean id="listObject3" class="kr.green.core.vo.ListObject">
+		<property name="list" ref="arrayList"/>
+	</bean>
+</beans>

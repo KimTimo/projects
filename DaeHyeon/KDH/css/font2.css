@@ -1,0 +1,55 @@
+@font-face {
+    font-family: '';
+    src: url(../Font2/NotoSansKR-Regular.eot);
+/*IE9~IE11 */		
+    src: url(../Font2/NotoSansKR-Regular.eot?#iefix) format('embedded-opentype'),
+        url('NotoSansKR-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NotoSansKR';
+    src: url(../Font2/NotoSansKR-Thin.eot);
+    src: url(../Font2/NotoSansKR-Thin.eot?#iefix) format('embedded-opentype'),
+        url(../Font2/NotoSansKR-Thin.woff) format('woff');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: '';
+    src: url(../Font2/NotoSansKR-Regular.eot);
+    src: url(../Font2/NotoSansKR-Regular.eot?#iefix) format('embedded-opentype'),
+        url(../Font2/NotoSansKR-Regular.woff) format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: '';
+    src: url(../Font2/NotoSansKR-Bold.eot);
+    src: url(../Font2/NotoSansKR-Bold.eot?#iefix) format('embedded-opentype'),
+        url(../Font2/NotoSansKR-Bold.woff) format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: '';
+    src: url(../Font2/NotoSansKR-Light.eot);
+    src: url(../Font2/NotoSansKR-Light.eot?#iefix) format('embedded-opentype'),
+        url(../Font2/NotoSansKR-Light.woff) format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: '';
+    src: url(../Font2/NotoSansKR-Medium.eot);
+    src: url(../Font2/NotoSansKR-Medium.eot?#iefix) format('embedded-opentype'),
+        url(../Font2/NotoSansKR-Medium.woff) format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+

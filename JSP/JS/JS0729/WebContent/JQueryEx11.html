@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>문서객체 탐색 : add() => 추가 선택</title>
+<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$('h1').css('background','silver').add('h2').css('float','left');
+		
+		// h1, h2 태그를  반복
+		$('h1,h2').each(function(){
+			// is('.sel') : 태그에 class가 sel이 적용되어 있다면
+			if($(this).is('.sel')){
+				$(this).css('color', 'red'); // 색상을 빨강색으로
+			}
+		});
+	});
+</script>
+<style type="text/css">
+ 
+</style>
+</head>
+<body>
+	 (h1{큰제목 $}+h2{작은제목 $$})*3
+	 <h1 class="sel">큰제목 1</h1>
+	 <h2>작은제목 01</h2>
+	 <h1 class="sel">큰제목 2</h1>
+	 <h2>작은제목 02</h2>
+	 <h1>큰제목 3</h1>
+	 <h2 class="sel">작은제목 03</h2>
+
+</body>
+</html>

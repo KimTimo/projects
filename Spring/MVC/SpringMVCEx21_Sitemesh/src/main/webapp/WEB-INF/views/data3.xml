@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<response>
+	<header>
+		<resultCode>00</resultCode>
+		<resultMsg>NORMAL SERVICE.</resultMsg>
+	</header>
+	<body>
+		<items>
+			<item>
+				<dateKind>02</dateKind>
+				<dateName>2·28 민주운동 기념일</dateName>
+				<isHoliday>N</isHoliday>
+				<locdate>20210228</locdate>
+				<seq>1</seq>
+			</item>
+			<item>
+				<dateKind>02</dateKind>
+				<dateName>납세자의 날</dateName>
+				<isHoliday>N</isHoliday>
+				<locdate>20210303</locdate>
+				<seq>1</seq>
+			</item>
+			<item>
+				<dateKind>02</dateKind>
+				<dateName>3·8민주의거 기념일</dateName>
+				<isHoliday>N</isHoliday>
+				<locdate>20210308</locdate>
+				<seq>1</seq>
+			</item>
+			<item>
+				<dateKind>02</dateKind>
+				<dateName>3·15 의거 기념일</dateName>
+				<isHoliday>N</isHoliday>
+				<locdate>20210315</locdate>
+				<seq>1</seq>
+			</item>
+			<item>
+				<dateKind>02</dateKind>
+				<dateName>상공의 날</dateName>
+				<isHoliday>N</isHoliday>
+				<locdate>20210317</locdate>
+				<seq>1</seq>
+			</item>
+			<item>
+				<dateKind>02</dateKind>
+				<dateName>서해수호의 날</dateName>
+				<isHoliday>N</isHoliday>
+				<locdate>20210326</locdate>
+				<seq>1</seq>
+			</item>
+			<item>
+				<dateKind>02</dateKind>
+				<dateName>예비군의 날</dateName>
+				<isHoliday>N</isHoliday>
+				<locdate>20210402</locdate>
+				<seq>1</seq>
+			</item>
+			<item>
+				<dateKind>02</dateKind>
+				<dateName>4·3희생자 추념일</dateName>
+				<isHoliday>N</isHoliday>
+				<locdate>20210403</locdate>
+				<seq>1</seq>
+			</item>
+			<item>
+				<dateKind>02</dateKind>
+				<dateName>식목일</dateName>
+				<isHoliday>N</isHoliday>
+				<locdate>20210405</locdate>
+				<seq>1</seq>
+			</item>
+			<item>
+				<dateKind>02</dateKind>
+				<dateName>보건의 날</dateName>
+				<isHoliday>N</isHoliday>
+				<locdate>20210407</locdate>
+				<seq>1</seq>
+			</item>
+			<item>
+				<dateKind>02</dateKind>
+				<dateName>도시농업의 날</dateName>
+				<isHoliday>N</isHoliday>
+				<locdate>20210411</locdate>
+				<seq>1</seq>
+			</item>
+			<item>
+				<dateKind>02</dateKind>
+				<dateName>대한민국임시정부 수립기념일</dateName>
+				<isHoliday>N</isHoliday>
+				<locdate>20210411</locdate>
+				<seq>2</seq>
+			</item>
+			<item>
+				<dateKind>02</dateKind>
+				<dateName>4·19 혁명 기념일</dateName>
+				<isHoliday>N</isHoliday>
+				<locdate>20210419</locdate>
+				<seq>1</seq>
+			</item>
+			<item>
+				<dateKind>02</dateKind>
+				<dateName>장애인의 날</dateName>
+				<isHoliday>N</isHoliday>
+				<locdate>20210420</locdate>
+				<seq>1</seq>
+			</item>
+			<item>
+				<dateKind>02</dateKind>
+				<dateName>과학의 날</dateName>
+				<isHoliday>N</isHoliday>
+				<locdate>20210421</locdate>
+				<seq>1</seq>
+			</item>
+			<item>
+				<dateKind>02</dateKind>
+				<dateName>정보통신의 날</dateName>
+				<isHoliday>N</isHoliday>
+				<locdate>20210422</locdate>
+				<seq>1</seq>
+			</item>
+			<item>
+				<dateKind>02</dateKind>
+				<dateName>법의 날</dateName>
+				<isHoliday>N</isHoliday>
+				<locdate>20210425</locdate>
+				<seq>1</seq>
+			</item>
+			<item>
+				<dateKind>02</dateKind>
+				<dateName>충무공 이순신 탄신일</dateName>
+				<isHoliday>N</isHoliday>
+				<locdate>20210428</locdate>
+				<seq>1</seq>
+			</item>
+			<item>
+				<dateKind>02</dateKind>
+				<dateName>근로자의 날</dateName>
+				<isHoliday>N</isHoliday>
+				<locdate>20210501</locdate>
+				<seq>1</seq>
+			</item>
+			<item>
+				<dateKind>02</dateKind>
+				<dateName>어버이 날</dateName>
+				<isHoliday>N</isHoliday>
+				<locdate>20210508</locdate>
+				<seq>1</seq>
+			</item>
+			<item>
+				<dateKind>02</dateKind>
+				<dateName>유권자의 날</dateName>
+				<isHoliday>N</isHoliday>
+				<locdate>20210510</locdate>
+				<seq>1</seq>
+			</item>
+			<item>
+				<dateKind>02</dateKind>
+				<dateName>동학농민혁명 기념일</dateName>
+				<isHoliday>N</isHoliday>
+				<locdate>20210511</locdate>
+				<seq>1</seq>
+			</item>
+			<item>
+				<dateKind>02</dateKind>
+				<dateName>식품안전의 날</dateName>
+				<isHoliday>N</isHoliday>
+				<locdate>20210514</locdate>
+				<seq>1</seq>
+			</item>
+			<item>
+				<dateKind>02</dateKind>
+				<dateName>스승의 날</dateName>
+				<isHoliday>N</isHoliday>
+				<locdate>20210515</locdate>
+				<seq>1</seq>
+			</item>
+			<item>
+				<dateKind>02</dateKind>
+				<dateName>성년의 날</dateName>
+				<isHoliday>N</isHoliday>
+				<locdate>20210517</locdate>
+				<seq>1</seq>
+			</item>
+			<item>
+				<dateKind>02</dateKind>
+				<dateName>5·18 민주화운동 기념일</dateName>
+				<isHoliday>N</isHoliday>
+				<locdate>20210518</locdate>
+				<seq>1</seq>
+			</item>
+			<item>
+				<dateKind>02</dateKind>
+				<dateName>발명의 날</dateName>
+				<isHoliday>N</isHoliday>
+				<locdate>20210519</locdate>
+				<seq>2</seq>
+			</item>
+			<item>
+				<dateKind>02</dateKind>
+				<dateName>부부의 날</dateName>
+				<isHoliday>N</isHoliday>
+				<locdate>20210521</locdate>
+				<seq>1</seq>
+			</item>
+			<item>
+				<dateKind>02</dateKind>
+				<dateName>바다의 날</dateName>
+				<isHoliday>N</isHoliday>
+				<locdate>20210531</locdate>
+				<seq>1</seq>
+			</item>
+			<item>
+				<dateKind>02</dateKind>
+				<dateName>의병의 날</dateName>
+				<isHoliday>N</isHoliday>
+				<locdate>20210601</locdate>
+				<seq>1</seq>
+			</item>
+			<item>
+				<dateKind>02</dateKind>
+				<dateName>환경의 날</dateName>
+				<isHoliday>N</isHoliday>
+				<locdate>20210605</locdate>
+				<seq>1</seq>
+			</item>
+			<item>
+				<dateKind>02</dateKind>
+				<dateName>구강보건의 날</dateName>
+				<isHoliday>N</isHoliday>
+				<locdate>20210609</locdate>
+				<seq>1</seq>
+			</item>
+			<item>
+				<dateKind>02</dateKind>
+				<dateName>6·10 민주항쟁 기념일</dateName>
+				<isHoliday>N</isHoliday>
+				<locdate>20210610</locdate>
+				<seq>1</seq>
+			</item>
+			<item>
+				<dateKind>02</dateKind>
+				<dateName>전자정부의 날</dateName>
+				<isHoliday>N</isHoliday>
+				<locdate>20210624</locdate>
+				<seq>1</seq>
+			</item>
+			<item>
+				<dateKind>02</dateKind>
+				<dateName>6·25 전쟁일</dateName>
+				<isHoliday>N</isHoliday>
+				<locdate>20210625</locdate>
+				<seq>1</seq>
+			</item>
+			<item>
+				<dateKind>02</dateKind>
+				<dateName>마약퇴치의 날</dateName>
+				<isHoliday>N</isHoliday>
+				<locdate>20210626</locdate>
+				<seq>1</seq>
+			</item>
+			<item>
+				<dateKind>02</dateKind>
+				<dateName>철도의 날</dateName>
+				<isHoliday>N</isHoliday>
+				<locdate>20210628</locdate>
+				<seq>1</seq>
+			</item>
+			<item>
+				<dateKind>02</dateKind>
+				<dateName>인구의 날</dateName>
+				<isHoliday>N</isHoliday>
+				<locdate>20210711</locdate>
+				<seq>1</seq>
+			</item>
+			<item>
+				<dateKind>02</dateKind>
+				<dateName>정보보호의 날</dateName>
+				<isHoliday>N</isHoliday>
+				<locdate>20210714</locdate>
+				<seq>1</seq>
+			</item>
+			<item>
+				<dateKind>02</dateKind>
+				<dateName>섬의 날</dateName>
+				<isHoliday>N</isHoliday>
+				<locdate>20210808</locdate>
+				<seq>1</seq>
+			</item>
+			<item>
+				<dateKind>02</dateKind>
+				<dateName>사회복지의 날</dateName>
+				<isHoliday>N</isHoliday>
+				<locdate>20210907</locdate>
+				<seq>1</seq>
+			</item>
+			<item>
+				<dateKind>02</dateKind>
+				<dateName>곤충의 날</dateName>
+				<isHoliday>N</isHoliday>
+				<locdate>20210907</locdate>
+				<seq>2</seq>
+			</item>
+			<item>
+				<dateKind>02</dateKind>
+				<dateName>해양경찰의 날</dateName>
+				<isHoliday>N</isHoliday>
+				<locdate>20210910</locdate>
+				<seq>1</seq>
+			</item>
+			<item>
+				<dateKind>02</dateKind>
+				<dateName>국군의 날</dateName>
+				<isHoliday>N</isHoliday>
+				<locdate>20211001</locdate>
+				<seq>1</seq>
+			</item>
+			<item>
+				<dateKind>02</dateKind>
+				<dateName>노인의 날</dateName>
+				<isHoliday>N</isHoliday>
+				<locdate>20211002</locdate>
+				<seq>1</seq>
+			</item>
+			<item>
+				<dateKind>02</dateKind>
+				<dateName>세계한인의 날</dateName>
+				<isHoliday>N</isHoliday>
+				<locdate>20211005</locdate>
+				<seq>1</seq>
+			</item>
+			<item>
+				<dateKind>02</dateKind>
+				<dateName>재향군인의 날</dateName>
+				<isHoliday>N</isHoliday>
+				<locdate>20211008</locdate>
+				<seq>1</seq>
+			</item>
+			<item>
+				<dateKind>02</dateKind>
+				<dateName>임산부의 날</dateName>
+				<isHoliday>N</isHoliday>
+				<locdate>20211010</locdate>
+				<seq>1</seq>
+			</item>
+			<item>
+				<dateKind>02</dateKind>
+				<dateName>정신건강의 날</dateName>
+				<isHoliday>N</isHoliday>
+				<locdate>20211010</locdate>
+				<seq>2</seq>
+			</item>
+			<item>
+				<dateKind>02</dateKind>
+				<dateName>체육의 날</dateName>
+				<isHoliday>N</isHoliday>
+				<locdate>20211015</locdate>
+				<seq>1</seq>
+			</item>
+			<item>
+				<dateKind>02</dateKind>
+				<dateName>부마민주항쟁 기념일</dateName>
+				<isHoliday>N</isHoliday>
+				<locdate>20211016</locdate>
+				<seq>1</seq>
+			</item>
+			<item>
+				<dateKind>02</dateKind>
+				<dateName>문화의 날</dateName>
+				<isHoliday>N</isHoliday>
+				<locdate>20211016</locdate>
+				<seq>2</seq>
+			</item>
+			<item>
+				<dateKind>02</dateKind>
+				<dateName>경찰의 날</dateName>
+				<isHoliday>N</isHoliday>
+				<locdate>20211021</locdate>
+				<seq>1</seq>
+			</item>
+			<item>
+				<dateKind>02</dateKind>
+				<dateName>국제연합일</dateName>
+				<isHoliday>N</isHoliday>
+				<locdate>20211024</locdate>
+				<seq>1</seq>
+			</item>
+			<item>
+				<dateKind>02</dateKind>
+				<dateName>금융의 날</dateName>
+				<isHoliday>N</isHoliday>
+				<locdate>20211026</locdate>
+				<seq>1</seq>
+			</item>
+			<item>
+				<dateKind>02</dateKind>
+				<dateName>교정의 날</dateName>
+				<isHoliday>N</isHoliday>
+				<locdate>20211028</locdate>
+				<seq>1</seq>
+			</item>
+			<item>
+				<dateKind>02</dateKind>
+				<dateName>지방자치의 날</dateName>
+				<isHoliday>N</isHoliday>
+				<locdate>20211029</locdate>
+				<seq>1</seq>
+			</item>
+			<item>
+				<dateKind>02</dateKind>
+				<dateName>학생독립운동 기념일</dateName>
+				<isHoliday>N</isHoliday>
+				<locdate>20211103</locdate>
+				<seq>1</seq>
+			</item>
+			<item>
+				<dateKind>02</dateKind>
+				<dateName>소방의 날</dateName>
+				<isHoliday>N</isHoliday>
+				<locdate>20211109</locdate>
+				<seq>1</seq>
+			</item>
+			<item>
+				<dateKind>02</dateKind>
+				<dateName>농업인의 날</dateName>
+				<isHoliday>N</isHoliday>
+				<locdate>20211111</locdate>
+				<seq>1</seq>
+			</item>
+			<item>
+				<dateKind>02</dateKind>
+				<dateName>순국선열의 날</dateName>
+				<isHoliday>N</isHoliday>
+				<locdate>20211117</locdate>
+				<seq>1</seq>
+			</item>
+			<item>
+				<dateKind>02</dateKind>
+				<dateName>아동학대예방의 날</dateName>
+				<isHoliday>N</isHoliday>
+				<locdate>20211119</locdate>
+				<seq>1</seq>
+			</item>
+			<item>
+				<dateKind>02</dateKind>
+				<dateName>소비자의 날</dateName>
+				<isHoliday>N</isHoliday>
+				<locdate>20211203</locdate>
+				<seq>1</seq>
+			</item>
+			<item>
+				<dateKind>02</dateKind>
+				<dateName>무역의 날</dateName>
+				<isHoliday>N</isHoliday>
+				<locdate>20211205</locdate>
+				<seq>1</seq>
+			</item>
+			<item>
+				<dateKind>02</dateKind>
+				<dateName>자원봉사자의 날</dateName>
+				<isHoliday>N</isHoliday>
+				<locdate>20211205</locdate>
+				<seq>2</seq>
+			</item>
+			<item>
+				<dateKind>02</dateKind>
+				<dateName>원자력 안전 및 진흥의 날</dateName>
+				<isHoliday>N</isHoliday>
+				<locdate>20211227</locdate>
+				<seq>1</seq>
+			</item>
+		</items>
+		<numOfRows>1000</numOfRows>
+		<pageNo>1</pageNo>
+		<totalCount>66</totalCount>
+	</body>
+</response>

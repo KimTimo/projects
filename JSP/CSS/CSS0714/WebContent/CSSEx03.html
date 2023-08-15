@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>속성 선택자(Attribute Selector)</title>
+<style type="text/css">
+    /* p태그 중에 title이란 속성이 있으면 속성값이 먹힘 */
+    p[title]{
+        font-weight: bold;
+    }
+    p[title="qwe"]{
+        color: orange;
+    }
+    /* p태그 중에 title이란 속성의 값이 qwe를 단어로 포함하면 속성값이 먹힘 */
+    p[title~="qwe"]{
+        text-decoration: underline;
+    }
+    
+    /* p태그 중에 title이란 속성의 값이 qwe를 단어나 단어 뒤에 -가 있으면 먹힘 */
+    p[title |="qwe"]{
+        text-decoration: overline;
+    }
+    
+    /* p태그 중에 title이란 속성의 값이 qwe로 시작하면 폰트를 바꿈 */
+    p[title ^="qwe"]{
+        font-family: "궁서체";
+    }
+    
+    /* p태그 중에 title이란 속성의 값이 asdf로 끝나면 글자크기를 18pt */
+    p[title $="asdf"]{
+        font-size: 25pt;
+    }
+    
+    /* p태그 중에 title이란 속성의 값이 asdf로 끝나면 글자크기를 18pt */
+    p[title *="we"]{
+        background-color: pink;
+    }
+    
+</style>
+</head>
+<body>
+    <!-- 
+    [addribute]          : 지정 속성이 있으면
+    [addribute="value"]  : 지정 속성에 값까지 같았을 때
+    [addribute~="value"] : 지정 속성에 값을 단어로 포함할 때
+    [addribute|="value"] : 지정 속성에 값을 단어 또는 -로 끝날 때
+    [addribute^="value"]
+    [addribute$="value"]
+    [addribute*="value"]
+     -->
+     <p>나는 문단입니다. 1</p>
+     <p title="qwe">나는 문단입니다. 2</p>
+     <p title="qwe1 asdf">나는 문단입니다. 3</p>
+     <p title="qwe-rt">나는 문단입니다. 4</p>
+     <p title="qw qwe asdf">나는 문단입니다. 5</p>	
+     <p title="qw qwe">나는 문단입니다. 6</p>	
+
+</body>
+</html>

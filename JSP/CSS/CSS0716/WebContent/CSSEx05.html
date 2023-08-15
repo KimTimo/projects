@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>번호 붙이기</title>
+<style type="text/css">
+body {
+	counter-reset: chapter 0;
+}
+
+h1:before {
+	counter-increment: chapter;
+	content: counter(chapter) ". "
+}
+</style>
+</head>
+<body>
+	<h1>나는 제목 001</h1>
+	<h1>나는 제목 002</h1>
+	<h1>나는 제목 003</h1>
+	<h1>나는 제목 004</h1>
+	<h1>나는 제목 005</h1>
+
+</body>
+</html>

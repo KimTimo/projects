@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="applicationUser" class="kr.green.core.vo.ApplicationUser">
+		<property name="name" value="superUser"/>
+	</bean>
+	<!-- 객체를 수동으로 주입 -->
+	<bean id="application1" class="kr.green.core.vo.Application">
+		<property name="applicationUser" ref="applicationUser"/>
+	</bean>
+	<!-- 객체를 자동으로 주입 -->
+	<bean id="application2" class="kr.green.core.vo.Application" autowire="byName"/>
+	<bean id="application3" class="kr.green.core.vo.Application" autowire="byType"/>
+	<bean id="application4" class="kr.green.core.vo.Application" autowire="constructor"/>
+	<bean id="application5" class="kr.green.core.vo.Application" autowire="default"/>
+	<bean id="application6" class="kr.green.core.vo.Application" autowire="no"/>
+
+</beans>

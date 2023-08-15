@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>선택자 연습 : 자식선택자/후손 선택자</title>
+<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		// 후손(공백) 선택자 : 부모  후손
+		$('body *').css('color','blue');
+		// 자식(>) 선택자 : 부모 > 자식
+		$('body > div').css('background-color','pink');
+		$('#list1>li').css('background','skyblue');
+	});
+</script>
+</head>
+<body>
+	div>ul>li{아이템 $$$}*5
+	<div>
+		<ul>
+			<li>아이템 001</li>
+			<li>아이템 002</li>
+			<li>아이템 003
+				<!-- ol>li{서브아이템 $$}*3  -->
+				<ul id="list1">
+					<li>서브아이템 01</li>
+					<li>서브아이템 02</li>
+					<li>서브아이템 03</li>
+				</ul>
+			</li>
+			<li>아이템 004</li>
+			<li>아이템 005</li>
+		</ul>
+	</div>
+</body>
+</html>

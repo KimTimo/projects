@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ES5 Array객체 map</title>
+<script type="text/javascript">
+	ar = [3,2,6,1,8,9];
+	// map() : 각요소를 변경해 새로운 배열을 만든다.
+	document.writeln("elt*elt = " + ar.map(function(elt, i, array) {
+		return elt*elt;
+	}) + "<br>");
+	document.writeln("elt*3-1 = " + ar.map(function(elt, i, array) {
+		return elt*3-1;
+	}) + "<br>");
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.green.member.dao.MemberDAO">
+	<!-- 저장하기 : 회원 가입 -->
+	<insert id="insert" parameterType="MemberVO">
+		insert into smember
+		(idx, userid,password,username,email,birth,phone,zipcode,addr1,addr2,enabled,regdate,uuid)
+		values
+		(smember_idx_seq.nextval, #{userid}, #{password}, #{username},
+		 #{email}, #{birth}, #{phone}, #{zipcode}, #{addr1}, #{addr2}, 0,SYSDATE,#{uuid})
+	</insert>
+	<!-- 수정하기 : 회원 정보 수정 -->
+	<update id="update"  parameterType="MemberVO">
+		update 
+			smember 
+		set
+			email = #{email },
+			phone = #{phone },
+			birth = #{birth },
+			zipcode = #{zipcode},
+			addr1 = #{addr1},
+			addr2 = #{addr2}
+		where
+			idx=#{idx}
+	</update>
+	<!-- 삭제하기 : 회원 탈퇴 -->
+	<delete id="delete" parameterType="int">
+		delete from smember where idx=#{idx}
+	</delete>
+	
+	<!-- 1개얻기하기 : 수정/삭제/로그인 -->
+	<select  id="selectByIdx" parameterType="int" resultType="MemberVO">
+		select * from smember where idx=#{idx}
+	</select>
+	<!-- 개수 얻기 : 관리자모드 -->
+	<select id="selectCount" resultType="int">
+		select count(*) from smember
+	</select>
+	
+	<!-- 모두 얻기 : 관리자모드 -->
+	<select id="selectAll" resultType="MemberVO">
+		select * from smember order by idx desc
+	</select>
+	
+	<!-- 동일한 아이디 개수세기 : 아이디 중복 확인 -->
+	<select id="selectCountByUserid" parameterType="string" resultType="int">
+		select count(*) from smember where userid=#{userid}
+	</select>
+	
+	<!-- 아이디로 찾기 -->
+	<select id="selectByUserid" parameterType="string" resultType="MemberVO">
+		select * from smember where userid=#{userid}
+	</select>
+	
+	<!-- 이름으로 찾기 -->
+	<select id="selectByUsername" parameterType="string" resultType="MemberVO">
+		select * from smember where username=#{username}
+	</select>
+	
+	<!-- 사용여부 변경하기 -->
+	<update id="updateEnabled" parameterType="hashmap">
+		update smember set enabled = #{enabled} where userid=#{userid}	
+	</update>
+	<!-- 비밀번호 변경하기 -->
+	<update id="updatePassword" parameterType="hashmap">
+		update smember set password = #{password} where userid=#{userid}	and username=#{username}
+	</update>
+	
+</mapper>

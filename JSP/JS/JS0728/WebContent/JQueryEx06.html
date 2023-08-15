@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script type="text/javascript">
+	// 다른 자바스크립트 라이브러리와 같이 사용한다면 $가 중복될 수 있다.
+	// 이런 경우에는 $ 대신 다른 접두어를 사용 가능하다.
+
+	// $를 사용하지 않겠다.
+	jQuery.noConflict();
+
+	jQuery(function() {
+		document.write("JQuery사용!!!<br>")
+	});
+
+	// 접두어로 $jq를 사용하겠다.
+	var $jq = jQuery.noConflict();
+	$jq(function() {
+		document.write("$jq사용!!!!<br>")
+	});
+
+	// 접두어로 my를 사용하겠다.
+	var my = jQuery.noConflict();
+	my(function() {
+		document.write("my사용!!!!<br>")
+	});
+</script>
+</head>
+<body>
+	<h1 id="header1">눌러봐!!!! 1</h1>
+	<h1 id="header2">눌러봐!!!! 2</h1>
+
+</body>
+</html>

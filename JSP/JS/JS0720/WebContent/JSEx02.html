@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>prompt 함수를 이용한 숫자만 입력받기</title>
+<script type="text/javascript">
+    var age = 0;
+    do{
+        age = prompt("나이?");
+    }while(isNaN(age));
+    
+    
+    alert("당신은 내년에 " + (Number(age) + 1) + "살 입니다.");
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이미지 맵</title>
+</head>
+<body>
+	<h2>이미지에 링크걸기</h2>
+	<a href="애국가.html"> <img src="/HTML0712/images/img_flag.png"
+		alt="태극기" /></a>
+	<br />
+	<hr />
+	<h2>이미지 일부분에 링크걸기(이미지맵)</h2>
+	<!-- 원본이미지에 usemap속성을 적고 map의 이름을 적는다. -->
+	<img src="/HTML0712/images/img_imagemap.jpg" alt="진실혹은거짓"
+		usemap="#vending" style="width: 320px; height: 240px" />
+
+	<map name="vending">
+		<!-- 도형이 모양과 좌표를 지정하고 클릭시 이동할 주소를 지정합니다. -->
+		<area shape="rect" coords="90,60,180,130" alt="거짓"
+			href="https://ko.wikipedia.org/wiki/%EA%B1%B0%EC%A7%93%EB%A7%90">
+		<area shape="rect" coords="210,200,70,130" alt="진실"
+			href="https://ko.wikipedia.org/wiki/%EC%A7%84%EC%8B%A4">
+
+	</map>
+
+</body>
+</html>

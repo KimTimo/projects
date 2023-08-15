@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>출력</title>
+<script type="text/javascript">
+    alert('메시지 출력');                       // 경고창
+    document.writeln("나는 어디에 나올깝쇼?");  // 문서에 직접 출력 : body에 출력
+    console.log("나는 또 어디에 나올까유?");    // 콘솔창에 출력
+    document.writeln("나는 '어디에' 나올까요??<br>");
+    document.writeln('나는 "어디에" 나올까요??<br>');
+    document.writeln("나는 \"어디에\" 나올까요??<br>");
+    document.writeln('나는 \'어디에\' 나올까요??<br>');
+    // 정수와 유리수의 구분 없이 숫자는 모두 숫자입니다.
+    document.writeln(10 + 10 + '<br>');
+    document.writeln(10 * 10 + '<br>');
+    document.writeln(10 / 3 + '<br>');          // 3.33333333333333333333335 : 정수와 실수의 구분이 없다!
+    document.writeln(typeof  10 + '<br>');      // number 타입
+    document.writeln(typeof(10.0) + '<br>');    // number 타입
+    
+    // 논리타입
+    document.writeln(typeof(true) + '<br>');    // boolean 타입
+    document.writeln(typeof(false) + '<br>');    // boolean 타입
+    document.writeln((3 > 4) + '<br>');    // boolean 타입
+    document.writeln((3 < 4) + '<br>');    // true 타입
+    document.writeln((true < false) + '<br>');    // false 왜? true가 1로 false가 0으로 바뀌어 1<0 의 결과 출력
+    		
+    // 조건식이 꼭 논리식이 아니여도 참 or 거짓 판단 가능
+    document.writeln((1 ? "참" : "거짓") + '<br>');   // 참
+    document.writeln((0 ? "참" : "거짓") + '<br>');   // 거짓
+    document.writeln((-1 ? "참" : "거짓") + '<br>');  // 참 ==> 0은 거짓. 그 외의 숫자는 참이다.
+    
+    document.writeln((34%2 ? "홀수" : "짝수") + "<br>");
+    document.writeln((35%2 ? "홀수" : "짝수") + "<br>");
+    
+    document.writeln(("" ? "참" : "구라") + "<br>");  // 거짓 : 빈문자열은 거짓
+    document.writeln((" " ? "참" : "구라") + "<br>"); // 참   : 어떤 문자열은 참
+    document.writeln((null ? "참" : "구라") + "<br>"); // 거짓   : null 은 거짓
+    
+    document.writeln('<br><hr>');
+    
+    // ==와 ===의 차이점
+    document.writeln((1=='1') + "<br>");              // 참 :   내용을 비교 : 1=='1' => '1'=='1' ==> 참
+    document.writeln((1==='1') + "<br>");             // 거짓 : 내용과 타입까지 일치하는지 비교
+    
+    document.writeln('<br><hr>');
+    // 자동 현변환에 유의하자.
+    document.writeln((1 + '1') + "<br>");             // 1 + '1' => '1' + '1' => '11'
+    document.writeln((1 - '1') + "<br>");             // 1 - '1' => 1 = 1 => 0
+    document.writeln((1 * '1') + "<br>");             // 1 * '1' => 1 * 1 = 1
+    document.writeln((1 / '1') + "<br>");             // 1 / '1' => 1 / 1 = 1
+    document.writeln((1 % '1') + "<br>");             // 1 % '1' => 1 % 1 = 0
+    // 1자리 문자를 숫자로 바꾸는 방법
+    document.writeln(('1' - '0') + "<br>");
+    document.writeln(('1' * 1) + "<br>");
+    
+</script>
+</head>
+<body>
+
+</body>
+</html>

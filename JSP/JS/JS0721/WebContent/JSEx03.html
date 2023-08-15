@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>함수 예제</title>
+<script type="text/javascript">
+
+	//  n ~ m 까지의 합을 구하는 함수 작성
+	function sum(n, m) {
+		if(n > m){
+			var t = n; n = m; m = t;
+		}
+		var s = 0;
+		for(i = n; i <= m; i++) s += i;
+		return s;
+	}
+	//  n!을 구하는 함수 작성
+	function factorial(n) {
+		var f = n;
+		while(n>1) f *= --n;
+		return f;
+	}
+	//  자릿수의 합계를 구하는 함수
+	function atSum(n) {
+		var sum = 0;
+		while(n > 0){
+			sum += n % 10;
+			n = parseInt(n/10);
+		}
+		return sum;
+	}
+	// x의 y승을 구하는 함수
+	function pow(x, y) {
+		var p = 1;
+		while(y > 0){
+			p *= x;
+			--y;
+		}
+		return p;
+	}
+	document.writeln("1 ~ 10 까지 합 : " + sum(1,10) + "<br>"); 
+	document.writeln("10 ~ 1 까지 합 : " + sum(10,1) + "<br>"); 
+	document.writeln("5! : " + factorial(5) + "<br>"); 
+	document.writeln("1234의 자릿수 합 : " + atSum(1234) + "<br>"); 
+	document.writeln("2의 10승 : " + pow(2,10) + "<br>"); 
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

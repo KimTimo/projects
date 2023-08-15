@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.green.mvc10.dao.TestDAO">
+
+    <select id="selectToday" resultType="java.util.Date">
+        select now()
+    </select>
+    
+    <select id="selectSum" parameterType="hashmap" resultType="int">
+        select #{num1 } + #{num2 } 
+    </select>
+    
+    <select id="selectMul" parameterType="hashmap" resultType="int">
+        select #{num1 } * #{num2 } 
+    </select>
+    
+    <select id="selectVO" parameterType="testVO" resultType="testVO">
+        select 
+        #{num1 } as num1, 
+        #{num2 } num2, 
+        now() as today,
+        #{num1 } + #{num2 } sum, 
+        #{num1 } * #{num2 } mul
+    </select>
+</mapper>

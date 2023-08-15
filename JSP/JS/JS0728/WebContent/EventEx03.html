@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이벤트 강제 발생시키기</title>
+<script type="text/javascript">
+	window.onload = function(){ // onload : 문서가 모두 읽은 다음에
+		var btn1 = document.getElementById("btn1");
+		var btn2 = document.getElementById("btn2");
+		var counter1 = document.getElementById("counter1");
+		var counter2 = document.getElementById("counter2");
+		
+		btn1.onclick = function(){ // 함수 할당
+			counter1.innerHTML = counter1.innerHTML * 1 + 1;
+		}
+		btn2.onclick = function(){
+			counter2.innerHTML = counter2.innerHTML * 1 + 1;
+			// 이벤트 강제발생 : 1번 버튼도 같이 눌린것 처럼 해보자
+			btn1.onclick(); // 함수 호출
+		}
+	}
+</script>
+</head>
+<body>
+	<button id="btn1">버튼 1</button>
+	<button id="btn2">버튼 2</button>
+	<br /><hr />
+	<h2>Button 1 : <span id="counter1">0</span>번 클릭됨 </h2>
+	<h2>Button 2 : <span id="counter2">0</span>번 클릭됨 </h2>
+</body>
+</html>
